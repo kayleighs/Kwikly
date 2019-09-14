@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const jobSchema = new Schema({
   title: { type: String, required: true },
-  location: [{ type: String, required: true }],
+  locationName: [{ type: String, required: true }],
   description: String,
   image: { type: String, trim: true },
   employerName: { type: String},
