@@ -1,0 +1,22 @@
+.wrapper {
+  min-height: 100%;
+  padding: 20px 20px 20px 20px;
+  margin: 30px 30px 30px 30px;
+
+}
+.ks-container {
+    position: relative;
+}
+.ks-container::after {
+    content:"";
+    background: url("../../images/halftone.png");  
+    opacity:.4;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    box-shadow: 4px 4px 20px 0px rgb(61, 61, 61);
+    border-radius: 15px;
+}
