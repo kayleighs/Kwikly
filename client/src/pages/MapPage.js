@@ -15,6 +15,8 @@ class Map extends Component {
 
   componentDidMount() {
     this.loadJobs();
+    console.log("this is the process env " + process.env.REACT_APP_GOOGLE_KEY)
+    console.log("this is just the key" + REACT_APP_GOOGLE_KEY)
   }
 
   loadJobs = () => {
@@ -79,7 +81,7 @@ const WrappedMap = withScriptjs(withGoogleMap(Map));
 //Go here for tutorial https://www.youtube.com/watch?v=Pf7g32CwX_s
 
 export default function MapPage() {
-  console.log(process.env.REACT_APP_GOOGLE_KEY)
+
   return (
     <div className="container" style={{ width: "100vw", height: "80vh"}}>
       <WrappedMap
