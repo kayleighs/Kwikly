@@ -22,3 +22,34 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+
+
+
+html {
+    position: relative;
+    /*for sticky footer */
+    min-height: 100%;
+    /*for sticky footer */
+    min-width: 100%;
+}
+.main {
+/*     margin-top: 78px; */
+    margin-bottom: 78px;
+}
+
+body {
+/*     background: url("./images/satinweave.png"); */
+
+/*     margin-bottom: 40px; */
+    /*for sticky footer */
+    color: #212121;
+}
+
+
+/* Fonts */
+
+.h-font {
+    font-family: 'EB Garamond', serif;
+}

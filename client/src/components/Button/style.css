@@ -1,0 +1,48 @@
+/* KS-Button Styles */
+
+.ks-button {
+border: none;
+background: #404040;
+color: #ffffff !important;
+font-weight: 100;
+padding: 15px;
+
+border-radius: 50px;
+display: inline-block;
+transition: all 0.3s ease 0s;
+}
+.bottom-center { 
+    bottom: 1%; 
+    left: 70%; 
+    transform: translateX(-50%); 
+        } 
+.bottom-center-50 { 
+    bottom: 1%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+        } 
+.bottom-right { 
+    bottom: 1%; 
+    left: 90%; 
+    transform: translateX(-50%); 
+        } 
+.ks-button:hover {
+color: #404040 !important;
+font-weight: 700 !important;
+letter-spacing: 3px;
+background: none;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.3s ease 0s;
+}
+
+.ks-button:focus {
+    box-shadow: 0 0 0 0.2rem rgb(14, 17, 219,.5);
+    outline: 0;
+}
+
+.ks-button:active {
+    color: #fff;
+    background-color: rgb(219, 21, 14);
+    border-color: rgb(22, 26, 228);
+}
