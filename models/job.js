@@ -3,13 +3,10 @@ const Schema = mongoose.Schema;
 
 const jobSchema = new Schema({
   title: { type: String, required: true },
-  locationName: [{ type: String, required: true }],
-  description: String,
-  image: { type: String, trim: true },
-  employerName: { type: String},
-  category: {type: String, required: true},
-  isAvailable: {type: Boolean, required: true, default: true},
-  salaryRange: {type: String},
+  location: {
+    lat : { type: String, required: true },
+    lng : { type: String, required: true }
+  },
   date: { type: Date, default: Date.now }
 });
 
