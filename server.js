@@ -14,6 +14,6 @@ app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.listen(PORT, function() {
+app.listen(process.env.PORT || 3001, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
