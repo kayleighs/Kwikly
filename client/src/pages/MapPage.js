@@ -27,7 +27,6 @@ class Map extends Component {
 
   setSelectedMarker = (info) => {
     this.setState({ selectedMarker: info})
-    console.log(this.props.google.map)
   };
 
   convertLoc = (place) => {
@@ -41,13 +40,11 @@ class Map extends Component {
   };
 
   render() {
-    const { google } = this.props
     return (
       <div className="map-page">
         <GoogleMap
           defaultZoom={10}
           defaultCenter={{ lat: 40.695210, lng: -74.001623 }}
-          google={google}
         >
           {this.state.allJobs.map((loc)=> (
             // console.log(loc),
