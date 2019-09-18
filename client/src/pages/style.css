@@ -2,3 +2,47 @@
     height: 400px;  /* The height is 400 pixels */
     width: 100%;  /* The width is the width of the web page */
 }
+
+
+
+
+
+/*-Login-- */
+.register-form {
+    display:none;
+}
+#login {
+    display: block;
+}
+
+#password {
+    display: block;
+}
+
+.fa-user {
+    color: rgb(14, 17, 219);
+}
+
+input {
+    border-radius: 5px;
+    border-style: none;
+    padding: 5px;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.1rem rgba(14, 17, 219, .5);
+}
+
+a {
+    color: rgb(14, 17, 219);
+}
+
+a:hover {
+    color: rgb(13, 16, 156);
+}
+
+.loading-image {
+    display:block;
+    margin: 0 auto;
+    }

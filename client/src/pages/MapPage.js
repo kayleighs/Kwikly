@@ -15,8 +15,6 @@ class Map extends Component {
 
   componentDidMount() {
     this.loadJobs();
-    console.log("this is the process env " + process.env.REACT_APP_GOOGLE_KEY)
-    console.log("this is just the key" + REACT_APP_GOOGLE_KEY)
   }
 
   loadJobs = () => {
