@@ -21,8 +21,11 @@ export default {
   savejob: function (jobData) {
     return axios.post("/api/jobs", jobData);
   },
-    // Saves a job to the database
-  saveuser: function (userData) {
+  // Saves a job to the database
+  saveUser: function (userData) {
     return axiosInstance.post("/api/user", userData);
+  },
+  getUser: function (id) {
+    return axiosInstance.get("/api/user/" + id)
   }
 };

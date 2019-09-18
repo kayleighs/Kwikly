@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { compose } from 'recompose';
-
+//import { compose } from 'recompose';
+import * as firebase from 'firebase';
 import { withFirebase } from '../components/Firebase';
 import * as ROUTES from '../constants/routes';
 import * as ROLES from '../constants/roles';
@@ -14,23 +14,19 @@ const SignUpPage = () => (
     <SignUpForm />
   </div>
 );
-
 const INITIAL_STATE = {
   username: '',
   email: '',
   passwordOne: '',
   passwordTwo: '',
   isAdmin: false,
+  _id: '',
   error: null,
 };
 const ERROR_CODE_ACCOUNT_EXISTS = 'auth/email-already-in-use';
 
 const ERROR_MSG_ACCOUNT_EXISTS = `
   An account with this E-Mail address already exists.
-  Try to login with this account instead. If you think the
-  account is already used from one of the social logins, try
-  to sign in with one of them. Afterward, associate your accounts
-  on your personal account page.
 `;
 
 class SignUpFormBase extends Component {
@@ -41,26 +37,45 @@ class SignUpFormBase extends Component {
   }
 
   onSubmit = event => {
+    // eslint-disable-next-line
     const { username, email, passwordOne, isAdmin } = this.state;
+    //console.log(this.state)
     const roles = {};
     if (isAdmin) {
-      roles[ROLES.ADMIN]= ROLES.ADMIN
+      roles[ROLES.ADMIN] = ROLES.ADMIN
     }
-    API.saveuser(this.state)
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
-/*       .then(authUser => {
-      // Create a user in your Firebase realtime database NEED TO CHANGE TO MONGO
-        return this.props.firebase.user(authUser.user.uid).set({
-          username,
-          email,
-          roles,
-        });
-      })
-      .then(() => {
-        return this.props.firebase.doSendEmailVerification();
-      }) */
-      .then(() => {
+      /*       .then(authUser => {
+            // Create a user in your Firebase realtime database NEED TO CHANGE TO MONGO
+              return this.props.firebase.user(authUser.user.uid).set({
+                username,
+                email,
+                roles,
+              });
+            }) */
+      /*       .then(() => {
+              return this.props.firebase.doSendEmailVerification();
+            }) */
+      // API.saveUser(this.state)
+      /*       .then((userData) => {
+              var uid = userData.uid
+              console.log(uid)
+              this.setState({ ...INITIAL_STATE });
+              this.props.history.push(ROUTES.HOME);
+            }) */
+      .then((userData) => {
+        firebase.auth().onAuthStateChanged(function (userData) {
+          //console.log(username)
+          const user = {
+            username: username,
+            email: userData.email,
+            isAdmin: isAdmin,
+            _id: userData.uid,// The UID of recently created user on firebase
+          }
+          console.log(user)
+          API.saveUser(user)
+        })
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.HOME);
       })
@@ -68,11 +83,12 @@ class SignUpFormBase extends Component {
         if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
           error.message = ERROR_MSG_ACCOUNT_EXISTS;
         }
-
         this.setState({ error });
       });
-
+    //console.log(this.state)
     event.preventDefault();
+
+
   };
 
   onChange = event => {
@@ -152,10 +168,7 @@ const SignUpLink = () => (
   </p>
 );
 
-const SignUpForm = compose(
-  withRouter,
-  withFirebase,
-)(SignUpFormBase);
+const SignUpForm = withRouter(withFirebase(SignUpFormBase));
 
 export default SignUpPage;
 export { SignUpForm, SignUpLink };

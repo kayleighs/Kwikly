@@ -6,8 +6,14 @@ import MapPage from "./pages/MapPage";
 import SignUpPage from "./pages/signup.js";
 import SignInPage from "./pages/signin";
 import HomePage from "./pages/home";
+import AccountPage from "./pages/account";
+import AdminPage from './pages/admin';
+
+import PasswordForgetPage from './components/PasswordForget';
+
 import FirebaseTest from "./pages/FirebaseTest.js"
 import * as ROUTES from './constants/routes';
+import { withAuthentication } from './components/Session';
 const App = () => (
     <Router>
       <div>
@@ -16,14 +22,14 @@ const App = () => (
         <Route exact path={ROUTES.LANDING} component={MapPage} />
         <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
         <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-{/*         <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage}/> */}
+        <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage}/> 
         <Route path={ROUTES.HOME} component={HomePage} />
       <Route path={ROUTES.FIRETEST} component={FirebaseTest} />
-{/*         <Route path={ROUTES.ACCOUNT} component={AccountPage} />
-        <Route path={ROUTES.ADMIN} component={AdminPage} /> */}
+      <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
+      <Route exact path={ROUTES.ADMIN} component={AdminPage} />
       </div>
     </Router>
   );
 
 
-export default App;
+export default withAuthentication(App);
