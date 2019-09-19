@@ -12,6 +12,8 @@ import AdminPage from './pages/admin';
 import UserPage from './pages/user'
 import PasswordForgetPage from './components/PasswordForget';
 
+import JobPostForm from "./components/JobPostForm/JobPostForm";
+
 import FirebaseTest from "./pages/FirebaseTest.js"
 import * as ROUTES from './constants/routes';
 import { withAuthentication } from './components/Session';
@@ -20,15 +22,16 @@ const App = () => (
       <div>
         <Navigation />
         <hr />
+        <Route exact path="/jobform" component={JobPostForm} />
         <Route exact path={ROUTES.LANDING} component={HomePage} />
         <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
         <Route path={ROUTES.SIGN_IN} component={SignInPage} />
         <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage}/> 
         <Route path={ROUTES.HOME} component={HomePageLoggedIn} />
-      <Route path={ROUTES.FIRETEST} component={FirebaseTest} />
-      <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
-      <Route exact path={ROUTES.ADMIN} component={AdminPage} />
-      <Route exact path={ROUTES.USER} component={UserPage} />
+        <Route path={ROUTES.FIRETEST} component={FirebaseTest} />
+        <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
+        <Route exact path={ROUTES.ADMIN} component={AdminPage} />
+        <Route exact path={ROUTES.USER} component={UserPage} />
       </div>
     </Router>
   );
