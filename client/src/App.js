@@ -8,7 +8,7 @@ import SignInPage from "./pages/signin";
 import HomePage from "./pages/home";
 import AccountPage from "./pages/account";
 import AdminPage from './pages/admin';
-
+import UserPage from './pages/user'
 import PasswordForgetPage from './components/PasswordForget';
 
 import FirebaseTest from "./pages/FirebaseTest.js"
@@ -27,6 +27,7 @@ const App = () => (
       <Route path={ROUTES.FIRETEST} component={FirebaseTest} />
       <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
       <Route exact path={ROUTES.ADMIN} component={AdminPage} />
+      <Route exact path={ROUTES.USER} component={UserPage} />
       </div>
     </Router>
   );
