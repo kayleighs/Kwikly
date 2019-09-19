@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import "./style.css";
-import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from "react-google-maps";
+import React, { Component } from 'react';
+import './googeMap.css';
+import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps';
 //import testData from "../testdata.json";
-import API from "../utils/API";
-import axios from "axios";
+import API from './../../utils/API';
+import axios from 'axios';
 require("dotenv").config();
 
 class Map extends Component {
@@ -72,8 +72,8 @@ class Map extends Component {
         </GoogleMap>
         <div className="row">
           <div className="col-10">
-            <button type="button" className="btn btn-success" onClick={()=> this.convertLoc("106 Court Street, Brooklyn, NY 11201")}> Location Convert </button>
-            <button type="button" className="btn btn-info" onClick={()=> this.toFrom("106 Court Street, Brooklyn, NY 11201", "West 116 St and Broadway, New York, NY 10027")}> Destination Time, transit </button>
+            {/* <button type="button" className="btn btn-success" onClick={()=> this.convertLoc("106 Court Street, Brooklyn, NY 11201")}> Location Convert </button>
+            <button type="button" className="btn btn-info" onClick={()=> this.toFrom("106 Court Street, Brooklyn, NY 11201", "West 116 St and Broadway, New York, NY 10027")}> Destination Time, transit </button> */}
           </div>
         </div>
       </div>
@@ -84,10 +84,10 @@ class Map extends Component {
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 //Go here for tutorial https://www.youtube.com/watch?v=Pf7g32CwX_s
 
-export default function MapPage() {
+export default function GoogleMapCMPT() {
 
   return (
-    <div className="container" style={{ width: "100vw", height: "80vh"}}>
+    <div className="container" id="map">
       <WrappedMap
         googleMapURL={"https://maps.googleapis.com/maps/api/js?key=" + process.env.REACT_APP_GOOGLE_KEY}
         loadingElement={<div style={{height: "100%"}} />}

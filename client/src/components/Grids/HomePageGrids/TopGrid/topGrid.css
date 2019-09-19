@@ -1,0 +1,18 @@
+.grid-home-top {
+    display: grid;
+    grid-template-columns: 4px 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 5px 1px;
+    object-fit: cover;
+    margin: auto;
+    justify-items: start;
+
+}
+
+.dl-container {
+    justify-content: center;
+    min-width: 100%;
+    min-height: 100%;
+    margin: auto;
+    padding: 20px;
+}
