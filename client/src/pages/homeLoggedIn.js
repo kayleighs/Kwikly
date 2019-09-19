@@ -13,7 +13,9 @@ import GoogleMapCMPT from '../components/GoogleMap/GoogleMapCMPT';
 /*Mock Data*/
 import jobs from './../jobs.json';
 
-class HomePage extends Component {
+// Authorization
+import { withAuthorization } from '../components/Session';
+class HomePageLoggedIn extends Component {
 
 
   state = {
@@ -52,4 +54,6 @@ class HomePage extends Component {
   }
 }
 
-export default (HomePage);
+const condition = authUser => !!authUser;
+
+export default withAuthorization(condition)(HomePageLoggedIn);

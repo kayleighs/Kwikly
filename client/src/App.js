@@ -6,6 +6,7 @@ import Navigation from './components/Navigation';
 import SignUpPage from "./pages/signup.js";
 import SignInPage from "./pages/signin";
 import HomePage from "./pages/home";
+import HomePageLoggedIn from "./pages/homeLoggedIn";
 import AccountPage from "./pages/account";
 import AdminPage from './pages/admin';
 import UserPage from './pages/user'
@@ -23,7 +24,7 @@ const App = () => (
         <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
         <Route path={ROUTES.SIGN_IN} component={SignInPage} />
         <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage}/> 
-        <Route path={ROUTES.HOME} component={HomePage} />
+        <Route path={ROUTES.HOME} component={HomePageLoggedIn} />
       <Route path={ROUTES.FIRETEST} component={FirebaseTest} />
       <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
       <Route exact path={ROUTES.ADMIN} component={AdminPage} />
