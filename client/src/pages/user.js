@@ -29,7 +29,7 @@ class UserPage extends Component {
 
         <NavBar/>
 
-        <TopGrid>
+  
           {this.state.user.map(user => (
                 <UserCard
                   id={user.id}
@@ -38,7 +38,7 @@ class UserPage extends Component {
                   Description={user.Description}
                 />
           ))}
-        </TopGrid>  
+        
 
         <Footer/>
 
