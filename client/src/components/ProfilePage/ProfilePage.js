@@ -4,30 +4,26 @@ import "./userCard.css";
 function UserCard(props) {
   return (
 
-  
-    <div className="userCard">
+  <wrapper id="Profile-Page">
+    <div className="card">
       
-      <div className="userContent">
+      <div className="content">
         <ul>
 
           <li>
             <img alt={props.JobTitle} src={props.image} className="imgStyles"/> 
           </li>    
           <li>
-            <strong id="name">Name:</strong> <h1>{props.JobTitle}</h1>
+            <strong>Job Title:</strong> <h1>{props.JobTitle}</h1>
           </li>
           <li>
-            <br></br>
-            <strong id="job-title">Job Title:</strong> <p>{props.Description}</p>
-          </li>
-          <li>
-            <strong id="skills">Skills:</strong> <p>{props.Description}</p>
+            <strong>Description:</strong> <p>{props.Description}</p>
           </li>
         </ul>
       </div>
 
     </div>
-   
+    </wrapper>
   );
 }
 

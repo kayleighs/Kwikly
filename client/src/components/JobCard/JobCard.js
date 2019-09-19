@@ -3,8 +3,9 @@ import "./jobCard.css";
 
 function JobCard(props) {
   return (
+    
     <div className="card">
-
+      
       <div className="content">
         <ul>
 
@@ -19,8 +20,9 @@ function JobCard(props) {
           </li>
         </ul>
       </div>
-
+   
     </div>
+   
   );
 }
 
