@@ -1,14 +1,20 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import axios from "axios";
+require("dotenv").config();
 
 class JobPostForm extends Component {
   
   state = {
     title: "",
+    address: "",
     employer: "",
     category: "",
     description: "",
+    location: {
+      lat: "",
+      lng: ""
+    },
     allJobs: []
   };
 
@@ -25,8 +31,36 @@ class JobPostForm extends Component {
     });
   };
 
-  createJob() {
-    console.log("test");
+  setCoordinates = (event, address) => {
+    event.preventDefault();
+    axios.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=" + process.env.REACT_APP_GOOGLE_KEY)
+      .then(res=> this.setState({
+        location: {
+          lat: res.data.results[0].geometry.location.lat,
+          lng: res.data.results[0].geometry.location.lng
+        }
+      })
+    )
+  };
+
+  createJob(event, data) {
+    event.preventDefault();
+    console.log(data);
+
+    API.savejob(
+      {
+        title: data.title,
+        employer: data.employer,
+        description: data.description,
+        category: data.category,
+        address: data.address,
+        location: {
+            lat: data.location.lat,
+            lng: data.location.lng
+        }
+    })
+      .then(() => this.componentDidMount())
+      .catch(err => console.log(err));
   };
 
   seeTheState = event => {
@@ -46,38 +80,38 @@ class JobPostForm extends Component {
                   <input name="title" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.title}></input>
                 </div>
                 <div className="form-group">
+                  <label>Address (exact)</label>
+                  <input name="address" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.address}></input>
+                  <button onClick={(event)=> this.setCoordinates(event, this.state.address)}className="btn btn-caution">Set Coordinates</button>
+                </div>
+                <div className="form-group">
                   <label htmlFor="employer-input">Employer Name</label>
                   <input name="employer" type="text" placeholder="..." className="employer-input form-control" onChange={this.handleInputChange} value={this.state.employer}></input>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="category-input">Category</label>
-                  <select name="category" className="form-control category-input" onChange={this.handleInputChange}>
-                    <option value={this.state.category}>Restaurant/Bar</option>
-                    <option value={this.state.category}>Food Service</option>
-                    <option value={this.state.category}>Household</option>
-                    <option value={this.state.category}>Personal Care</option>
-                    <option value={this.state.category}>Gardening/Outdoors</option>
-                    <option value={this.state.category}>Pet Service</option>
-                    <option value={this.state.category}>Babysitting</option>
-                    <option value={this.state.category}>Security</option>
-                    <option value={this.state.category}>Art/Design</option>
-                    <option value={this.state.category}>Photography</option>
-                    <option value={this.state.category}>Musician</option>
-                    <option value={this.state.category}>Seasonal</option>
-                    <option value={this.state.category}>Labor</option>
-                    <option value={this.state.category}>Administrative</option>
-                    <option value={this.state.category}>Factory/Industrial</option>
-                    <option value={this.state.category}>Driving/Delivery</option>
-                    <option value={this.state.category}>Teaching/Tutoring</option>
-                    <option value={this.state.category}>Web/Remote Service</option>
-                    <option value={this.state.category}>Miscellaneous</option>
-                  </select>
+                  <p>Category (pick one):</p>
+                    <p>Restaurant/Bar</p>
+                    <input type="radio" name="category" value="Restaurant/Bar" onChange={this.handleInputChange} />
+                    <p>Pet Service</p>
+                    <input type="radio" name="category" value="Pet Service" onChange={this.handleInputChange} />
+                    <p>Household</p> 
+                    <input type="radio" name="category" value="Household"  onChange={this.handleInputChange} />
+                    <p>Outdoors</p> 
+                    <input type="radio" name="category" value="Outdoors"  onChange={this.handleInputChange} />
+                    <p>Administrative</p> 
+                    <input type="radio" name="category" value="Administrative"  onChange={this.handleInputChange} />
+                    <p>Labor</p> 
+                    <input type="radio" name="category" value="Labor"  onChange={this.handleInputChange} />
+                    <p>Art/Design/Photography</p> 
+                    <input type="radio" name="category" value="Art/Design/Photography"  onChange={this.handleInputChange} />
+                    <p>Miscellaneous</p> 
+                    <input type="radio" name="category" value="Miscellaneous"  onChange={this.handleInputChange} />
                 </div>
                 <div className="form-group">
                   <label htmlFor="desc-input">Description</label>
                   <textarea name="description" type="text" rows="3" placeholder="..." className="desc-input form-control" onChange={this.handleInputChange} value={this.state.description}></textarea>
                 </div>
-                <button onClick={()=> this.createJob()} className="btn btn-primary">Submit</button>
+                <button onClick={(event)=> this.createJob(event, this.state)} className="btn btn-primary">Submit</button>
                 <button onClick={(event)=> this.seeTheState(event)} className="btn btn-primary">Current State</button>
               </form>
               

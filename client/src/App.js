@@ -11,9 +11,11 @@ import AccountPage from "./pages/account";
 import AdminPage from './pages/admin';
 import UserPage from './pages/user'
 import PasswordForgetPage from './components/PasswordForget';
-
+//------Paths to test form pages---
 import JobPostForm from "./components/JobPostForm/JobPostForm";
-
+import UserCreateForm from "./components/UserUpdate/UserCreateForm";
+import UserUpdateForm from "./components/UserUpdate/UserUpdateForm";
+//---------------------------------
 import FirebaseTest from "./pages/FirebaseTest.js"
 import * as ROUTES from './constants/routes';
 import { withAuthentication } from './components/Session';
@@ -23,6 +25,8 @@ const App = () => (
         <Navigation />
         <hr />
         <Route exact path="/jobform" component={JobPostForm} />
+        <Route exact path="/userform" component={UserCreateForm} />
+        <Route path="/userform/:id" render={props=> <UserUpdateForm {...props}/>} />
         <Route exact path={ROUTES.LANDING} component={HomePage} />
         <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
         <Route path={ROUTES.SIGN_IN} component={SignInPage} />

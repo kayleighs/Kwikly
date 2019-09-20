@@ -26,6 +26,12 @@ export default {
     return axios.post("/api/user", userData);
   },
   getUser: function (id) {
-    return axios.get("/api/user/" + id)
+    return axios.get("/api/user/" + id);
+  },
+  getUsers: function() {
+    return axios.get("/api/user");
+  },
+  editUser: function (id, userData) {
+    return axios.put("/api/user/" + id, userData)
   }
 };
