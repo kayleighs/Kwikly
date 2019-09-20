@@ -15,6 +15,8 @@ import PasswordForgetPage from './components/PasswordForget';
 import JobPostForm from "./components/JobPostForm/JobPostForm";
 import UserCreateForm from "./components/UserUpdate/UserCreateForm";
 import UserUpdateForm from "./components/UserUpdate/UserUpdateForm";
+import EmployerCreateForm from "./components/EmployerUpdate/EmployerCreateForm";
+import EmployerUpdateForm from "./components/EmployerUpdate/EmployerUpdateForm";
 //---------------------------------
 import FirebaseTest from "./pages/FirebaseTest.js"
 import * as ROUTES from './constants/routes';
@@ -27,6 +29,8 @@ const App = () => (
         <Route exact path="/jobform" component={JobPostForm} />
         <Route exact path="/userform" component={UserCreateForm} />
         <Route path="/userform/:id" render={props=> <UserUpdateForm {...props}/>} />
+        <Route exact path="/employerform" component={EmployerCreateForm} />
+        <Route path="/employerform/:id" render={props=> <EmployerUpdateForm {...props}/>} />
         <Route exact path={ROUTES.LANDING} component={HomePage} />
         <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
         <Route path={ROUTES.SIGN_IN} component={SignInPage} />

@@ -28,20 +28,26 @@ class UserCreateForm extends Component {
   makeOneUser = (event, newUser) => {
     event.preventDefault();
     console.log(newUser);
-    API.saveUser({
-      username: newUser.username,
-      password: newUser.password,
-      email: newUser.email,
-      isAdmin: newUser.isAdmin,
-      statement: newUser.statement,
-      address: newUser.address,
-      location: {
-        lat: newUser.location.lat,
-        lng: newUser.location.lng
-      }
-    })
-    .then(()=> this.componentDidMount())
-    .catch(err => console.log(err));
+    axios.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + newUser.address + "&key=" + process.env.REACT_APP_GOOGLE_KEY)
+      .then(res=> this.setState({
+        location: {
+          lat: res.data.results[0].geometry.location.lat,
+          lng: res.data.results[0].geometry.location.lng
+        }
+      })).then(()=> API.saveUser({
+          username: newUser.username,
+          password: newUser.password,
+          email: newUser.email,
+          isAdmin: newUser.isAdmin,
+          statement: newUser.statement,
+          address: newUser.address,
+          location: {
+            lat: this.state.location.lat,
+            lng: this.state.location.lng
+          }
+      })
+      .then(()=> this.componentDidMount())
+      .catch(err => console.log(err)));
   };
 
   handleInputChange = event => {
@@ -49,18 +55,6 @@ class UserCreateForm extends Component {
     this.setState({
       [name]: value
     });
-  };
-
-  setCoordinates = (event, address) => {
-    event.preventDefault();
-    axios.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=" + process.env.REACT_APP_GOOGLE_KEY)
-      .then(res=> this.setState({
-        location: {
-          lat: res.data.results[0].geometry.location.lat,
-          lng: res.data.results[0].geometry.location.lng
-        }
-      })
-    )
   };
 
   seeTheState = event => {
@@ -90,7 +84,6 @@ class UserCreateForm extends Component {
                 <div className="form-group">
                   <label>Address (exact)</label>
                   <input name="address" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.address}></input>
-                  <button onClick={(event)=> this.setCoordinates(event, this.state.address)} className="btn btn-caution">Set Coordinates</button>
                 </div>
                 <div className="form-group">
                   <label htmlFor="desc-input">Statement</label>
@@ -114,6 +107,7 @@ class UserCreateForm extends Component {
                       <h4>{res.username}</h4>
                       <h5>id: {res._id} (use for URL to edit each user)</h5>
                       <p>email: {res.email}</p>
+                      <p>Address: {res.address}</p>
                       <p>{res.statement}</p>
                     </li>
                   );

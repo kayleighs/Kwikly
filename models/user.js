@@ -11,10 +11,10 @@ const userSchema = new Schema({
   savedJobs: [{type: String} ], //This will probably be equal to the _id of the Jobs object
   appliedJobs: [{type: String} ],
   hiredJobs: [{type: String} ], 
-  address: {type: String},
+  address: {type: String, required: true},
   location: {
-    lat : { type: String},
-    lng : { type: String }
+    lat : { type: String, required: true },
+    lng : { type: String, required: true }
   },
   dateJoined: { type: Date, default: Date.now }
 

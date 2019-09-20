@@ -25,13 +25,25 @@ export default {
   saveUser: function (userData) {
     return axios.post("/api/user", userData);
   },
+  saveEmployer: function (userData) {
+    return axios.post("/api/userEmployer", userData);
+  },
   getUser: function (id) {
     return axios.get("/api/user/" + id);
+  },
+  getEmployer: function (id) {
+    return axios.get("/api/userEmployer/" + id);
   },
   getUsers: function() {
     return axios.get("/api/user");
   },
+  getEmployers: function () {
+    return axios.get("/api/userEmployer");
+  },
   editUser: function (id, userData) {
-    return axios.put("/api/user/" + id, userData)
+    return axios.put("/api/user/" + id, userData);
+  },
+  editEmployer: function(id, userData) {
+    return axios.put("/api/userEmployer/" + id, userData);
   }
 };
