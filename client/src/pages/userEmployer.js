@@ -39,6 +39,7 @@ class EmpolyerPage extends Component {
                   businessName={Empolyer.BusinessName}
                   description={Empolyer.Description}
                   image={Empolyer.image}
+                  location={Empolyer.location}
                 />
 
             ))}
