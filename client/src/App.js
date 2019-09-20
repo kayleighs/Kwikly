@@ -10,6 +10,7 @@ import HomePageLoggedIn from "./pages/homeLoggedIn";
 import AccountPage from "./pages/account";
 import AdminPage from './pages/admin';
 import UserPage from './pages/user'
+import UserEmployerPage from './pages/userEmployer'
 import PasswordForgetPage from './components/PasswordForget';
 
 import FirebaseTest from "./pages/FirebaseTest.js"
@@ -29,6 +30,7 @@ const App = () => (
       <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
       <Route exact path={ROUTES.ADMIN} component={AdminPage} />
       <Route exact path={ROUTES.USER} component={UserPage} />
+      <Route exact path={ROUTES.USEREMPLOYER} component={UserEmployerPage} />
       </div>
     </Router>
   );
