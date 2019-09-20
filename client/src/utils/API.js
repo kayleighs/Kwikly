@@ -45,5 +45,10 @@ export default {
   },
   editEmployer: function(id, userData) {
     return axios.put("/api/userEmployer/" + id, userData);
+  },
+  getDirections: function(origin, destination, travelMode) {
+    return axios.get("/dir/" + origin + "/" + destination + "/" + travelMode);
+    //See index.js in the 'routes' folder (not the one nested within the 'api' folder)
+    //for how this axios call to Directions API is made
   }
 };

@@ -3,6 +3,8 @@ import API from "../../utils/API";
 import axios from "axios";
 require("dotenv").config();
 
+//path found at http://localhost:3000/employerform
+
 class EmployerCreateForm extends Component {
   
   state = {
@@ -27,19 +29,25 @@ class EmployerCreateForm extends Component {
   makeOneEmployer = (event, newEmp) => {
     event.preventDefault();
     console.log(newEmp);
-    API.saveEmployer({
-      username: newEmp.username,
-      password: newEmp.password,
-      email: newEmp.email,
-      statement: newEmp.statement,
-      businessAddress: newEmp.businessAddress,
-      location: {
-        lat: newEmp.location.lat,
-        lng: newEmp.location.lng
-      }
-    })
-    .then(()=> this.componentDidMount())
-    .catch(err => console.log(err));
+    axios.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + newEmp.businessAddress + "&key=" + process.env.REACT_APP_GOOGLE_KEY)
+      .then(res=> this.setState({
+        location: {
+          lat: res.data.results[0].geometry.location.lat,
+          lng: res.data.results[0].geometry.location.lng
+        }
+      })).then(()=> API.saveEmployer({
+        username: newEmp.username,
+        password: newEmp.password,
+        email: newEmp.email,
+        statement: newEmp.statement,
+        businessAddress: newEmp.businessAddress,
+        location: {
+          lat: this.state.location.lat,
+          lng: this.state.location.lng
+        }
+      })
+      .then(()=> this.componentDidMount())
+      .catch(err => console.log(err)));
   };
 
   handleInputChange = event => {
@@ -47,18 +55,6 @@ class EmployerCreateForm extends Component {
     this.setState({
       [name]: value
     });
-  };
-
-  setCoordinates = (event, address) => {
-    event.preventDefault();
-    axios.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=" + process.env.REACT_APP_GOOGLE_KEY)
-      .then(res=> this.setState({
-        location: {
-          lat: res.data.results[0].geometry.location.lat,
-          lng: res.data.results[0].geometry.location.lng
-        }
-      })
-    )
   };
 
   seeTheState = event => {
@@ -88,7 +84,6 @@ class EmployerCreateForm extends Component {
                 <div className="form-group">
                   <label> BusinessAddress (exact)</label>
                   <input name="businessAddress" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.businessAddress}></input>
-                  <button onClick={(event)=> this.setCoordinates(event, this.state.businessAddress)} className="btn btn-caution">Set Coordinates</button>
                 </div>
                 <div className="form-group">
                   <label htmlFor="desc-input">Statement</label>
@@ -112,7 +107,7 @@ class EmployerCreateForm extends Component {
                       <h4>{res.username}</h4>
                       <h5>id: {res._id} (use for URL to edit each employer)</h5>
                       <p>email: {res.email}</p>
-                      <a> Address: {res.businessAddress}</a>
+                      <p> Address: {res.businessAddress}</p>
                       <p>{res.statement}</p>
                     </li>
                   );

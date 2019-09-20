@@ -17,6 +17,7 @@ import UserCreateForm from "./components/UserUpdate/UserCreateForm";
 import UserUpdateForm from "./components/UserUpdate/UserUpdateForm";
 import EmployerCreateForm from "./components/EmployerUpdate/EmployerCreateForm";
 import EmployerUpdateForm from "./components/EmployerUpdate/EmployerUpdateForm";
+import DirectionsTest from "./components/DirectionsTest";
 //---------------------------------
 import FirebaseTest from "./pages/FirebaseTest.js"
 import * as ROUTES from './constants/routes';
@@ -31,6 +32,7 @@ const App = () => (
         <Route path="/userform/:id" render={props=> <UserUpdateForm {...props}/>} />
         <Route exact path="/employerform" component={EmployerCreateForm} />
         <Route path="/employerform/:id" render={props=> <EmployerUpdateForm {...props}/>} />
+        <Route exact path ="/directiontest" component={DirectionsTest} />
         <Route exact path={ROUTES.LANDING} component={HomePage} />
         <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
         <Route path={ROUTES.SIGN_IN} component={SignInPage} />

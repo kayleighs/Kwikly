@@ -51,8 +51,8 @@ class EmployerUpdateForm extends Component {
           statement: user.statement,
           businessAddress: user.businessAddress,
           location: {
-              lat: user.location.lat,
-              lng: user.location.lng
+              lat: this.state.location.lat,
+              lng: this.state.location.lng
           }
         }
       })

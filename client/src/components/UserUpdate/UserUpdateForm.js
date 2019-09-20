@@ -51,8 +51,8 @@ class UserUpdateForm extends Component {
           statement: user.statement,
           address: user.address,
           location: {
-              lat: user.location.lat,
-              lng: user.location.lng
+              lat: this.state.location.lat,
+              lng: this.state.location.lng
           }
         }
       })

@@ -31,36 +31,28 @@ class JobPostForm extends Component {
     });
   };
 
-  setCoordinates = (event, address) => {
+  createJob(event, data) {
     event.preventDefault();
-    axios.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=" + process.env.REACT_APP_GOOGLE_KEY)
+    console.log(data);
+    axios.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + data.address + "&key=" + process.env.REACT_APP_GOOGLE_KEY)
       .then(res=> this.setState({
         location: {
           lat: res.data.results[0].geometry.location.lat,
           lng: res.data.results[0].geometry.location.lng
         }
+      })).then(()=> API.savejob({
+            title: data.title,
+            employer: data.employer,
+            description: data.description,
+            category: data.category,
+            address: data.address,
+            location: {
+                lat: this.state.location.lat,
+                lng: this.state.location.lng
+            }
       })
-    )
-  };
-
-  createJob(event, data) {
-    event.preventDefault();
-    console.log(data);
-
-    API.savejob(
-      {
-        title: data.title,
-        employer: data.employer,
-        description: data.description,
-        category: data.category,
-        address: data.address,
-        location: {
-            lat: data.location.lat,
-            lng: data.location.lng
-        }
-    })
       .then(() => this.componentDidMount())
-      .catch(err => console.log(err));
+      .catch(err => console.log(err)));
   };
 
   seeTheState = event => {
@@ -82,7 +74,6 @@ class JobPostForm extends Component {
                 <div className="form-group">
                   <label>Address (exact)</label>
                   <input name="address" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.address}></input>
-                  <button onClick={(event)=> this.setCoordinates(event, this.state.address)}className="btn btn-caution">Set Coordinates</button>
                 </div>
                 <div className="form-group">
                   <label htmlFor="employer-input">Employer Name</label>
