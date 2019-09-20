@@ -8,3 +8,4 @@ export const ADMIN = '/admin';
 export const ADMIN_DETAILS = '/admin/:id';
 export const FIRETEST = '/test';
 export const USER = '/user'
+export const USEREMPLOYER = '/userEmployer'
