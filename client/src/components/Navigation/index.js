@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import "./navbar.css";
+
 import { AuthUserContext } from '../Session';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
@@ -18,31 +20,31 @@ const Navigation = () => (
 );
 
 const NavigationAuth = () => (
-    <ul>
-        <li>
-            <Link to={ROUTES.LANDING}>Landing</Link>
-        </li>
-        <li>
-            <Link to={ROUTES.HOME}>Home</Link>
-        </li>
-        <li>
-            <Link to={ROUTES.ACCOUNT}>Account</Link>
-        </li>
-        <li>
+
+    <div class="navbar">
+        <Link id="logo" to={ROUTES.LANDING}>Kwikly</Link>
+        <div id="search">
+            <input type="text" id="search-bar" placeholder="Search      for    Jobs..."></input>
+        </div>
+        <div class="right-nav">
             <SignOutButton />
-        </li>
-    </ul>
+            <Link to={ROUTES.HOME}>Home</Link>
+            <Link to={ROUTES.ACCOUNT}>Account</Link>
+        </div>
+
+    </div> 
 );
 
 const NavigationNonAuth = () => (
-    <ul>
-        <li>
-            <Link to={ROUTES.LANDING}>Landing</Link>
-        </li>
-        <li>
+    <div class="navbar">
+        <Link id="logo" to={ROUTES.LANDING}>Kwikly</Link>
+        <div id="search">
+            <input type="text" id="search-bar" placeholder="Search      for    Jobs..."></input>
+        </div>
+        <div class="right-nav">
             <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-        </li>
-    </ul>
+        </div>
+    </div> 
 );
 
 export default Navigation;

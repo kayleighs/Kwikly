@@ -45,6 +45,7 @@ const App = () => (
         <Route path={ROUTES.SIGN_IN} component={SignInPage} />
         <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage}/> 
         <Route path={ROUTES.FIRETEST} component={FirebaseTest} />
+      <Route path={ROUTES.HOME} component={HomePageLoggedIn} />
   
         <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
         <Route exact path={ROUTES.ADMIN} component={AdminPage} />

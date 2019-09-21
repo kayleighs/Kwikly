@@ -26,7 +26,7 @@ class HomePage extends Component {
     return (
       <div>
 
-        <NavBar/>
+        {/* <NavBar/> */}
 
         <TopGrid>
           <SideBar/>
