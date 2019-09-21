@@ -1,13 +1,13 @@
 import axios from "axios";
 //Use below to test server locally, replace axios below with axiosInstance, also I used Chrome extension, allow-control-allow-origin
-const axiosInstance = axios.create({
+/* const axiosInstance = axios.create({
   baseURL: 'http://localhost:3001'
-});
+}); */
 export default {
 
   // Gets all jobs
   getJobs: function () {
-    return axiosInstance.get("/api/jobs");
+    return axios.get("/api/jobs");
   },
   // Gets the job with the given id
   getjob: function (id) {
@@ -23,7 +23,7 @@ export default {
   },
   // Saves a job to the database
   saveUser: function (userData) {
-    return axiosInstance.post("/api/user", userData);
+    return axios.post("/api/user", userData);
   },
   saveEmployer: function (userData) {
     return axios.post("/api/userEmployer", userData);
