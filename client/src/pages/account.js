@@ -8,7 +8,6 @@ class Account extends React.Component {
   state = {
     user: [],
   }
-
   componentDidMount() {
     this.loadUserInfo();
   }
@@ -21,9 +20,6 @@ class Account extends React.Component {
       )
       .catch(err => console.log(err));
   };
-
-
-
   render() {
     return (
       <div>

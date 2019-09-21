@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import "./navbar.css";
-
+import SearchModal from "../SearchModal/SearchModal";
 import { AuthUserContext } from '../Session';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
@@ -23,9 +23,7 @@ const NavigationAuth = () => (
 
     <div class="navbar">
         <Link id="logo" to={ROUTES.LANDING}>Kwikly</Link>
-        <div id="search">
-            <input type="text" id="search-bar" placeholder="Search      for    Jobs..."></input>
-        </div>
+        <SearchModal />
         <div class="right-nav">
             <SignOutButton />
             <Link to={ROUTES.HOME}>Home</Link>
@@ -38,9 +36,7 @@ const NavigationAuth = () => (
 const NavigationNonAuth = () => (
     <div class="navbar">
         <Link id="logo" to={ROUTES.LANDING}>Kwikly</Link>
-        <div id="search">
-            <input type="text" id="search-bar" placeholder="Search      for    Jobs..."></input>
-        </div>
+        <SearchModal />
         <div class="right-nav">
             <Link to={ROUTES.SIGN_IN}>Sign In</Link>
         </div>
