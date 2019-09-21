@@ -87,8 +87,6 @@ class SignUpFormBase extends Component {
       });
     //console.log(this.state)
     event.preventDefault();
-
-
   };
 
   onChange = event => {
