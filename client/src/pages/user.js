@@ -13,23 +13,17 @@ import UserCard from './../components/UserCard/UserCard';
 /*Mock Data*/
 import user from './../user.json';
 
-
 class UserPage extends Component {
-
 
   state = {
     user,
   };
 
-
   render() {
 
     return (
       <div>
-
-        <NavBar/>
-
-  
+        {/* <NavBar/> */}
           {this.state.user.map(user => (
                 <UserCard
                   id={user.id}
@@ -38,15 +32,11 @@ class UserPage extends Component {
                   Description={user.Description}
                 />
           ))}
-        
-
         <Footer/>
-
       </div>
     );
 
   }
 }
-
 
 export default UserPage;
