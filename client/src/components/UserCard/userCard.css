@@ -1,36 +1,39 @@
 .imgStyles {
-    width: 150px;
-    height: 150px;
-    border: 1px solid #000;
-    display: flex;
-    justify-content: left;
-    box-shadow: 0 3px 6px black, 0 3px 6px orange;
-    border-radius: 90px;
-    margin: 0px 30px 0px 0px;
-    float:left;
-  }
+  width: 150px;
+  height: 150px;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: left;
+  box-shadow: 0 3px 6px black, 0 3px 6px orange;
+  border-radius: 90px;
+  margin: 0px 30px 0px 0px;
+  float:left;
+}
   
-  .userCard {
-    background: #fff;
-    border-radius: 2px;
-    height: 100%;
-    margin: 1rem;
-    position: relative;
-    max-width: 10000px;
-    box-shadow: 0 3px 6px #5460B1, 0 3px 6px black;
-    text-align: left;
-    padding:10px;
-  }
-  ul{
-    list-style-type: none;
+.userCard {
+  background: #fff;
+  border-radius: 2px;
+  height: 100%;
+  margin: 1rem;
+  position: relative;
+  max-width: 10000px;
+  box-shadow: 0 3px 6px #5460B1, 0 3px 6px black;
+  text-align: left;
+  padding:10px;
+}
 
-  }
-  #name{
-    font-size: 34px;
-  }
-  #job-title{
-    font-size: 34px;
-  }
-  #skills{
-    font-size: 34px;
-  }
+ul {
+  list-style-type: none;
+}
+
+#name {
+  font-size: 34px;
+}
+
+#job-title {
+  font-size: 34px;
+}
+
+#skills {
+  font-size: 34px;
+}
