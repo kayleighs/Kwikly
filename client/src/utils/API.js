@@ -25,7 +25,30 @@ export default {
   saveUser: function (userData) {
     return axios.post("/api/user", userData);
   },
+  saveEmployer: function (userData) {
+    return axios.post("/api/userEmployer", userData);
+  },
   getUser: function (id) {
-    return axios.get("/api/user/" + id)
+    return axios.get("/api/user/" + id);
+  },
+  getEmployer: function (id) {
+    return axios.get("/api/userEmployer/" + id);
+  },
+  getUsers: function() {
+    return axios.get("/api/user");
+  },
+  getEmployers: function () {
+    return axios.get("/api/userEmployer");
+  },
+  editUser: function (id, userData) {
+    return axios.put("/api/user/" + id, userData);
+  },
+  editEmployer: function(id, userData) {
+    return axios.put("/api/userEmployer/" + id, userData);
+  },
+  getDirections: function(origin, destination, travelMode) {
+    return axios.get("/dir/" + origin + "/" + destination + "/" + travelMode);
+    //See index.js in the 'routes' folder (not the one nested within the 'api' folder)
+    //for how this axios call to Directions API is made
   }
 };
