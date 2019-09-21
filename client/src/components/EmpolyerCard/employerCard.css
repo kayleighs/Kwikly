@@ -33,7 +33,7 @@
   grid-area: 1 / 3 / 2 / 4; 
 }
 
-/*Item-4-Inner-grid*/
+/*Item-4-Inner-grid (Nested Grid)*/
 /***************************************/
 .Item-Employer-Card-4 { 
   grid-area: 2 / 1 / 3 / 2;
@@ -53,6 +53,7 @@
   grid-area: 1 / 2 / 2 / 3; 
 }
 /***************************************/
+/*End of Item-4-Nested-Grid*/
 
 .Item-Employer-Card-5 { 
   grid-area: 2 / 2 / 3 / 3; 
