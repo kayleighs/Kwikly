@@ -1,5 +1,6 @@
 import React from "react";
 import "./employerCard.css";
+import Button from '../Buttons/Button';
 
 
 function EmployerCard(props) {
@@ -64,7 +65,10 @@ function EmployerCard(props) {
       {/*Button num1 displays the employer's current job postings.*/} 
       {/*Button num2 creates a new job posting.*/}
       {/*========================================================================*/}
-      <div className="Item-Employer-Card-6 Item">6</div>
+      <div className="Item-Employer-Card-6 Item">
+        <Button className="Item-6-Grid-1"><p>Current Jobs</p></Button>
+        <Button className="Item-6-Grid-2">Create Job</Button>
+      </div>
 
     </div>
    
