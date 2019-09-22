@@ -22,7 +22,7 @@ class EmpolyerPage extends Component {
     return (
       <div>
 
-        <NavBar/>
+       {/*  <NavBar/> */}
 
         <div>
             {this.state.Empolyer.map(Empolyer => (

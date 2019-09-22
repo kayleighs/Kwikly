@@ -30,6 +30,7 @@ const withAuthorization = condition => Component => {
             );
         }
     }
+
     return compose(
         withRouter,
         withFirebase,

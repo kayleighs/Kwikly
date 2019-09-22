@@ -28,7 +28,7 @@ class HomePageLoggedIn extends Component {
     return (
       <div>
 
-        <NavBar/>
+        {/* <NavBar/> */}
 
         <TopGrid>
           <SideBar/>

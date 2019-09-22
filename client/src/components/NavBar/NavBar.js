@@ -5,21 +5,21 @@ import "./navbar.css";
 import { Link } from 'react-router-dom';
 import { AuthUserContext } from '../Session';
 import SignOutButton from '../SignOut';
+import SearchModal from "../SearchModal/SearchModal";
 import * as ROUTES from '../../constants/routes';
 
-function NavBar() {
+function NavBar(props) {
 
   return (
 
     <div class="navbar">
-      <a id="logo" href="#home">Kwikly</a>
-      <div id="search">
-        <input type="text" id="search-bar" placeholder="Search      for    Jobs..."></input>
-      </div>
-      <div class="right-nav">
+      <a id="logo" href="#home">Kwikly</a>          
+        <SearchModal/>
+        <div class="right-nav">
         <Link to={ROUTES.SIGN_IN}>Sign In</Link>
       </div>
     </div> 
+ 
 
   );
 }

@@ -12,7 +12,7 @@ import AdminPage from './pages/admin';
 import UserPage from './pages/user'
 import EmployerPage from './pages/userEmployer';
 import TestPage from './pages/testPage';
-
+import modalTest from './pages/modalTest';
 import PasswordForgetPage from './components/PasswordForget';
 //------Paths to test form pages---
 import JobPostForm from "./components/JobPostForm/JobPostForm";
@@ -46,12 +46,15 @@ const App = () => (
         <Route path={ROUTES.SIGN_IN} component={SignInPage} />
         <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage}/> 
         <Route path={ROUTES.FIRETEST} component={FirebaseTest} />
+      <Route path={ROUTES.HOME} component={HomePageLoggedIn} />
   
         <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
         <Route exact path={ROUTES.ADMIN} component={AdminPage} />
         <Route exact path={ROUTES.USER} component={UserPage} />
         <Route exact path={ROUTES.EMPLOYER} component={EmployerPage} />
         <Route exact path={ROUTES.TESTpage} component={TestPage} />
+        <Route exact path={ROUTES.MODALTEST} component={modalTest} />
+
 
       </div>
     </Router>

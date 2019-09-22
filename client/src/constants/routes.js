@@ -10,3 +10,5 @@ export const FIRETEST = '/test';
 export const USER = '/user';
 export const EMPLOYER = '/employer';
 export const TESTpage = '/testPage';
+export const MODALTEST ='/testmodal';
+
