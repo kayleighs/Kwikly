@@ -11,6 +11,7 @@ import AccountPage from "./pages/account";
 import AdminPage from './pages/admin';
 import UserPage from './pages/user'
 import EmployerPage from './pages/userEmployer';
+import TestPage from './pages/testPage';
 import modalTest from './pages/modalTest';
 import PasswordForgetPage from './components/PasswordForget';
 //------Paths to test form pages---
@@ -51,7 +52,9 @@ const App = () => (
         <Route exact path={ROUTES.ADMIN} component={AdminPage} />
         <Route exact path={ROUTES.USER} component={UserPage} />
         <Route exact path={ROUTES.EMPLOYER} component={EmployerPage} />
+        <Route exact path={ROUTES.TESTpage} component={TestPage} />
         <Route exact path={ROUTES.MODALTEST} component={modalTest} />
+
 
       </div>
     </Router>

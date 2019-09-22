@@ -1,0 +1,26 @@
+
+.button {
+
+    backface-visibility: hidden;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
+    background:#5460B1;
+    border-radius: 100px;
+    border: 1px solid #4A48A1;
+    border-width: 1px 1px 1px 1px;
+    padding: 5px 20px 7px 20px;
+    box-shadow: 0px 2px 2px rgba(0%,0%,0%,0.5),0px 0px 5px rgba(0,0,0,0.25),0px 0px 2px 4px rgba(0,0,0,0.1);
+    color: #FEDC6F;
+    font-size: 16px;
+    font-family: Helvetica Neue;
+    font-weight: 900;
+    font-style: normal;
+    text-shadow: 0px 2px 1px rgba(0,0,0,0.3);
+    max-width: 300px;
+    max-height: 300px;
+
+}
+
+
