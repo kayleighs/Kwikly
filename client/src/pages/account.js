@@ -26,6 +26,10 @@ class Account extends React.Component {
         <h1>Account info</h1>
         <ul>Email: {this.state.user.email}</ul>
         <ul>Name: {this.state.user.username}</ul>
+        {this.state.user.isAdmin ? 
+          (<p>hi</p>): 
+          null
+        } 
         {/*       <ul>uid: {firebase.auth().currentUser.uid}</ul> */}
         {/*       <ul>Sign-in-provider: {firebase.auth().currentUser.providerId}</ul> */}
       </div>
