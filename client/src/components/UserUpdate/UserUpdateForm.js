@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
+import API from "../../utils/API.js";
 import axios from "axios";
+//import ImageSave from "./ImageSave";
+import ImageSaveTwo from "./ImageSaveTwo";
 require("dotenv").config();
 
 class UserUpdateForm extends Component {
@@ -8,7 +10,6 @@ class UserUpdateForm extends Component {
   state = {
     username: "",
     email: "",
-    isAdmin: true,
     statement: "",
     address: "",
     location: {
@@ -23,9 +24,9 @@ class UserUpdateForm extends Component {
   };
 
   getOneUser = () => {
-    API.getUser(this.props.match.params.id)
-    .then(res => this.setState({ currentUser: res.data }))
-    .catch(err => console.log(err));
+    API.getUserByName(this.props.match.params.username)
+      .then(res => this.setState({ currentUser: res.data[0] }))
+      .catch(err => console.log(err));
   };
 
   handleInputChange = event => {
@@ -71,6 +72,13 @@ class UserUpdateForm extends Component {
         <div className="container">
           <div className="row">
             <div className="col-12">
+              {this.state.currentUser ? (
+                <ImageSaveTwo 
+                  UserName={this.state.currentUser.username}
+                  UserId={this.state.currentUser._id} 
+                />
+                ) : ( <p>No image to display</p>)
+              }
               <form>
                 <div className="form-group">
                   <label>User Name</label>

@@ -35,7 +35,7 @@ const App = () => (
 
         <Route exact path="/jobform" component={JobPostForm} />
         <Route exact path="/userform" component={UserCreateForm} />
-        <Route path="/userform/:id" render={props=> <UserUpdateForm {...props}/>} />
+        <Route path="/userform/:username" render={props=> <UserUpdateForm {...props}/>} />
         <Route exact path="/employerform" component={EmployerCreateForm} />
         <Route path="/employerform/:id" render={props=> <EmployerUpdateForm {...props}/>} />
         <Route exact path ="/directiontest" component={DirectionsTest} />

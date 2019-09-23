@@ -13,4 +13,9 @@ router
   .put(userController.update)
   .delete(userController.remove);
 
+router
+  .route("/name/:username")
+  .get(userController.findByName)
+  .put(userController.update);
+
 module.exports = router;

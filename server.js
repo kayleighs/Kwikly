@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-// Connect to the Mongo DB
+// Connect to the Mongo DB, altered for making database storage params for photos
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/jobApp";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 

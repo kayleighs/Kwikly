@@ -35,6 +35,9 @@ export default {
   getUser: function (id) {
     return axios.get("/api/user/" + id);
   },
+  getUserByName: function (username) {
+    return axios.get("/api/user/name/" + username);
+  },
   getEmployer: function (id) {
     return axios.get("/api/userEmployer/" + id);
   },
