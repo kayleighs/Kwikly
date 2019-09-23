@@ -25,14 +25,13 @@ import DirectionsTest from "./components/DirectionsTest";
 import FirebaseTest from "./pages/FirebaseTest.js"
 import * as ROUTES from './constants/routes';
 import { withAuthentication } from './components/Session';
-
+import Footer from './components/Footer/Footer';
 
 const App = () => (
     <Router>
       <div>
         
         <Navigation />
-        <hr />
 
         <Route exact path="/jobform" component={JobPostForm} />
         <Route exact path="/userform" component={UserCreateForm} />
@@ -55,7 +54,7 @@ const App = () => (
         <Route exact path={ROUTES.TESTpage} component={TestPage} />
         <Route exact path={ROUTES.MODALTEST} component={modalTest} />
 
-
+        <Footer />
       </div>
     </Router>
   );
