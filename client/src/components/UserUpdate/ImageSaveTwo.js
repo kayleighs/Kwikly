@@ -10,7 +10,7 @@ class ImageSaveTwo extends Component {
     currentPic: {},
   };
 
-  componenetDidMount() {
+  componentDidMount() {
     this.getCurrentPic()
   };
 
