@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import * as ROUTES from '../constants/routes';
+
 import * as firebase from 'firebase';
 
 import API from "../utils/API";
@@ -40,10 +43,12 @@ class Account extends React.Component {
               image={this.state.user.image}
               location={this.state.user.location}
             />
+            <Link to={ROUTES.POSTJOB}>Post a Job</Link>
           </div>): 
           (<div>
             <UserCard
               id={this.state.user.id}
+              username={this.state.user.username}
               JobTitle={this.state.user.JobTitle}
               image={this.state.user.image}
               Description={this.state.user.Description}
