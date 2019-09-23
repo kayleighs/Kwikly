@@ -14,7 +14,7 @@ function UserCard(props) {
             <img alt={props.JobTitle} src={props.image} className="imgStyles"/> 
           </li>    
           <li>
-            <strong id="name">Name:</strong> <h1>{props.JobTitle}</h1>
+            <strong id="name">Name:</strong> <h1>{props.username}</h1>
           </li>
           <li>
             <br></br>

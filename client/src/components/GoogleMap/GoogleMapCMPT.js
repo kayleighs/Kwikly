@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './googeMap.css';
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps';
 //import testData from "../testdata.json";
-import API from './../../utils/API';
+import API from '../../utils/API';
 import axios from 'axios';
 require("dotenv").config();
 

@@ -12,3 +12,5 @@ export const EMPLOYER = '/employer';
 export const TESTpage = '/testPage';
 export const MODALTEST ='/testmodal';
 
+export const POSTJOB = '/postjob'
+
