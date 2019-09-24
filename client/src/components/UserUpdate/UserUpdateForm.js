@@ -72,13 +72,6 @@ class UserUpdateForm extends Component {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              {this.state.currentUser ? (
-                <ImageSaveTwo 
-                  UserName={this.state.currentUser.username}
-                  UserId={this.state.currentUser._id} 
-                />
-                ) : ( <p>No image to display</p>)
-              }
               <form>
                 <div className="form-group">
                   <label>User Name</label>
