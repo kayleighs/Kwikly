@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 
 /*Components*/
-import NavBar from './../components/NavBar/NavBar';
+// import NavBar from './../components/NavBar/NavBar'; We are using the auth navbar
 import EmployerCard from './../components/EmpolyerCard/EmployerCard';
+import JobPostForm from './../components/JobPostForm/JobPostForm';
 import Footer from './../components/Footer/Footer';
 
 /*Mock Data*/
@@ -11,6 +12,17 @@ import Empolyer from './../employer.json';
 
 class EmpolyerPage extends Component {
 
+  showJobPostForm = () => {
+    const showJobForm = document.getElementById('the-hidden-leaf-village');
+  }  
+
+
+  // $(".searchButton").on("click", function () {
+  //   setTimeout(function () {
+  //       $(".carousel-control-prev-icon").css("display", "block");
+  //       $(".carousel-control-next-icon").css("display", "block");
+  //   }, 1000); 
+  // });
 
   state = {
     Empolyer,
@@ -38,6 +50,10 @@ class EmpolyerPage extends Component {
                 />
 
             ))}
+        </div>
+
+        <div className="ks-container gradient-style-1">
+          <JobPostForm id="the-hidden-leaf-village"/>
         </div>
         
         <Footer/>

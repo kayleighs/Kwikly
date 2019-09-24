@@ -1,7 +1,12 @@
 import React, { Component } from "react";
+
+//Style Sheet
+import './jobPostForm.css';
+
 import API from "../../utils/API";
 import axios from "axios";
 require("dotenv").config();
+
 
 class JobPostForm extends Component {
   
@@ -62,10 +67,14 @@ class JobPostForm extends Component {
 
   render() {
     return (
-      <div className="form-page">
+      // the-hidden-leaf-village id is a reference to Naruto.
+      //Its just used to hide the job form using display: none; 
+      //Sorry for trolling, you should probably change this id but its really awesome.
+      <div className="form-page" id="the-hidden-leaf-village">
         <div className="container">
           <div className="row">
-            <div className="col-12">
+            <div className="col-1"></div>
+            <div className="col-10">
               <form>
                 <div className="form-group">
                   <label>Job Name</label>
@@ -81,22 +90,18 @@ class JobPostForm extends Component {
                 </div>
                 <div className="form-group">
                   <p>Category (pick one):</p>
-                    <p>Restaurant/Bar</p>
-                    <input type="radio" name="category" value="Restaurant/Bar" onChange={this.handleInputChange} />
-                    <p>Pet Service</p>
-                    <input type="radio" name="category" value="Pet Service" onChange={this.handleInputChange} />
-                    <p>Household</p> 
-                    <input type="radio" name="category" value="Household"  onChange={this.handleInputChange} />
-                    <p>Outdoors</p> 
-                    <input type="radio" name="category" value="Outdoors"  onChange={this.handleInputChange} />
-                    <p>Administrative</p> 
-                    <input type="radio" name="category" value="Administrative"  onChange={this.handleInputChange} />
-                    <p>Labor</p> 
-                    <input type="radio" name="category" value="Labor"  onChange={this.handleInputChange} />
-                    <p>Art/Design/Photography</p> 
-                    <input type="radio" name="category" value="Art/Design/Photography"  onChange={this.handleInputChange} />
-                    <p>Miscellaneous</p> 
-                    <input type="radio" name="category" value="Miscellaneous"  onChange={this.handleInputChange} />
+                    <select>
+
+                      <option name="category" value="Restaurant/Bar" onChange={this.handleInputChange}>Restaurant/Bar</option>
+                      <option name="category" value="Pet Service" onChange={this.handleInputChange}>Pet Service</option>    
+                      <option name="category" value="Household"  onChange={this.handleInputChange}>Household</option>
+                      <option name="category" value="Outdoors"  onChange={this.handleInputChange}>Outdoors</option>      
+                      <option name="category" value="Administrative"  onChange={this.handleInputChange}>Administrative</option>
+                      <option name="category" value="Labor"  onChange={this.handleInputChange}>Labor</option> 
+                      <option name="category" value="Art/Design/Photography"  onChange= {this.handleInputChange}>Art/Design/Photography</option>  
+                      <option name="category" value="Miscellaneous"  onChange={this.handleInputChange}>Miscellaneous</option>         
+
+                    </select>
                 </div>
                 <div className="form-group">
                   <label htmlFor="desc-input">Description</label>
@@ -107,28 +112,7 @@ class JobPostForm extends Component {
               </form>
               
             </div>
-          </div>
-          <hr />
-          <div className="row delete-this-later">
-            <div className="col-12">
-            {this.state.allJobs.length ? (
-              <div className="search-results">
-                <ul className="pl-0 list-group mb-4">
-                {this.state.allJobs.map(res=> {
-                  return (
-                    <li key={res._id} className="list-group-item bg-light mb-2">
-                      <h4>{res.title}</h4>
-                      <p>Offered by: {res.employer} || category: {res.category}</p>
-                      <p>{res.description}</p>
-                    </li>
-                  );
-                })}
-                </ul>
-              </div>
-            ) : (
-              <h4>Nothing saved yet</h4>
-            )}
-            </div>
+            <div className="col-1"></div>
           </div>
         </div>
       </div>
