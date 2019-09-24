@@ -13,7 +13,7 @@ import Empolyer from './../employer.json';
 class EmpolyerPage extends Component {
 
   showJobPostForm = () => {
-    document.getElementById('')
+    const showJobForm = document.getElementById('the-hidden-leaf-village');
   }  
 
 
@@ -53,7 +53,7 @@ class EmpolyerPage extends Component {
         </div>
 
         <div className="ks-container gradient-style-1">
-          <JobPostForm/>
+          <JobPostForm id="the-hidden-leaf-village"/>
         </div>
         
         <Footer/>
