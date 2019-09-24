@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 /*Grids*/
 import TopGrid from '../components/Grids/HomePageGrids/TopGrid/TopGrid';
 import BottomGrid from '../components/Grids/HomePageGrids/BottomGrid/BottomGrid';
-
+import API from "../utils/API";
 /*Components*/
 import NavBar from '../components/NavBar/NavBar.js';
 import Footer from '../components/Footer/Footer';
@@ -17,9 +17,20 @@ class HomePage extends Component {
 
 
   state = {
-    jobs,
+    allJobs: []
   };
 
+  componentDidMount() {
+    this.loadJobs();
+  }
+
+  loadJobs = () => {
+    API.getJobs()
+      .then(res =>
+        this.setState({ allJobs: res.data })
+      )
+      .catch(err => console.log(err));
+  };
 
   render() {
 
@@ -34,12 +45,12 @@ class HomePage extends Component {
         </TopGrid>  
 
         <BottomGrid>
-          {this.state.jobs.map(jobs => (
+          {this.state.allJobs.map(jobs => (
                 <JobCard
-                  id={jobs.id}
-                  JobTitle={jobs.JobTitle}
+                  id={jobs._id}
+                  JobTitle={jobs.title}
                   image={jobs.image}
-                  Description={jobs.Description}
+                  Description={jobs.description}
                 />
           ))}
         </BottomGrid>
