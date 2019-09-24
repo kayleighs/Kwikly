@@ -17,6 +17,7 @@ class HomePage extends Component {
 
 
   state = {
+    category: this.props.category,
     allJobs: []
   };
 
@@ -47,10 +48,12 @@ class HomePage extends Component {
         <BottomGrid>
           {this.state.allJobs.map(jobs => (
                 <JobCard
-                  id={jobs._id}
+                  key={jobs._id}
                   JobTitle={jobs.title}
-                  image={jobs.image}
+                  category={jobs.category}
+                  image="https://i.pinimg.com/originals/30/9d/df/309ddf5999bb72b8c08058199877917b.jpg"
                   Description={jobs.description}
+                  onClick={()=> console.log(this.state)}
                 />
           ))}
         </BottomGrid>

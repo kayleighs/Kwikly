@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import axios from "axios";
+import Gravatar from 'react-gravatar'
 require("dotenv").config();
 
 //Path found at http://localhost:3000/userform
@@ -9,8 +10,8 @@ class UserCreateForm extends Component {
   
   state = {
     username: "",
-    password: "",
     email: "",
+    _id: Math.random().toString(36).replace('0.', ''),
     isAdmin: true,
     statement: "",
     address: "",
@@ -38,8 +39,8 @@ class UserCreateForm extends Component {
         }
       })).then(()=> API.saveUser({
           username: newUser.username,
-          password: newUser.password,
           email: newUser.email,
+          _id: newUser._id,
           isAdmin: newUser.isAdmin,
           statement: newUser.statement,
           address: newUser.address,
@@ -76,10 +77,6 @@ class UserCreateForm extends Component {
                   <input name="username" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.username}></input>
                 </div>
                 <div className="form-group">
-                  <label>Password</label>
-                  <input name="password" type="password" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.password}></input>
-                </div>
-                <div className="form-group">
                   <label>Email</label>
                   <input name="email" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.email}></input>
                 </div>
@@ -106,8 +103,9 @@ class UserCreateForm extends Component {
                 {this.state.allUsers.map(res=> {
                   return (
                     <li key={res._id} className="list-group-item bg-light mb-2">
-                      <h4>{res.username}</h4>
-                      <h5>id: {res._id} (use for URL to edit each user)</h5>
+                      <Gravatar email={res.email} size={100} style={{ float: "left" }}/>
+                      <h4>{res.username} (use for URL to edit each user)</h4>
+                      <h5>id: {res._id}</h5>
                       <p>email: {res.email}</p>
                       <p>Address: {res.address}</p>
                       <p>{res.statement}</p>

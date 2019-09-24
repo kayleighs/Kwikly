@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 /*Grids*/
 import TopGrid from '../components/Grids/HomePageGrids/TopGrid/TopGrid';
 import BottomGrid from '../components/Grids/HomePageGrids/BottomGrid/BottomGrid';
-
+import API from "../utils/API";
 /*Components*/
 import NavBar from '../components/NavBar/NavBar.js';
 import Footer from '../components/Footer/Footer';
@@ -17,11 +17,22 @@ import jobs from './../jobs.json';
 import { withAuthorization } from '../components/Session';
 class HomePageLoggedIn extends Component {
 
-
   state = {
-    jobs,
+    category: this.props.category,
+    allJobs: []
   };
 
+  componentDidMount() {
+    this.loadJobs();
+  }
+
+  loadJobs = () => {
+    API.getJobs()
+      .then(res =>
+        this.setState({ allJobs: res.data })
+      )
+      .catch(err => console.log(err));
+  };
 
   render() {
 
@@ -36,13 +47,15 @@ class HomePageLoggedIn extends Component {
         </TopGrid>  
 
         <BottomGrid>
-          {this.state.jobs.map(jobs => (
-                <JobCard
-                  id={jobs.id}
-                  JobTitle={jobs.JobTitle}
-                  image={jobs.image}
-                  Description={jobs.Description}
-                />
+          {this.state.allJobs.map(jobs => (
+            <JobCard
+              key={jobs._id}
+              JobTitle={jobs.title}
+              category={jobs.category}
+              image="https://i.pinimg.com/originals/30/9d/df/309ddf5999bb72b8c08058199877917b.jpg"
+              Description={jobs.description}
+              onClick={()=> console.log(this.state)}
+            />
           ))}
         </BottomGrid>
 

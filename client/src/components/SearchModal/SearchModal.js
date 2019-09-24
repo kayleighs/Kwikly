@@ -12,6 +12,12 @@ class SearchModal extends React.Component {
   hideModal = () => {
     this.setState({ show: false });
   }
+
+  switchCategory = (event, select) => {
+    event.preventDefault();
+    this.hideModal();
+    this.props.newCategory(select)
+  };
     
   render() {
     return (
@@ -19,7 +25,7 @@ class SearchModal extends React.Component {
         <h1></h1>
         <Modal show={this.state.show} handleClose={this.hideModal} >
         <input type="text" id="search-bar" placeholder="Search for Jobs..."></input>
-          <div className="clearfix"><Link>
+          <div className="clearfix"><Link onClick={(event)=> this.switchCategory(event, "Restaurant/Bar")}>
           <img id="searchIcon" src={"https://img.icons8.com/cotton/2x/search--v2.png"}></img>Restarant/Bar</Link></div>
           <div className="clearfix"><Link>
           <img id="searchIcon" src={"https://img.icons8.com/cotton/2x/search--v2.png"}></img>Pet Services</Link></div>
