@@ -67,10 +67,10 @@ class JobPostForm extends Component {
 
   render() {
     return (
-      // the-hidden-leaf-village class is a reference to Naruto.
+      // the-hidden-leaf-village id is a reference to Naruto.
       //Its just used to hide the job form using display: none; 
-      //Sorry for trolling, you should probably change this class but its really awesome.
-      <div className="form-page the-hidden-leaf-village">
+      //Sorry for trolling, you should probably change this id but its really awesome.
+      <div className="form-page" id="the-hidden-leaf-village">
         <div className="container">
           <div className="row">
             <div className="col-1"></div>

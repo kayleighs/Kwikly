@@ -13,7 +13,7 @@ import Empolyer from './../employer.json';
 class EmpolyerPage extends Component {
 
   showJobPostForm = () => {
-    document.getElementByClass('')
+    document.getElementById('')
   }  
 
 
