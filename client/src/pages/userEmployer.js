@@ -1,14 +1,9 @@
 import React, {Component} from 'react';
-/*Grids*/
-import TopGrid from './../components/Grids/HomePageGrids/TopGrid/TopGrid';
-import BottomGrid from '../components/Grids/HomePageGrids/BottomGrid/BottomGrid';
 
 /*Components*/
 import NavBar from './../components/NavBar/NavBar';
-import Footer from './../components/Footer/Footer';
-import SideBar from './../components/SideBar/SideBar';
 import EmployerCard from './../components/EmpolyerCard/EmployerCard';
-
+import Footer from './../components/Footer/Footer';
 
 /*Mock Data*/
 import Empolyer from './../employer.json';

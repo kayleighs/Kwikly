@@ -9,4 +9,8 @@ export const ADMIN_DETAILS = '/admin/:id';
 export const FIRETEST = '/test';
 export const USER = '/user';
 export const EMPLOYER = '/employer';
+export const TESTpage = '/testPage';
 export const MODALTEST ='/testmodal';
+
+export const POSTJOB = '/postjob'
+
