@@ -42,3 +42,7 @@ html, body {
   background-color: #5460B1;
 }
 
+.gradient-style-1 {
+    background-image: linear-gradient(to bottom, #fffded, #5460B1);
+}
+
