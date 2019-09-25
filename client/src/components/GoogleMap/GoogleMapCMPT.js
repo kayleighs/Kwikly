@@ -84,11 +84,12 @@ class Map extends Component {
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 //Go here for tutorial https://www.youtube.com/watch?v=Pf7g32CwX_s
 
-export default function GoogleMapCMPT() {
+export default function GoogleMapCMPT(props) {
 
   return (
     <div className="container" id="map">
       <WrappedMap
+        currentCategory={props.categorySearch}
         googleMapURL={"https://maps.googleapis.com/maps/api/js?key=" + process.env.REACT_APP_GOOGLE_KEY}
         loadingElement={<div style={{height: "100%"}} />}
         containerElement={<div style={{height: "100%"}} />}

@@ -27,38 +27,33 @@ import * as ROUTES from './constants/routes';
 import { withAuthentication } from './components/Session';
 import Footer from './components/Footer/Footer';
 
-class App extends Component { 
+class App extends Component {
 
   state = {
-    globalCategory: "Miscellaneous"
+    currentCategory: "Miscellaneous"
   };
 
-  changeCategory = (newValue) => {
-    this.setState({ globalCategory: newValue })
-  };
-  
   render() {
     return (
       <Router>
         <div>
           
-          <Navigation newCategory={this.changeCategory}/>
+          <Navigation />
 
           {/* <Route exact path="/jobform" component={JobPostForm} /> */}
         <Route exact path={ROUTES.POSTJOB} component={JobPostForm} />
           <Route exact path="/userform" component={UserCreateForm} />
-          <Route path="/userform/:username" render={props=> <UserUpdateForm {...props}/>} />
+          <Route path="/userform/:id" render={props=> <UserUpdateForm {...props}/>} />
           <Route exact path="/employerform" component={EmployerCreateForm} />
           <Route path="/employerform/:id" render={props=> <EmployerUpdateForm {...props}/>} />
           <Route exact path ="/directiontest" component={DirectionsTest} />
 
-
-          <Route exact path={ROUTES.LANDING} render={props=> <HomePage category={this.state.globalCategory} />} />
+          <Route exact path={ROUTES.LANDING} render={props=> <HomePage {...props}/>} />
           <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
           <Route path={ROUTES.SIGN_IN} component={SignInPage} />
           <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage}/> 
           <Route path={ROUTES.FIRETEST} component={FirebaseTest} />
-        <Route path={ROUTES.HOME} component={HomePageLoggedIn} />
+        <Route path={ROUTES.HOME} render={props=> <HomePageLoggedIn {...props}/>} />
     
           <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
           <Route exact path={ROUTES.ADMIN} component={AdminPage} />

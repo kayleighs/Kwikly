@@ -11,7 +11,7 @@ export default {
     return axios.get("/api/jobs");
   },
   getJobsbyCategory: function(category) {
-    return axios.get("/api/jobs/" + category);
+    return axios.get("/api/jobs/by-category/" + category);
   },
   // Gets the job with the given id
   getjob: function (id) {

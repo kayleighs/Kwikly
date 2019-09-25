@@ -14,7 +14,9 @@ import GoogleMapCMPT from '../components/GoogleMap/GoogleMapCMPT';
 import jobs from './../jobs.json';
 
 class HomePage extends Component {
-
+  constructor(props) {
+    super(props)
+  }
 
   state = {
     category: this.props.category,
@@ -33,17 +35,27 @@ class HomePage extends Component {
       .catch(err => console.log(err));
   };
 
+  filterJobs = (filter) => {
+    API.getJobsbyCategory(filter)
+      //.then(res=> console.log(res.data))
+      .then(res=> this.setState({ allJobs: res.data }))
+      .catch(err => console.log(err));
+  }
+
   render() {
 
     return (
       <div>
-
         {/* <NavBar/> */}
-
         <TopGrid>
           <SideBar/>
-          <GoogleMapCMPT/>
+          <GoogleMapCMPT categorySearch={this.props.location.state.category}/>
         </TopGrid>  
+        {this.props.location.state ? (
+          <div className="d-flex justify-content-center">
+            <button className="btn btn-primary" onClick={()=> this.filterJobs(this.props.location.state.category)}>Search by {this.props.location.state.category}</button>
+          </div>
+        ): null}
 
         <BottomGrid>
           {this.state.allJobs.map(jobs => (
@@ -53,7 +65,7 @@ class HomePage extends Component {
                   category={jobs.category}
                   image="https://i.pinimg.com/originals/30/9d/df/309ddf5999bb72b8c08058199877917b.jpg"
                   Description={jobs.description}
-                  onClick={()=> console.log(this.state)}
+                  onClick={()=> console.log(this.props.location.state.category)}
                 />
           ))}
         </BottomGrid>

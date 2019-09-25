@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import "./navbar.css";
@@ -9,38 +9,56 @@ import * as ROUTES from '../../constants/routes';
 //import * as ROLES from '../../constants/roles';
 
 
-const Navigation = () => (
-    <div>
+class Navigation extends Component {
+
+
+  render() {
+    return (
+      <div>
         <AuthUserContext.Consumer>
             {authUser =>
                 authUser ? <NavigationAuth /> : <NavigationNonAuth />
             }
         </AuthUserContext.Consumer>
-    </div>
-);
+      </div>
+      
+    )
+  }
+};
 
-const NavigationAuth = () => (
+class NavigationAuth extends Component {
 
-    <div class="navbar">
-        <Link id="logo" to={ROUTES.LANDING}>Kwikly</Link>
-        <SearchModal />
-        <div class="right-nav">
-            <SignOutButton />
-            <Link to={ROUTES.HOME}>Home</Link>
-            <Link to={ROUTES.ACCOUNT}>Account</Link>
-        </div>
 
-    </div> 
-);
+    render() {
+      return (
+        <div className="navbar">
+            <Link id="logo" to={ROUTES.LANDING}>Kwikly</Link>
+            <SearchModal />
+            <div className="right-nav">
+                <SignOutButton />
+                <Link to={ROUTES.HOME}>Home</Link>
+                <Link to={ROUTES.ACCOUNT}>Account</Link>
+            </div>
 
-const NavigationNonAuth = () => (
-    <div class="navbar">
-        <Link id="logo" to={ROUTES.LANDING}>Kwikly</Link>
-        <SearchModal />
-        <div class="right-nav">
-            <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-        </div>
-    </div> 
-);
+        </div> 
+      )
+    }
+};
+
+class NavigationNonAuth extends Component {
+
+    
+    render() {
+      return (
+        <div className="navbar">
+            <Link id="logo" to={ROUTES.LANDING}>Kwikly</Link>
+            <SearchModal />
+            <div className="right-nav">
+                <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+            </div>
+        </div> 
+      )
+    }
+};
 
 export default Navigation;
