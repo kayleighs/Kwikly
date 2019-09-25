@@ -17,7 +17,7 @@ import PasswordForgetPage from './components/PasswordForget';
 //------Paths to test form pages---
 import JobPostForm from "./components/JobPostForm/JobPostForm";
 import UserCreateForm from "./components/UserUpdate/UserCreateForm";
-import UserUpdateForm from "./components/UserUpdate/UserUpdateForm";
+import UserUpdateForm from "./components/UserUpdate/UserUpdateForm.js";
 import EmployerCreateForm from "./components/EmployerUpdate/EmployerCreateForm";
 import EmployerUpdateForm from "./components/EmployerUpdate/EmployerUpdateForm";
 import DirectionsTest from "./components/DirectionsTest";
@@ -33,7 +33,7 @@ const App = () => (
         
         <Navigation />
 
-        {/* <Route exact path="/jobform" component={JobPostForm} /> */}
+      {/* <Route exact path="/jobform" component={JobPostForm} />  */}
       <Route exact path={ROUTES.POSTJOB} component={JobPostForm} />
         <Route exact path="/userform" component={UserCreateForm} />
         <Route path="/userform/:username" render={props=> <UserUpdateForm {...props}/>} />
