@@ -19,7 +19,7 @@ class Account extends React.Component {
   }
   loadUserInfo = () => {
     const uId = firebase.auth().currentUser.uid
-    console.log(uId)
+    //console.log(uId)
     API.getUser(uId)
       .then(res =>
         this.setState({ user: res.data })
