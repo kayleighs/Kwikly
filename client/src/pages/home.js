@@ -49,7 +49,7 @@ class HomePage extends Component {
         {/* <NavBar/> */}
         <TopGrid>
           <SideBar/>
-          <GoogleMapCMPT categorySearch={this.props.location.state.category}/>
+          <GoogleMapCMPT categorySearch={this.props.location.state}/>
         </TopGrid>  
         {this.props.location.state ? (
           <div className="d-flex justify-content-center">
