@@ -5,7 +5,7 @@ const userSchema = new Schema({
   username: { type: String, required: true },
 /*   password: { type: String, required: true }, */
   email: { type: String },
-  isAdmin: { type: Boolean, required: true, default: false },
+  isAdmin: { type: Boolean, required: true, default: false},
   _id: String,
   statement: {type: String},
   badges: [ {type: String} ], //could be a string that explains the type of badge to show on profile

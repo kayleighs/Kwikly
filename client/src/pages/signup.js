@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import * as firebase from 'firebase';
 import { withFirebase } from '../components/Firebase';
 import * as ROUTES from '../constants/routes';
-import * as ROLES from '../constants/roles';
+//import * as ROLES from '../constants/roles';
 
 import API from "../utils/API";
 import axios from "axios";
@@ -16,6 +16,7 @@ const SignUpPage = () => (
     <SignUpForm />
   </div>
 );
+
 const INITIAL_STATE = {
   username: '',
   email: '',
@@ -32,7 +33,6 @@ const INITIAL_STATE = {
   },
   allUsers: []
 };
-
 
 const ERROR_CODE_ACCOUNT_EXISTS = 'auth/email-already-in-use';
 
@@ -52,63 +52,32 @@ class SignUpFormBase extends Component {
     this.state = { ...INITIAL_STATE };
   }
 
-  onSubmit = event => {
-    // eslint-disable-next-line
-
-    //console.log(this.state)
-    const roles = {};
-    if (isAdmin) {
-      roles[ROLES.ADMIN] = ROLES.ADMIN
-    }
-    axios.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + this.state.address + "&key=" + process.env.REACT_APP_GOOGLE_KEY)
-      .then(res => {
-        this.setState({
-          location: {
-            lat: res.data.results[0].geometry.location.lat,
-            lng: res.data.results[0].geometry.location.lng
-          },
-        })
-      })
-    const { username, email, passwordOne, isAdmin, statement, address, location } = this.state;
-    console.log(this.state)
+  startFirebase() {
     this.props.firebase
-      .doCreateUserWithEmailAndPassword(email, passwordOne)
-      /*       .then(authUser => {
-            // Create a user in your Firebase realtime database NEED TO CHANGE TO MONGO
-              return this.props.firebase.user(authUser.user.uid).set({
-                username,
-                email,
-                roles,
-              });
-            }) */
-      /*       .then(() => {
-              return this.props.firebase.doSendEmailVerification();
-            }) */
-      // API.saveUser(this.state)
-      /*       .then((userData) => {
-              var uid = userData.uid
-              console.log(uid)
-              this.setState({ ...INITIAL_STATE });
-              this.props.history.push(ROUTES.HOME);
-            }) */
-      .then((userData) => {
-        firebase.auth().onAuthStateChanged(function (userData) {
-          //console.log(username)
-          //console.log(this.state.lat)
-         // console.log(location)
+      .doCreateUserWithEmailAndPassword(this.state.email, this.state.passwordOne)
+
+      .then(() => {
+
+        var userTest= firebase.auth().currentUser;
+
+        // firebase.auth().onAuthStateChanged(userData => {
           const user = {
-            username: username,
-            email: userData.email,
-            isAdmin: isAdmin,
-            statement: statement,
-            address: address,
-            location: location,
-            _id: userData.uid,// The UID of recently created user on firebase
+            username: this.state.username,
+            email: this.state.email,
+            isAdmin: this.state.isAdmin,
+            statement: this.state.statement,
+            address: this.state.address,
+            location: this.state.location,
+            _id: userTest.uid,// The UID of recently created user on firebase
           }
-          console.log(user)
-         API.saveUser(user)
-        })
-        this.setState({ ...INITIAL_STATE });
+
+          console.log("OUTSIDE OF API SAVE USER",user)
+          API.saveUser(user).then(resp => {
+            console.log("IN API SAVE USER",user)
+            console.log("RESPONSE FROM API SAVE USER", resp)
+            this.setState({ ...INITIAL_STATE });
+          })
+        // })
         this.props.history.push(ROUTES.HOME);
       })
       .catch(error => {
@@ -118,18 +87,34 @@ class SignUpFormBase extends Component {
         this.setState({ error });
       });
     //console.log(this.state)
-    event.preventDefault();
   };
 
+  onSubmit = event => {
+    event.preventDefault();
+    axios.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + this.state.address + "&key=" + process.env.REACT_APP_GOOGLE_KEY)
+      .then(res => {
+        this.setState({
+          location: {
+            lat: res.data.results[0].geometry.location.lat,
+            lng: res.data.results[0].geometry.location.lng
+          },
+        }, () => {
+          this.startFirebase()
+        })
+      })
+    }
+
   onChange = event => {
+    event.preventDefault();
     this.setState({ [event.target.name]: event.target.value });
   };
-  onChangeCheckbox = event => {
-    this.setState({ [event.target.name]: event.target.checked });
+
+  onChangeCheckbox = () => {
+    this.setState({ isAdmin: !this.state.isAdmin });
   };
+
   seeTheState = event => {
     event.preventDefault();
-    console.log(this.state.address)
     axios.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + this.state.address + "&key=" + process.env.REACT_APP_GOOGLE_KEY)
       .then(res => {
         this.setState({
@@ -143,6 +128,7 @@ class SignUpFormBase extends Component {
     //console.log(this.state.address)
     console.log(this.state.location)
   };
+
   render() {
     const {
       username,
@@ -197,8 +183,9 @@ class SignUpFormBase extends Component {
                   <input
                     name="isAdmin"
                     type="checkbox"
-                    checked={isAdmin}
                     onChange={this.onChangeCheckbox}
+                    checked={this.state.isAdmin}
+                    
                   />
                 </label>
                 <button disabled={isInvalid} onClick={(event) => this.onSubmit(event, this.state)} className="btn btn-primary">Submit</button>
