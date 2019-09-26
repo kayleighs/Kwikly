@@ -2,7 +2,7 @@ import React from 'react';
 import './employerCard.css';
 import Button from '../Buttons/Button';
 import DMicon from './DMicon/DM-Icon.png';
-
+import ReactModal from 'react-modal';
 
 function EmployerCard(props) {
 
