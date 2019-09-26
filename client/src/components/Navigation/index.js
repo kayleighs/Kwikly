@@ -25,9 +25,9 @@ const NavigationAuth = () => (
          <SearchModal />
         <Link id="logo" to={ROUTES.LANDING}>Kwikly</Link>
         <div class="right-nav">
-            <SignOutButton />
             <Link to={ROUTES.HOME}>Home</Link>
             <Link to={ROUTES.ACCOUNT}>Account</Link>
+            <SignOutButton />
         </div>
 
     </div> 
