@@ -11,7 +11,7 @@ import JobCard from '../components/JobCard/JobCard';
 import GoogleMapCMPT from '../components/GoogleMap/GoogleMapCMPT';
 
 /*Mock Data*/
-import jobs from './../jobs.json';
+//import jobs from './../jobs.json';
 
 class HomePage extends Component {
 
@@ -42,14 +42,18 @@ class HomePage extends Component {
       .then(res=> this.setState({ allJobs: res.data }))
       .catch(err => console.log(err));
   };
+  seeTheState = event => {
+    event.preventDefault();
+    console.log(this.state)
 
+  };
   render() {
 
     return (
+
       <div>
-
+        
         {/* <NavBar/> */}
-
         <TopGrid>
           <SideBar/>
           <GoogleMapCMPT/>
@@ -72,7 +76,7 @@ class HomePage extends Component {
                 />
           ))}
         </BottomGrid>
-
+        {/* <button onClick={(event) => this.seeTheState(event)} className="btn btn-primary">Current State</button> */}
         <Footer/>
 
       </div>
