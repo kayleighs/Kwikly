@@ -23,7 +23,7 @@ class SearchModal extends React.Component {
   render() {
     return (
       <main>
-        <ReactModal style={{
+      <ReactModal style={{
     overlay: {
       position: 'fixed',
       top: 0,
