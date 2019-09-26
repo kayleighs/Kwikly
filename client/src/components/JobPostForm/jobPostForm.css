@@ -5,6 +5,7 @@
 
 }
 
-#the-hidden-leaf-village {
-    display: none;
+#job-post-header {
+    display: flex;
+    justify-content: center;
 }
