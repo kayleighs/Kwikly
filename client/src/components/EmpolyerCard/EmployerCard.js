@@ -98,7 +98,7 @@ function EmployerCard(props) {
       {/*========================================================================*/}
       <div className="Item-Employer-Card-6 Item">
         <button className="Item-6-Grid-1 button-style"><p>Current Jobs</p></button>
-        <button className="Item-6-Grid-2 button-style"  onClick={() => this.props.showJobPostForm()}>Create Job</button>
+        <button className="Item-6-Grid-2 button-style"  onClick={() => props.showJobPostForm()}>Create Job</button>
       </div>
 
     </div>

@@ -14,6 +14,7 @@ class EmpolyerPage extends Component {
 
   showJobPostForm = () => {
     const showJobForm = document.getElementById('the-hidden-leaf-village');
+    showJobForm.style.removeId('the-hidden-leaf-village'); 
   }  
 
 
@@ -47,13 +48,14 @@ class EmpolyerPage extends Component {
                   description={Empolyer.Description}
                   image={Empolyer.image}
                   location={Empolyer.location}
+                  showJobPostForm={this.showJobPostForm}
                 />
 
             ))}
         </div>
 
         <div className="ks-container gradient-style-1">
-          <JobPostForm id="the-hidden-leaf-village"/>
+          <JobPostForm />
         </div>
         
         <Footer/>
