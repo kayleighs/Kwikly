@@ -17,7 +17,7 @@ function UserCard(props) {
         <p className="ks-container color-3-blue">{props.email}</p>
       </div>
 
-      {/*This section gives a list of positions that need to be filled*/}
+      {/*This section gives a list of skills*/}
       {/*========================================================================*/}
       <div className="Item-Employer-Card-2 Item ks-container color-2-yellow">
         <h2>Skills:</h2>

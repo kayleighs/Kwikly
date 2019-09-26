@@ -55,3 +55,39 @@ Sorry for trolling, you should probably change this id but its really awesome.
 #the-hidden-leaf-village {
     display: none;
 }
+
+
+/*List Of Google Fonts*/
+#font-list {
+    /*SignIn Font*/
+    font-family: 'Fugaz One', cursive;
+    /*Logo Font*/
+    font-family: 'Monoton', cursive;
+    /*NavBar Link Font*/
+    font-family: 'Montserrat Alternates', sans-serif;
+    /*Look For this Font's Location Later 9/26/19*/
+    font-family: 'EB Garamond', serif;
+}
+
+/*Signin Form Styles*/
+.signin-header {
+    font-family: 'Fugaz One', cursive;
+    background-color: #5460B1;
+    border-right: 5px solid #c9c9c9 ;
+    border-top-right-radius: 100px 50px;
+    background-clip: padding-box; 
+    color: white;
+    width: 150px;
+}
+
+.signin-input {
+    width: 500px;
+    height: 50px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 32px;
+    border: 6px solid #5460B1;
+    border-radius: 50px;
+}
+
+

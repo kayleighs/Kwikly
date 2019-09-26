@@ -7,9 +7,11 @@ import { SignUpLink } from './signup';
 import { withFirebase } from '../components/Firebase';
 import * as ROUTES from '../constants/routes';
 
+//This page is grabbing css styles from the globalStyles.css in the public folder
+
 const SignInPage = () => (
-  <div>
-    <h1>SignIn</h1>
+  <div className="ks-container">
+    <h1 className="signin-header">SignIn</h1>
     <SignInForm />
     {/*     <PasswordForgetLink /> */}
     <SignUpLink />
@@ -56,15 +58,16 @@ class SignInFormBase extends Component {
     const isInvalid = password === '' || email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
+
+      <form onSubmit={this.onSubmit} className="">
+        <input className="signin-input"
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
-        <input
+        <input className="signin-input"
           name="password"
           value={password}
           onChange={this.onChange}
