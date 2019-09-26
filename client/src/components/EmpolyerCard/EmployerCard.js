@@ -2,7 +2,7 @@ import React from 'react';
 import './employerCard.css';
 import Button from '../Buttons/Button';
 import DMicon from './DMicon/DM-Icon.png';
-
+import Gravatar from 'react-gravatar';
 
 function EmployerCard(props) {
 
@@ -13,22 +13,17 @@ function EmployerCard(props) {
       {/*This section holds user image, first & last name and bussiness name*/}
       {/*========================================================================*/}
       <div className="Item-Employer-Card-1 Item">
-        <img id="EmployerImg" src={props.image} alt={props.id}></img>  
-        <p className="ks-container color-1-red">Daniel</p>
-        <p className="ks-container color-2-yellow">LaZenbery</p>
-        <p className="ks-container color-3-blue">The Purple Platypus</p>
+        <Gravatar email={props.email} id="EmployerImg" alt={props.id} />
+        <p className="ks-container color-1-red">Employer</p>
+        <p className="ks-container color-2-yellow">{props.username}</p>
+        <p className="ks-container color-3-blue">{props.email}</p>
       </div>
     
       {/*This section gives a list of positions that need to be filled*/}
       {/*========================================================================*/}
       <div className="Item-Employer-Card-2 Item ks-container color-2-yellow">
         <h2>Seeking:</h2>
-        <ul>
-          <li>Bartenders</li>
-          <li>Bar Backs</li>
-          <li>Bus Boys/Gals</li>
-          <li>Waiters/Waitresses</li>
-        </ul>
+        {props.seeking}
       </div>
 
       {/*Badge and DM section*/}
@@ -72,7 +67,7 @@ function EmployerCard(props) {
       <div className="Item-Employer-Card-4 Item">  
         
         <div className="Item-4-Grid-1">
-          <h2>Brooklyn,NY</h2>
+          <h2>{props.address}</h2>
         </div>
         <div className="Item-4-Grid-2">
           <img id="MapImg" src={props.location} alt={props.id}></img>  
@@ -84,12 +79,7 @@ function EmployerCard(props) {
       {/*========================================================================*/}
       <div className="Item-Employer-Card-5 Item ks-container color-1-red">
         <h2>About Us:</h2>
-        <p>
-          At the Purple Platypus we pride ourselves in horrible customer service accompanied with drinks worst than our attitudes. If there is nothing passive about your aggression, you've found the right place to work!  
-        </p>
-        <p>
-          Each drink served at this pub is served straight with a splash of purple food coloring.
-        </p>
+          {props.statement}
       </div>
 
       {/*This section holds two buttons.*/} 
@@ -98,7 +88,7 @@ function EmployerCard(props) {
       {/*========================================================================*/}
       <div className="Item-Employer-Card-6 Item">
         <button className="Item-6-Grid-1 button-style"><p>Current Jobs</p></button>
-        <button className="Item-6-Grid-2 button-style"  onClick={() => props.showJobPostForm()}>Create Job</button>
+        <button className="Item-6-Grid-2 button-style"  onClick={() => this.props.showJobPostForm()}>Create Job</button>
       </div>
 
     </div>

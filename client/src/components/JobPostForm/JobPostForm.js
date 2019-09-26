@@ -74,10 +74,8 @@ class JobPostForm extends Component {
       // the-hidden-leaf-village id is a reference to Naruto.
       //Its just used to hide the job form using display: none; 
       //Sorry for trolling, you should probably change this id but its really awesome.
-      //The hidden leaf Village has been moved to globalStyles. Add it back to this component's style later.
-      <div className="form-page">
+      <div className="form-page" /*id="the-hidden-leaf-village"*/>
         <div className="container">
-          <h2 id="job-post-header">Post A New Job</h2>
           <div className="row">
             <div className="col-1"></div>
             <div className="col-10">
