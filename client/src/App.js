@@ -30,9 +30,7 @@ import Footer from './components/Footer/Footer';
 const App = () => (
     <Router>
       <div>
-        
         <Navigation />
-
       {/* <Route exact path="/jobform" component={JobPostForm} />  */}
       <Route exact path={ROUTES.POSTJOB} component={JobPostForm} />
         <Route exact path="/userform" component={UserCreateForm} />

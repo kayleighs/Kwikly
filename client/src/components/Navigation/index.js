@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import "./navbar.css";
-import SearchModal from "../SearchModal/SearchModal";
+import SearchModal from "../SearchModal/SearchModal.js";
 import { AuthUserContext } from '../Session';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';

@@ -4,6 +4,7 @@ import * as ROUTES from '../constants/routes';
 
 import * as firebase from 'firebase';
 
+
 import API from "../utils/API";
 
 import EmployerCard from './../components/EmpolyerCard/EmployerCard';
@@ -15,23 +16,34 @@ class Account extends React.Component {
     user: [],
   }
   componentDidMount() {
-    this.loadUserInfo();
+    // this.loadUserInfo();
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        // User is signed in.
+        const uId = firebase.auth().currentUser.uid
+        //console.log(uId)
+        API.getUser(uId)
+          .then(res =>
+            this.setState({ user: res.data })
+          )
+          .catch(err => console.log(err));
+      }
+    });
   }
   loadUserInfo = () => {
-    const uId = firebase.auth().currentUser.uid
-    //console.log(uId)
-    API.getUser(uId)
-      .then(res =>
-        this.setState({ user: res.data })
-      )
-      .catch(err => console.log(err));
-  };
+        // User is signed in.
+        const uId = firebase.auth().currentUser.uid
+        //console.log(uId)
+        API.getUser(uId)
+          .then(res =>
+            this.setState({ user: res.data })
+          )
+          .catch(err => console.log(err));
+  }
+   
   render() {
     return (
       <div>
-        <h1>Account info</h1>
-        <ul>Email: {this.state.user.email}</ul>
-        <ul>Name: {this.state.user.username}</ul>
         {this.state.user.isAdmin ? 
           (<div>
             <EmployerCard
@@ -49,9 +61,12 @@ class Account extends React.Component {
             <UserCard
               id={this.state.user.id}
               username={this.state.user.username}
+              email={this.state.user.email}
               JobTitle={this.state.user.JobTitle}
               image={this.state.user.image}
-              Description={this.state.user.Description}
+              statement={this.state.user.statement}
+              address={this.state.user.address}
+              skills={this.state.user.skills}
             />
           </div>)
         } 
