@@ -11,7 +11,7 @@ export default {
     return axios.get("/api/jobs");
   },
   getJobsbyCategory: function(category) {
-    return axios.get("/api/jobs/" + category);
+    return axios.get("/api/jobs/by-category/" + category);
   },
   // Gets the job with the given id
   getjob: function (id) {
@@ -32,8 +32,8 @@ export default {
   saveEmployer: function (userData) {
     return axios.post("/api/userEmployer", userData);
   },
-  getUser: function (id) {
-    return axios.get("/api/user/" + id);
+  getUser: function (username) {
+    return axios.get("/api/user/byname/" + username);
   },
   getEmployer: function (id) {
     return axios.get("/api/userEmployer/" + id);

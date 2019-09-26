@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import axios from "axios";
+import Gravatar from 'react-gravatar';
 require("dotenv").config();
 
 class UserUpdateForm extends Component {
@@ -23,8 +24,9 @@ class UserUpdateForm extends Component {
   };
 
   getOneUser = () => {
-    API.getUser(this.props.match.params.id)
-    .then(res => this.setState({ currentUser: res.data }))
+    API.getUser(this.props.match.params.username)
+    //.then(res=> console.log(res.data[0]))
+    .then(res => this.setState({ currentUser: res.data[0] }))
     .catch(err => console.log(err));
   };
 
@@ -100,6 +102,7 @@ class UserUpdateForm extends Component {
               <div className="user-current">
                 <ul className="pl-0 list-group mb-4">
                     <li key={this.state.currentUser._id} className="list-group-item bg-light mb-2">
+                        <Gravatar email={this.state.email} size={100} style={{ float: "left" }}/>
                         <h4>{this.state.currentUser.username}</h4>
                         <p>{this.state.currentUser.email}</p>
                         <p>{this.state.currentUser.address}</p>

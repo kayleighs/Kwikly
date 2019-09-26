@@ -15,8 +15,8 @@ router
   .put(jobsController.update)
   .delete(jobsController.remove);
 
-router
-  .route("/:category")
+  router
+  .route("/by-category/:category")
   .get(jobsController.findByCategory);
 
 module.exports = router;
