@@ -13,10 +13,13 @@ function JobCard(props) {
             <img alt={props.JobTitle} src={props.image} className="imgStyles"/> 
           </li>    
           <li>
-            <strong>Job Title:</strong> <h1>{props.JobTitle}</h1>
+            <h1><strong>Job Title: </strong>{props.title}</h1>
           </li>
           <li>
-            <strong>Description:</strong> <p>{props.Description}</p>
+            <p><strong>Category: </strong>{props.category}</p>
+          </li>
+          <li>
+            <p><strong>Description: </strong>{props.description}</p>
           </li>
         </ul>
       </div>
