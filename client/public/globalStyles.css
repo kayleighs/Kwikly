@@ -46,3 +46,146 @@ html, body {
     background-image: linear-gradient(to bottom, #fffded, #5460B1);
 }
 
+<<<<<<< HEAD
+=======
+
+/*
+the-hidden-leaf-village id is a reference to Naruto.
+Its just used to hide the job form using display: none; 
+Sorry for trolling, you should probably change this id but its really awesome. 
+*/
+#the-hidden-leaf-village {
+    display: none;
+}
+
+
+/*List Of Google Fonts*/
+#font-list {
+    /*SignIn Font*/
+    font-family: 'Fugaz One', cursive;
+    /*Logo Font*/
+    font-family: 'Monoton', cursive;
+    /*NavBar Link Font*/
+    font-family: 'Montserrat Alternates', sans-serif;
+    /*Look For this Font's Location Later 9/26/19*/
+    font-family: 'EB Garamond', serif;
+}
+
+/*Form Styles*/
+/*========================*/
+.signin-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    
+}
+.dl-form-header {
+    font-family: 'Fugaz One', cursive;
+    background-color: #5460B1;
+    border-right: 10px solid #c9c9c9 ;
+    border-top-right-radius: 100px 50px;
+    background-clip: padding-box; 
+    color: white;
+    width: 150px;
+}
+
+.signin-input {
+    width: 500px;
+    height: 50px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 32px;
+    color: black;
+    border: 6px solid #5460B1;
+    border-radius: 50px;
+}
+
+.dl-form-button {
+    position:relative; 
+    top: -5px;  
+    margin: 0px 10px; 
+    padding: 10px 28px;
+    background-color: #5460B1; 
+    border: 1px solid #5460B1;
+    border-radius: 50px;
+    font-family: 'Fugaz One', cursive;
+    color: white;
+    font-size: 20px;
+    cursor: pointer; 
+}
+
+.dl-form-button:hover {
+    background-color: white; 
+    border: 1px solid #5460B1;
+    color: #5460B1;
+}
+
+
+/*Checkbox Styles*/
+.checkbox-holder {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.admin-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.admin-checkbox-style {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+.checkbox-holder:hover .admin-checkbox ~ .admin-checkbox-style {
+    background-color: #c9c9c9;
+}
+
+.checkbox-holder input:checked ~ .admin-checkbox-style {
+    background-color: #5460B1;
+}
+
+.admin-checkbox-style:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-holder input:checked ~ .admin-checkbox-style:after {
+    display: block;
+}
+
+.checkbox-holder .admin-checkbox-style:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+
+
+
+>>>>>>> 6323771e3dfd7a3ac976b935653e7b9904b1aad2

@@ -30,6 +30,7 @@ class JobPostForm extends Component {
   };
 
   handleInputChange = event => {
+    console.log(event.target)
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -94,16 +95,16 @@ class JobPostForm extends Component {
                 </div>
                 <div className="form-group">
                   <p>Category (pick one):</p>
-                    <select onChange={this.handleInputChange.bind(this)} value={this.state.category}>
+                    <select onChange={this.handleInputChange} name="category" value={this.state.value}>
 
-                      <option name="category" value="Bar/Restaurant" onChange={this.handleInputChange}>Restaurant/Bar</option>
-                      <option name="category" value="Pet Service" onChange={this.handleInputChange}>Pet Service</option>    
-                      <option name="category" value="Household"  onChange={this.handleInputChange}>Household</option>
-                      <option name="category" value="Outdoors"  onChange={this.handleInputChange}>Outdoors</option>      
-                      <option name="category" value="Administrative"  onChange={this.handleInputChange}>Administrative</option>
-                      <option name="category" value="Labor"  onChange={this.handleInputChange}>Labor</option> 
-                      <option name="category" value="Art/Design/Photography"  onChange={this.handleInputChange}>Art/Design/Photography</option>  
-                      <option name="category" value="Miscellaneous"  onChange={this.handleInputChange}>Miscellaneous</option>         
+                      <option value="Bar/Restaurant">Restaurant/Bar</option>
+                      <option value="Pet Service">Pet Service</option>    
+                      <option value="Household" >Household</option>
+                      <option value="Outdoors" >Outdoors</option>      
+                      <option value="Administrative" >Administrative</option>
+                      <option value="Labor" >Labor</option> 
+                      <option value="Art/Design/Photography" >Art/Design/Photography</option>  
+                      <option value="Miscellaneous" >Miscellaneous</option>         
 
                     </select>
                 </div>
