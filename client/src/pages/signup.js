@@ -158,32 +158,32 @@ class SignUpFormBase extends Component {
             <div className="col-12">
               <form>
                 <div className="form-group">
-                  <label>User Name</label>
+                  <label className="form-label-style">User Name</label>
                   <input name="username" type="text" placeholder="..." className="title-input form-control " onChange={this.onChange} value={this.state.username}></input>
                 </div>
                 <div className="form-group">
-                  <label>Password</label>
+                  <label className="form-label-style">Password</label>
                   <input name="passwordOne" type="password" placeholder="..." className="title-input form-control" onChange={this.onChange} value={this.state.passwordOne}></input>
                 </div>
                 <div className="form-group">
-                  <label>Confirm Password</label>
+                  <label className="form-label-style">Confirm Password</label>
                   <input name="passwordTwo" value={this.state.passwordTwo} onChange={this.onChange} type="password" placeholder="Confirm Password" className="title-input form-control"/>
                 </div>
                 <div className="form-group">
-                  <label>Email</label>
+                  <label className="form-label-style">Email</label>
                   <input name="email" type="text" placeholder="..." className="title-input form-control" onChange={this.onChange} value={this.state.email}></input>
                 </div>
                 <div className="form-group">
-                  <label>Address (exact)</label>
+                  <label className="form-label-style">Address (exact)</label>
                   <input name="address" type="text" placeholder="..." className="title-input form-control" onChange={this.onChange} value={address}></input>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="desc-input">Statement</label>
+                  <label className="form-label-style" htmlFor="desc-input">Statement</label>
                   <textarea name="statement" type="text" rows="3" placeholder="..." className="desc-input form-control" onChange={this.onChange} value={statement}></textarea>
                 </div>
 
                 <label className="checkbox-holder">
-                  Are you an Employer?🤔
+                  Click HERE! For an Employer Account🤔
                   <input className="admin-checkbox"
                     name="isAdmin"
                     type="checkbox"

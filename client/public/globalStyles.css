@@ -86,7 +86,7 @@ Sorry for trolling, you should probably change this id but its really awesome.
     border-top-right-radius: 100px 50px;
     background-clip: padding-box; 
     color: white;
-    width: 150px;
+    width: 160px;
 }
 
 .signin-input {
@@ -96,7 +96,7 @@ Sorry for trolling, you should probably change this id but its really awesome.
     margin: 10px;
     font-size: 32px;
     color: black;
-    border: 6px solid #5460B1;
+    border: 3px solid #5460B1;
     border-radius: 50px;
 }
 
@@ -116,7 +116,7 @@ Sorry for trolling, you should probably change this id but its really awesome.
 
 .dl-form-button:hover {
     background-color: white; 
-    border: 1px solid #5460B1;
+    border: 3px solid #5460B1;
     color: #5460B1;
 }
 
@@ -182,7 +182,16 @@ Sorry for trolling, you should probably change this id but its really awesome.
     transform: rotate(45deg);
 }
 
-
+.form-label-style {
+    display: flex;
+    justify-content: center;
+    font-family: 'Fugaz One', cursive;
+    background-color: #5460B1;
+    border-top-right-radius: 100px 50px;
+    background-clip: padding-box; 
+    color: white;
+    width: 190px;
+}
 
 
 
