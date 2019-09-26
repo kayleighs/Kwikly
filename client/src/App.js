@@ -33,7 +33,7 @@ const App = () => (
         
         <Navigation />
 
-      {/* <Route exact path="/jobform" component={JobPostForm} />  */}
+      <Route exact path="/jobform" component={JobPostForm} /> 
       <Route exact path={ROUTES.POSTJOB} component={JobPostForm} />
         <Route exact path="/userform" component={UserCreateForm} />
         <Route path="/userform/:username" render={props=> <UserUpdateForm {...props}/>} />

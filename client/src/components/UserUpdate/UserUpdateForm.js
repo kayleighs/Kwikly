@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import axios from "axios";
-import Gravatar from 'react-gravatar'
+import Gravatar from 'react-gravatar';
 require("dotenv").config();
 
 class UserUpdateForm extends Component {
