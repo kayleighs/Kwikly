@@ -70,10 +70,19 @@ Sorry for trolling, you should probably change this id but its really awesome.
 }
 
 /*Signin Form Styles*/
+/*========================*/
+.signin-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    
+}
 .signin-header {
     font-family: 'Fugaz One', cursive;
     background-color: #5460B1;
-    border-right: 5px solid #c9c9c9 ;
+    border-right: 10px solid #c9c9c9 ;
     border-top-right-radius: 100px 50px;
     background-clip: padding-box; 
     color: white;
@@ -86,8 +95,31 @@ Sorry for trolling, you should probably change this id but its really awesome.
     padding: 10px;
     margin: 10px;
     font-size: 32px;
+    color: black;
     border: 6px solid #5460B1;
     border-radius: 50px;
 }
+
+.signin-button {
+    position:relative; 
+    top: -5px;  
+    margin: 0px 10px; 
+    padding: 10px 28px;
+    background-color: #5460B1; 
+    border: 1px solid #5460B1;
+    border-radius: 50px;
+    font-family: 'Fugaz One', cursive;
+    color: white;
+    font-size: 20px;
+    cursor: pointer; 
+}
+
+.signin-button:hover {
+    background-color: white; 
+    border: 1px solid #5460B1;
+    color: #5460B1;
+}
+
+
 
 

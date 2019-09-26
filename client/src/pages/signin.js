@@ -7,14 +7,16 @@ import { SignUpLink } from './signup';
 import { withFirebase } from '../components/Firebase';
 import * as ROUTES from '../constants/routes';
 
+/*===============================================================================*/
 //This page is grabbing css styles from the globalStyles.css in the public folder
+/*===============================================================================*/
 
 const SignInPage = () => (
-  <div className="ks-container">
+  <div className="ks-container signin-grid">
     <h1 className="signin-header">SignIn</h1>
     <SignInForm />
     {/*     <PasswordForgetLink /> */}
-    <SignUpLink />
+    <SignUpLink/>
   </div>
 );
 
@@ -74,7 +76,7 @@ class SignInFormBase extends Component {
           type="password"
           placeholder="Password"
         />
-        <button disabled={isInvalid} type="submit">
+        <button disabled={isInvalid} type="submit" className="signin-button">
           Sign In
         </button>
 

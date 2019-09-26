@@ -10,9 +10,13 @@ import API from "../utils/API";
 import axios from "axios";
 require("dotenv").config();
 
+/*===============================================================================*/
+//This page is grabbing css styles from the globalStyles.css in the public folder
+/*===============================================================================*/
+
 const SignUpPage = () => (
-  <div>
-    <h1>SignUp</h1>
+  <div className="ks-container">
+    <h1 className="signin-header">SignUp</h1>
     <SignUpForm />
   </div>
 );
@@ -155,7 +159,7 @@ class SignUpFormBase extends Component {
               <form>
                 <div className="form-group">
                   <label>User Name</label>
-                  <input name="username" type="text" placeholder="..." className="title-input form-control" onChange={this.onChange} value={this.state.username}></input>
+                  <input name="username" type="text" placeholder="..." className="title-input form-control " onChange={this.onChange} value={this.state.username}></input>
                 </div>
                 <div className="form-group">
                   <label>Password</label>
@@ -188,8 +192,8 @@ class SignUpFormBase extends Component {
                     
                   />
                 </label>
-                <button disabled={isInvalid} onClick={(event) => this.onSubmit(event, this.state)} className="btn btn-primary">Submit</button>
-                <button onClick={(event) => this.seeTheState(event)} className="btn btn-primary">Current State</button>
+                <button disabled={isInvalid} onClick={(event) => this.onSubmit(event, this.state)} className="signin-button">Submit</button>
+                {/* <button onClick={(event) => this.seeTheState(event)} className="signin-button">Current State</button> */}
                 {error && <p>{error.message}</p>}
               </form>
 
@@ -198,7 +202,7 @@ class SignUpFormBase extends Component {
           <hr />
           <div className="row delete-this-later">
             <div className="col-12">
-              {this.state.allUsers.length ? (
+              {/* {this.state.allUsers.length ? (
                 <div className="search-results">
                   <ul className="pl-0 list-group mb-4">
                     {this.state.allUsers.map(res => {
@@ -216,7 +220,7 @@ class SignUpFormBase extends Component {
                 </div>
               ) : (
                   <h4>Nothing saved yet</h4>
-                )}
+                )} */}
             </div>
           </div>
         </div>
