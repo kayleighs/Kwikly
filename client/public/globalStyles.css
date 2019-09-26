@@ -69,7 +69,7 @@ Sorry for trolling, you should probably change this id but its really awesome.
     font-family: 'EB Garamond', serif;
 }
 
-/*Signin Form Styles*/
+/*Form Styles*/
 /*========================*/
 .signin-grid {
     display: grid;
@@ -79,7 +79,7 @@ Sorry for trolling, you should probably change this id but its really awesome.
     grid-row-gap: 0px;
     
 }
-.signin-header {
+.dl-form-header {
     font-family: 'Fugaz One', cursive;
     background-color: #5460B1;
     border-right: 10px solid #c9c9c9 ;
@@ -100,7 +100,7 @@ Sorry for trolling, you should probably change this id but its really awesome.
     border-radius: 50px;
 }
 
-.signin-button {
+.dl-form-button {
     position:relative; 
     top: -5px;  
     margin: 0px 10px; 
@@ -114,11 +114,74 @@ Sorry for trolling, you should probably change this id but its really awesome.
     cursor: pointer; 
 }
 
-.signin-button:hover {
+.dl-form-button:hover {
     background-color: white; 
     border: 1px solid #5460B1;
     color: #5460B1;
 }
+
+
+/*Checkbox Styles*/
+.checkbox-holder {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.admin-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.admin-checkbox-style {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+.checkbox-holder:hover .admin-checkbox ~ .admin-checkbox-style {
+    background-color: #c9c9c9;
+}
+
+.checkbox-holder input:checked ~ .admin-checkbox-style {
+    background-color: #5460B1;
+}
+
+.admin-checkbox-style:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-holder input:checked ~ .admin-checkbox-style:after {
+    display: block;
+}
+
+.checkbox-holder .admin-checkbox-style:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
 
 
 

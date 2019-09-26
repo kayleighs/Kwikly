@@ -16,7 +16,7 @@ require("dotenv").config();
 
 const SignUpPage = () => (
   <div className="ks-container">
-    <h1 className="signin-header">SignUp</h1>
+    <h1 className="dl-form-header">SignUp</h1>
     <SignUpForm />
   </div>
 );
@@ -182,17 +182,17 @@ class SignUpFormBase extends Component {
                   <textarea name="statement" type="text" rows="3" placeholder="..." className="desc-input form-control" onChange={this.onChange} value={statement}></textarea>
                 </div>
 
-                <label>
-                  Admin:
-                  <input
+                <label className="checkbox-holder">
+                  Are you an Employer?🤔
+                  <input className="admin-checkbox"
                     name="isAdmin"
                     type="checkbox"
                     onChange={this.onChangeCheckbox}
                     checked={this.state.isAdmin}
-                    
                   />
+                  <span className="admin-checkbox-style"></span>
                 </label>
-                <button disabled={isInvalid} onClick={(event) => this.onSubmit(event, this.state)} className="signin-button">Submit</button>
+                <button disabled={isInvalid} onClick={(event) => this.onSubmit(event, this.state)} className="dl-form-button">Submit</button>
                 {/* <button onClick={(event) => this.seeTheState(event)} className="signin-button">Current State</button> */}
                 {error && <p>{error.message}</p>}
               </form>

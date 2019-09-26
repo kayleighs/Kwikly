@@ -13,7 +13,7 @@ import * as ROUTES from '../constants/routes';
 
 const SignInPage = () => (
   <div className="ks-container signin-grid">
-    <h1 className="signin-header">SignIn</h1>
+    <h1 className="dl-form-header">SignIn</h1>
     <SignInForm />
     {/*     <PasswordForgetLink /> */}
     <SignUpLink/>
@@ -76,7 +76,7 @@ class SignInFormBase extends Component {
           type="password"
           placeholder="Password"
         />
-        <button disabled={isInvalid} type="submit" className="signin-button">
+        <button disabled={isInvalid} type="submit" className="dl-form-button">
           Sign In
         </button>
 
