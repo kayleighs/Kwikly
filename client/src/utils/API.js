@@ -33,7 +33,7 @@ export default {
     return axios.post("/api/userEmployer", userData);
   },
   getUser: function (username) {
-    return axios.get("/api/user/byname/" + username);
+    return axios.get("/api/user/"+ username);
   },
   getEmployer: function (id) {
     return axios.get("/api/userEmployer/" + id);

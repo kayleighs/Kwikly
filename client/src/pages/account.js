@@ -15,13 +15,25 @@ class Account extends React.Component {
   state = {
     user: [],
   }
+/*   componentDidMount() {
+    this.loadUserInfo();
+  }
+  loadUserInfo = () => {
+    const uId = firebase.auth().currentUser.uid
+    console.log(uId)
+    API.getUser(uId)
+      .then(res =>
+        this.setState({ user: res.data })
+      )
+      .catch(err => console.log(err));
+  }; */
   componentDidMount() {
     // this.loadUserInfo();
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         // User is signed in.
         const uId = firebase.auth().currentUser.uid
-        //console.log(uId)
+        console.log(uId)
         API.getUser(uId)
           .then(res =>
             this.setState({ user: res.data })
@@ -30,7 +42,7 @@ class Account extends React.Component {
       }
     });
   }
-  loadUserInfo = () => {
+/*   loadUserInfo = () => {
         // User is signed in.
         const uId = firebase.auth().currentUser.uid
         //console.log(uId)
@@ -39,11 +51,16 @@ class Account extends React.Component {
             this.setState({ user: res.data })
           )
           .catch(err => console.log(err));
-  }
-   
+  } */
+  seeTheState = event => {
+    event.preventDefault();
+    console.log(this.state)
+
+  };
   render() {
     return (
       <div>
+        <button onClick={(event) => this.seeTheState(event)} className="btn btn-primary">Current State</button>
         {this.state.user.isAdmin ? 
           (<div>
             <EmployerCard
@@ -69,6 +86,7 @@ class Account extends React.Component {
               skills={this.state.user.skills}
             />
           </div>)
+          
         } 
         {/*       <ul>uid: {firebase.auth().currentUser.uid}</ul> */}
         {/*       <ul>Sign-in-provider: {firebase.auth().currentUser.providerId}</ul> */}
