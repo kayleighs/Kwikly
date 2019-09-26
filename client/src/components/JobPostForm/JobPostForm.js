@@ -36,6 +36,10 @@ class JobPostForm extends Component {
     });
   };
 
+  handleDropdown = input => {
+    this.setState({category: input});
+  }
+
   createJob(event, data) {
     event.preventDefault();
     console.log(data);
@@ -70,7 +74,7 @@ class JobPostForm extends Component {
       // the-hidden-leaf-village id is a reference to Naruto.
       //Its just used to hide the job form using display: none; 
       //Sorry for trolling, you should probably change this id but its really awesome.
-      <div className="form-page" id="the-hidden-leaf-village">
+      <div className="form-page" /*id="the-hidden-leaf-village"*/>
         <div className="container">
           <div className="row">
             <div className="col-1"></div>
@@ -90,15 +94,15 @@ class JobPostForm extends Component {
                 </div>
                 <div className="form-group">
                   <p>Category (pick one):</p>
-                    <select>
+                    <select onChange={this.handleInputChange.bind(this)} value={this.state.category}>
 
-                      <option name="category" value="Restaurant/Bar" onChange={this.handleInputChange}>Restaurant/Bar</option>
+                      <option name="category" value="Bar/Restaurant" onChange={this.handleInputChange}>Restaurant/Bar</option>
                       <option name="category" value="Pet Service" onChange={this.handleInputChange}>Pet Service</option>    
                       <option name="category" value="Household"  onChange={this.handleInputChange}>Household</option>
                       <option name="category" value="Outdoors"  onChange={this.handleInputChange}>Outdoors</option>      
                       <option name="category" value="Administrative"  onChange={this.handleInputChange}>Administrative</option>
                       <option name="category" value="Labor"  onChange={this.handleInputChange}>Labor</option> 
-                      <option name="category" value="Art/Design/Photography"  onChange= {this.handleInputChange}>Art/Design/Photography</option>  
+                      <option name="category" value="Art/Design/Photography"  onChange={this.handleInputChange}>Art/Design/Photography</option>  
                       <option name="category" value="Miscellaneous"  onChange={this.handleInputChange}>Miscellaneous</option>         
 
                     </select>
