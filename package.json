@@ -25,6 +25,6 @@
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.7.1",
-    "react-gravatar": "^2.6.3"
+    "react-modal": "^3.10.1"
   }
 }
