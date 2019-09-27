@@ -79,7 +79,8 @@ class SearchModal extends React.Component {
               < button id="close" onClick={this.hideModal} > X</button >
             </section>
         </ReactModal>
-        <button className="clearfix" type='button' id="open" onClick={this.showModal}>Search for Jobs.. </button>
+        <button className="clearfix" type='button' id="open" onClick={this.showModal}><img id="searchIcon" src={"https://img.icons8.com/cotton/2x/search--v2.png"}></img>
+Search for Jobs... </button>
       
       </main>
     )
