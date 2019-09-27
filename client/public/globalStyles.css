@@ -141,8 +141,8 @@ Sorry for trolling, you should probably change this id but its really awesome.
     font-size: 32px;
     color: black;
     border: 3px solid #5460B1;
-    border-radius: 10px;
-    font-size: 15px;
+    /* border-radius: 10px;
+    font-size: 15px; */
 }
 
 .sign-up-input-styles-statement {

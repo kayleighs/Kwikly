@@ -95,8 +95,12 @@ img#searchIcon {
   color: white;
   width: 190px;
   border-top-right-radius: 100px 90px;
-
-  
+}
+button#open:hover{
+  background-color: white; 
+  border: 3px solid #5460B1;
+  color: #5460B1;
+  cursor: pointer;
 }
 
 button#close {
@@ -108,9 +112,12 @@ button#close {
   background-color:white; 
   border: 4px outset #5460B1;
   float: right;
-
 }
-
+button#close:hover{
+  background-color: white; 
+  border: 3px solid #5460B1;
+  color: #5460B1;
+}
 li {
   font-weight: 700;
   font-size: 14px;
