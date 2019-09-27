@@ -12,6 +12,7 @@ class JobPostForm extends Component {
   
   state = {
     title: "",
+    image: "/images/Rest_bar.png",
     address: "",
     employer: "",
     category: "",
@@ -37,8 +38,38 @@ class JobPostForm extends Component {
     });
   };
 
-  handleDropdown = input => {
-    this.setState({category: input});
+  handleDropdown = event => {
+    let setPhoto;
+    if (event.target.value === "Bar/Restaurant") {
+      //setPhoto = "https://cdn1.iconfinder.com/data/icons/cocktail-bar-glyph/100/martini_bar_restaurant_drink_club-512.png";
+      setPhoto = "/images/Rest_bar.png";
+    } else if (event.target.value === "Pet Service") {
+      //setPhoto = "https://cdn0.iconfinder.com/data/icons/dog-4/100/dog-12-512.png";
+      setPhoto = "/images/pet.png";
+    } else if (event.target.value === "Household") {
+      //setPhoto = "https://cdn1.iconfinder.com/data/icons/misc-vol-1/512/house_home_household_domestic-512.png";
+      setPhoto = "/images/household.png";
+    } else if (event.target.value === "Outdoors") {
+      //setPhoto = "https://cdn3.iconfinder.com/data/icons/nature-animals/512/tree-512.png";
+      setPhoto = "/images/outdoors.png";
+    } else if (event.target.value === "Administrative") {
+      //setPhoto = "https://cdn3.iconfinder.com/data/icons/mobipeople/512/admin_add_user_edit_delete-512.png";
+      setPhoto = "/images/admin.png";
+    } else if (event.target.value === "Labor") {
+      //setPhoto = "https://cdn1.iconfinder.com/data/icons/occupations-3/100/13-512.png";
+      setPhoto = "/images/labor.png";
+    } else if (event.target.value === "Art/Design/Photography") {
+      //setPhoto = "https://www.shareicon.net/data/512x512/2015/12/31/695872_color_512x512.png";
+      setPhoto = "/images/art.png";
+    } else if (event.target.value === "Miscellaneous") {
+      //setPhoto = "https://cdn2.iconfinder.com/data/icons/budicon-misc/16/13-misc_-_puzzle_piece-512.png";
+      setPhoto = "/images/misc.png";
+    }
+
+    this.setState({
+      category: event.target.value,
+      image: setPhoto
+    });
   }
 
   createJob(event, data) {
@@ -52,6 +83,7 @@ class JobPostForm extends Component {
         }
       })).then(()=> API.savejob({
             title: data.title,
+            image: data.image,
             employer: data.employer,
             description: data.description,
             category: data.category,
@@ -83,20 +115,20 @@ class JobPostForm extends Component {
               <form>
                 <div className="form-group">
                   <label>Job Name</label>
-                  <input name="title" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.title}></input>
+                  <input id="inputJob" name="title" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.title}></input>
                 </div>
                 <div className="form-group">
                   <label>Address (exact)</label>
-                  <input name="address" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.address}></input>
+                  <input id="inputJob" name="address" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.address}></input>
                 </div>
                 <div className="form-group">
                   <label htmlFor="employer-input">Employer Name</label>
-                  <input name="employer" type="text" placeholder="..." className="employer-input form-control" onChange={this.handleInputChange} value={this.state.employer}></input>
+                  <input id="inputJob" name="employer" type="text" placeholder="..." className="employer-input form-control" onChange={this.handleInputChange} value={this.state.employer}></input>
                 </div>
                 <div className="form-group">
-                  <p>Category (pick one):</p>
-                    <select onChange={this.handleInputChange} name="category" value={this.state.value}>
 
+                  <p id="jobCategories">Category (pick one):</p>
+                    <select onChange={this.handleInputChange} name="category" value={this.state.value}>
                       <option value="Bar/Restaurant">Restaurant/Bar</option>
                       <option value="Pet Service">Pet Service</option>    
                       <option value="Household" >Household</option>
@@ -110,10 +142,10 @@ class JobPostForm extends Component {
                 </div>
                 <div className="form-group">
                   <label htmlFor="desc-input">Description</label>
-                  <textarea name="description" type="text" rows="3" placeholder="..." className="desc-input form-control" onChange={this.handleInputChange} value={this.state.description}></textarea>
+                  <textarea id="inputJob" name="description" type="text" rows="3" placeholder="..." className="desc-input form-control" onChange={this.handleInputChange} value={this.state.description}></textarea>
                 </div>
-                <button onClick={(event)=> this.createJob(event, this.state)} className="btn btn-primary">Submit</button>
-                <button onClick={(event)=> this.seeTheState(event)} className="btn btn-primary">Current State</button>
+                <button id="submitJob" onClick={(event)=> this.createJob(event, this.state)} className="btn btn-primary">Submit</button>
+                <button id="currentStateJob" onClick={(event)=> this.seeTheState(event)} className="btn btn-primary">Current State</button>
               </form>
               
             </div>

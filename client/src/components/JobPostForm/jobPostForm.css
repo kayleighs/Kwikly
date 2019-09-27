@@ -1,11 +1,78 @@
 .Job-Post-Form-Styles {
     /* height: 500px; */
     width: 250px;
-
+    
 
 }
 
 #job-post-header {
     display: flex;
     justify-content: center;
+}
+label{
+    font-family: 'Fugaz One', cursive;
+    background-color: #5460B1;
+    border-right: 10px solid #c9c9c9 ;
+    border-top-right-radius: 100px 50px;
+    background-clip: padding-box; 
+    color: white;
+    width: 167px;
+    height: fit-content;
+    padding-left: 10px;
+    /* padding-top: 30px; */
+    margin-top: 30px;
+    position: relative;
+}
+p.jobCateories{
+    font-family: 'Fugaz One', cursive;
+    background-color: #5460B1;
+    border-right: 10px solid #c9c9c9 ;
+    border-top-right-radius: 100px 50px;
+    background-clip: padding-box; 
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    padding-left: 10px;
+    /* padding-top: 30px; */
+    margin-top: 30px;
+    position: relative;
+}
+.inputJob{
+    border: 1px solid #5460B1;
+    font-family: 'Fugaz One', cursive;
+    color: white;
+    font-size: 20px;
+    cursor: pointer; 
+    border-radius: 10px;
+    font-size: 15px;
+}
+select{
+    border: 1px solid #5460B1;
+    font-size: 20px;
+    cursor: pointer; 
+    border-radius: 10px;
+    font-size: 15px;
+}
+button#submitJob{
+ border-radius: 50px;
+  font-family: 'Fugaz One', cursive;
+  color: #5460B1;
+  font-size: 20px;
+  cursor: pointer;
+  background-color:white; 
+  border: 4px outset #5460B1;
+  float: left;
+  margin: 10px;
+}
+
+button#currentStateJob{
+    border-radius: 50px;
+    font-family: 'Fugaz One', cursive;
+    color: #5460B1;
+    font-size: 20px;
+    cursor: pointer;
+    background-color:white; 
+    border: 4px outset #5460B1;
+    float: left;
+    margin: 10px;
 }

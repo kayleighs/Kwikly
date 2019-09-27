@@ -21,6 +21,7 @@ class HomePage extends Component {
 
   state = {
     category: this.props.category,
+    searchTerm: this.props.searchTerm,
     allJobs: []
   };
 
@@ -42,6 +43,14 @@ class HomePage extends Component {
       .then(res=> this.setState({ allJobs: res.data }))
       .catch(err => console.log(err));
   };
+
+  filterJobsByName = (filter) => {
+    API.getJobsbySearch(filter)
+    //.then(res=> console.log(res.data))
+    .then(res=> this.setState({ allJobs: res.data }))
+    .catch(err => console.log(err));
+  };
+
   seeTheState = event => {
     event.preventDefault();
     console.log(this.state)
@@ -58,9 +67,13 @@ class HomePage extends Component {
           <SideBar/>
           <GoogleMapCMPT/>
         </TopGrid>  
-        {this.props.location.state ? (
+        {this.props.location.state && this.props.location.state.category ? (
           <div className="d-flex justify-content-center">
             <button className="btn btn-primary" onClick={()=> this.filterJobs(this.props.location.state.category)}>Search by {this.props.location.state.category}</button>
+          </div>
+        ) : this.props.location.state && this.props.location.state.searchTerm ? (
+          <div className="d-flex justify-content-center">
+            <button className="btn btn-primary" onClick={()=> this.filterJobsByName(this.props.location.state.searchTerm)}>Search by {this.props.location.state.searchTerm}</button>
           </div>
         ): null}
 
@@ -70,7 +83,7 @@ class HomePage extends Component {
                   key={jobs._id}
                   title={jobs.title}
                   category={jobs.category}
-                  image="https://i.pinimg.com/originals/30/9d/df/309ddf5999bb72b8c08058199877917b.jpg"
+                  image={jobs.image}
                   description={jobs.description}
                   onClick={()=> console.log(this.props.location.state.category)}
                 />

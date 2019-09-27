@@ -46,9 +46,6 @@ html, body {
     background-image: linear-gradient(to bottom, #fffded, #5460B1);
 }
 
-<<<<<<< HEAD
-=======
-
 /*
 the-hidden-leaf-village id is a reference to Naruto.
 Its just used to hide the job form using display: none; 
@@ -76,7 +73,7 @@ Sorry for trolling, you should probably change this id but its really awesome.
 .signin-grid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(3, fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     
@@ -88,7 +85,11 @@ Sorry for trolling, you should probably change this id but its really awesome.
     border-top-right-radius: 100px 50px;
     background-clip: padding-box; 
     color: white;
-    width: 150px;
+    width: 160px;
+    height: fit-content;
+    padding-top: 30px;
+    margin-top: 30px;
+    position: relative;
 }
 
 .signin-input {
@@ -98,7 +99,7 @@ Sorry for trolling, you should probably change this id but its really awesome.
     margin: 10px;
     font-size: 32px;
     color: black;
-    border: 6px solid #5460B1;
+    border: 3px solid #5460B1;
     border-radius: 50px;
 }
 
@@ -118,8 +119,43 @@ Sorry for trolling, you should probably change this id but its really awesome.
 
 .dl-form-button:hover {
     background-color: white; 
-    border: 1px solid #5460B1;
+    border: 3px solid #5460B1;
     color: #5460B1;
+}
+
+.form-label-style {
+    display: flex;
+    padding-left: 20px;
+    font-family: 'Fugaz One', cursive;
+    background-color: #5460B1;
+    border-top-right-radius: 100px 50px;
+    background-clip: padding-box; 
+    color: white;
+    width: 190px;
+}
+
+.sign-up-input-styles {
+    height: 50px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 32px;
+    color: black;
+    border: 3px solid #5460B1;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.sign-up-input-styles-statement {
+    /* width: 500px; */
+    height: 100px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    color: black;
+    border: 3px solid #5460B1;
+    border-radius: 10px;
+    
+    
 }
 
 
@@ -127,10 +163,10 @@ Sorry for trolling, you should probably change this id but its really awesome.
 .checkbox-holder {
     display: block;
     position: relative;
-    padding-left: 35px;
+    padding-left: 30px;
     margin-bottom: 12px;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 20px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -186,6 +222,3 @@ Sorry for trolling, you should probably change this id but its really awesome.
 
 
 
-
-
->>>>>>> 6323771e3dfd7a3ac976b935653e7b9904b1aad2

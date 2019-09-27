@@ -43,8 +43,8 @@ class Map extends Component {
     return (
       <div className="map-page">
         <GoogleMap
-          defaultZoom={10}
-          defaultCenter={{ lat: 40.695210, lng: -74.001623 }}
+          defaultZoom={11}
+          defaultCenter={{ lat: 40.771395, lng: -73.983452 }}
         >
           {this.state.allJobs.map((loc)=> (
             // console.log(loc),
@@ -52,6 +52,7 @@ class Map extends Component {
               key={loc._id} 
               position={{lat: parseFloat(loc.location.lat), lng: parseFloat(loc.location.lng)}}
               onClick={()=> this.setSelectedMarker(loc)}
+              icon={{url: loc.image, scaledSize: new window.google.maps.Size(25, 25)}}
             />
           ))}
     
