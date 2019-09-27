@@ -120,6 +120,38 @@ Sorry for trolling, you should probably change this id but its really awesome.
     color: #5460B1;
 }
 
+.form-label-style {
+    display: flex;
+    justify-content: center;
+    font-family: 'Fugaz One', cursive;
+    background-color: #5460B1;
+    border-top-right-radius: 100px 50px;
+    background-clip: padding-box; 
+    color: white;
+    width: 190px;
+}
+
+.sign-up-input-styles {
+    height: 50px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 32px;
+    color: black;
+    border: 3px solid #5460B1;
+    border-radius: 10px;
+}
+
+.sign-up-input-styles-statement {
+    /* width: 500px; */
+    height: 100px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    color: black;
+    border: 3px solid #5460B1;
+    border-radius: 10px;
+}
+
 
 /*Checkbox Styles*/
 .checkbox-holder {
@@ -182,16 +214,6 @@ Sorry for trolling, you should probably change this id but its really awesome.
     transform: rotate(45deg);
 }
 
-.form-label-style {
-    display: flex;
-    justify-content: center;
-    font-family: 'Fugaz One', cursive;
-    background-color: #5460B1;
-    border-top-right-radius: 100px 50px;
-    background-clip: padding-box; 
-    color: white;
-    width: 190px;
-}
 
 
 

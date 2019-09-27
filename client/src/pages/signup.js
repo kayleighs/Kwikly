@@ -158,28 +158,28 @@ class SignUpFormBase extends Component {
             <div className="col-12">
               <form>
                 <div className="form-group">
-                  <label className="form-label-style">User Name</label>
-                  <input name="username" type="text" placeholder="..." className="title-input form-control " onChange={this.onChange} value={this.state.username}></input>
+                  <label className="form-label-style">Username</label>
+                  <input name="username" type="text" placeholder="Username" className="title-input form-control sign-up-input-styles" onChange={this.onChange} value={this.state.username}></input>
                 </div>
                 <div className="form-group">
                   <label className="form-label-style">Password</label>
-                  <input name="passwordOne" type="password" placeholder="..." className="title-input form-control" onChange={this.onChange} value={this.state.passwordOne}></input>
+                  <input name="passwordOne" type="password" placeholder="Password" className="title-input form-control sign-up-input-styles" onChange={this.onChange} value={this.state.passwordOne}></input>
                 </div>
                 <div className="form-group">
                   <label className="form-label-style">Confirm Password</label>
-                  <input name="passwordTwo" value={this.state.passwordTwo} onChange={this.onChange} type="password" placeholder="Confirm Password" className="title-input form-control"/>
+                  <input name="passwordTwo" value={this.state.passwordTwo} onChange={this.onChange} type="password" placeholder="Confirm Password" className="title-input form-control sign-up-input-styles"/>
                 </div>
                 <div className="form-group">
                   <label className="form-label-style">Email</label>
-                  <input name="email" type="text" placeholder="..." className="title-input form-control" onChange={this.onChange} value={this.state.email}></input>
+                  <input name="email" type="text" placeholder="YourEmail@Email.Com" className="title-input form-control sign-up-input-styles" onChange={this.onChange} value={this.state.email}></input>
                 </div>
                 <div className="form-group">
                   <label className="form-label-style">Address (exact)</label>
-                  <input name="address" type="text" placeholder="..." className="title-input form-control" onChange={this.onChange} value={address}></input>
+                  <input name="address" type="text" placeholder="1111 East Street City,State ZipCode" className="title-input form-control sign-up-input-styles" onChange={this.onChange} value={address}></input>
                 </div>
                 <div className="form-group">
                   <label className="form-label-style" htmlFor="desc-input">Statement</label>
-                  <textarea name="statement" type="text" rows="3" placeholder="..." className="desc-input form-control" onChange={this.onChange} value={statement}></textarea>
+                  <textarea name="statement" type="text" rows="3" placeholder="Talk about yourself a little bit..." className="desc-input form-control sign-up-input-styles-statement" onChange={this.onChange} value={statement}></textarea>
                 </div>
 
                 <label className="checkbox-holder">
