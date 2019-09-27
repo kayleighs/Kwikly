@@ -89,7 +89,8 @@ class HomePage extends Component {
                 />
           ))}
         </BottomGrid>
-        {/* <button onClick={(event) => this.seeTheState(event)} className="btn btn-primary">Current State</button> */}
+        <button onClick={(event) => this.seeTheState(event)} className="btn btn-primary">Current State</button>
+        <button onClick={()=> console.log(this.props.location)} className="btn btn-primary">Current Props</button>
         <Footer/>
 
       </div>
