@@ -190,3 +190,17 @@
   height: 50px;
   cursor: pointer;
 }
+
+.edit-button {
+  position: relative;
+  bottom: 35px;
+  right: 15px;
+  background-color: transparent;
+  text-decoration: underline !important;
+}
+.edit-button:hover {
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+transform: scale(1.5);
+text-decoration: none !important;
+}

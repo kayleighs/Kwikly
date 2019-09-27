@@ -3,17 +3,20 @@ import { Link } from 'react-router-dom';
 import * as ROUTES from '../constants/routes';
 
 import * as firebase from 'firebase';
-
+import { ToastContainer } from "react-toastr";
 
 import API from "../utils/API";
 
 import EmployerCard from './../components/EmpolyerCard/EmployerCard';
 import UserCard from './../components/UserCard/UserCard';
 
+let container;
 //const uId = firebase.auth().currentUser.uid 
 class Account extends React.Component {
   state = {
     user: [],
+    newStatement: '',
+    newSeekingOrSkills: ''
   }
 /*   componentDidMount() {
     this.loadUserInfo();
@@ -57,9 +60,47 @@ class Account extends React.Component {
     console.log(this.state)
 
   };
+
+  updateStatement(userId, userObj) {
+   // console.log("clicked")
+    var userObj= this.state.user
+    var userId= this.state.user._id
+    userObj.statement = this.state.newStatement
+    this.setState({user:userObj})
+    //console.log(this.state)
+    //console.log(userId, userObj)
+    API.editUser(userId,userObj)
+    console.log("successfully updated")
+    container.success(`Success`, `Statement Updated!`, {
+      closeButton: true,
+    })
+  }
+  updateSeekingOrSkills(userId, userObj) {
+    // console.log("clicked")
+    var userObj = this.state.user
+    var userId = this.state.user._id
+    userObj.seekingOrSkills = this.state.newSeekingOrSkills
+    this.setState({ user: userObj })
+    //console.log(this.state)
+    //console.log(userId, userObj)
+    API.editUser(userId, userObj)
+    console.log("successfully updated")
+    container.success(`Success`, `Seeking Updated!`, {
+      closeButton: true,
+    })
+  }
+  onChange = event => {
+    //console.log("changed")
+    //console.log(event.target)
+    this.setState({ [event.target.name]: event.target.value });
+  };
   render() {
     return (
       <div>
+        <ToastContainer
+          ref={ref => container = ref}
+          className="toast-bottom-right"
+        />
          <button onClick={(event) => this.seeTheState(event)} className="btn btn-primary">Current State</button>
         {this.state.user.isAdmin ? 
           (<div>
@@ -70,6 +111,10 @@ class Account extends React.Component {
               statement={this.state.user.statement}
               location={this.state.user.location}
               address={this.state.user.address}
+              seekingOrSkills={this.state.user.seekingOrSkills}
+              onChange={this.onChange}
+              updateStatement={() => this.updateStatement()}
+              updateSeeking={() => this.updateSeekingOrSkills()}
             />
             <Link to={ROUTES.POSTJOB}>Post a Job</Link>
           </div>): 
