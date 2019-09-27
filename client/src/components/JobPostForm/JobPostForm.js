@@ -15,7 +15,7 @@ class JobPostForm extends Component {
     image: "/images/Rest_bar.png",
     address: "",
     employer: "",
-    category: "",
+    category: "Bar/Restaurant",
     description: "",
     location: {
       lat: "",
@@ -38,7 +38,7 @@ class JobPostForm extends Component {
     });
   };
 
-  handleDropdown = event => {
+  handleDropdown = (event) => {
     let setPhoto;
     if (event.target.value === "Bar/Restaurant") {
       //setPhoto = "https://cdn1.iconfinder.com/data/icons/cocktail-bar-glyph/100/martini_bar_restaurant_drink_club-512.png";
@@ -128,7 +128,7 @@ class JobPostForm extends Component {
                 <div className="form-group">
 
                   <p id="jobCategories">Category (pick one):</p>
-                    <select onChange={this.handleInputChange} name="category" value={this.state.value}>
+                    <select onChange={this.handleDropdown} name="category" value={this.state.value}>
                       <option value="Bar/Restaurant">Restaurant/Bar</option>
                       <option value="Pet Service">Pet Service</option>    
                       <option value="Household" >Household</option>
