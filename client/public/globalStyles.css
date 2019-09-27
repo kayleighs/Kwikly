@@ -46,7 +46,6 @@ html, body {
     background-image: linear-gradient(to bottom, #fffded, #5460B1);
 }
 
-
 /*
 the-hidden-leaf-village id is a reference to Naruto.
 Its just used to hide the job form using display: none; 
@@ -213,7 +212,6 @@ Sorry for trolling, you should probably change this id but its really awesome.
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
-
 
 
 

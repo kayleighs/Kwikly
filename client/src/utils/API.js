@@ -32,8 +32,8 @@ export default {
   saveEmployer: function (userData) {
     return axios.post("/api/userEmployer", userData);
   },
-  getUser: function (username) {
-    return axios.get("/api/user/"+ username);
+  getUser: function (id) {
+    return axios.get("/api/user/"+ id);
   },
   getEmployer: function (id) {
     return axios.get("/api/userEmployer/" + id);
