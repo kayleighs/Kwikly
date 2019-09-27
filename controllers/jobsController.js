@@ -23,7 +23,7 @@ module.exports = {
   },
   findBySearch: function (req, res) {
     db.Jobs
-      .find({title: /wed/i})
+      .find({title: { $regex :req.params.term, $options: "i" }})
       .then(dbModel => res.json(dbModel))
       .catch(err=> res.status(422).json(err));
   },
