@@ -19,4 +19,8 @@ router
   .route("/by-category/:category")
   .get(jobsController.findByCategory);
 
+  router
+    .route("/by-search/:term")
+    .get(jobsController.findBySearch);
+
 module.exports = router;
