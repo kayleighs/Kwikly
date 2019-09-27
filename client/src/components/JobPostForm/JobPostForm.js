@@ -94,7 +94,7 @@ class JobPostForm extends Component {
             }
       })
       .then(() => this.componentDidMount())
-      .catch(err => console.log(err)));
+      .catch(err => console.log(err)))
   };
 
   seeTheState = event => {

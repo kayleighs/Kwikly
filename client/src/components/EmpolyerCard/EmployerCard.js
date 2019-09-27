@@ -98,7 +98,7 @@ render() {
         <h2>Seeking:</h2>
         <a id="saveButtonS" className="float-right edit-button " onClick={this.onSaveS}>Save</a>
         <a id="editButtonS" className="float-right edit-button" onClick={this.toggleInputAboutS}>Edit</a>
-        <textarea id="seekingOrSkillsInputBox" name="newSeekingOrSkills" type="text" rows="3" placeholder="..." className="desc-input form-control" onChange={this.props.onChange} value={this.props.newSeekingOrSkills} defaultValue={this.props.seekingOrSkills}></textarea>
+        <textarea id="seekingOrSkillsInputBox" name="newSeekingOrSkills" type="text" rows="3" placeholder="..." className="desc-input form-control" onChange={this.props.onChange} value={this.props.newSeekingOrSkills}></textarea>
         <p id="seekingOrSkills">{this.props.seekingOrSkills}</p>
       </div>
 
@@ -157,7 +157,7 @@ render() {
         <h2>About Us:</h2>
         <a id="saveButton" className="float-right edit-button " onClick={this.onSave}>Save</a>
         <a id="editButton" className="float-right edit-button" onClick={this.toggleInputAbout}>Edit</a>
-        <textarea id="statementInputBox" name="newStatement" type="text" rows="3" placeholder="..." className="desc-input form-control" onChange={this.props.onChange} value={this.props.newStatement} defaultValue={this.props.statement}></textarea>
+        <textarea id="statementInputBox" name="newStatement" type="text" rows="3" placeholder="..." className="desc-input form-control" onChange={this.props.onChange} value={this.props.newStatement}></textarea>
         <p id="statement">{this.props.statement}</p>
       </div>
 
