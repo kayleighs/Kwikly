@@ -112,8 +112,8 @@ class JobPostForm extends Component {
                   <label htmlFor="desc-input">Description</label>
                   <textarea name="description" type="text" rows="3" placeholder="..." className="desc-input form-control" onChange={this.handleInputChange} value={this.state.description}></textarea>
                 </div>
-                <button onClick={(event)=> this.createJob(event, this.state)} className="btn btn-primary">Submit</button>
-                <button onClick={(event)=> this.seeTheState(event)} className="btn btn-primary">Current State</button>
+                <button id="submit" onClick={(event)=> this.createJob(event, this.state)} className="btn btn-primary">Submit</button>
+                <button id="currentState" onClick={(event)=> this.seeTheState(event)} className="btn btn-primary">Current State</button>
               </form>
               
             </div>

@@ -144,7 +144,18 @@ input#search-bar {
 .modal-main {
   animation: fadeIn 0.5s;
 }
-
+button#search-now{
+  background-color: #5460B1; 
+  border: 1px solid #5460B1;
+  border-radius: 50px 100px;
+  font-family: 'Fugaz One', cursive;
+  color: #5460B1;
+  font-size: 20px;
+  cursor: pointer;
+  background-color:white; 
+  border: 4px outset #5460B1;
+  border-top-right-radius: 100px 90px;
+}
 .modal-main{
   /* width: fit-content; */
 }
