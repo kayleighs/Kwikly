@@ -15,7 +15,7 @@ class JobPostForm extends Component {
     image: "/images/Rest_bar.png",
     address: "",
     employer: "",
-    category: "Bar/Restaurant",
+    category: "Bar Restaurant",
     description: "",
     location: {
       lat: "",
@@ -40,10 +40,10 @@ class JobPostForm extends Component {
 
   handleDropdown = (event) => {
     let setPhoto;
-    if (event.target.value === "Bar/Restaurant") {
+    if (event.target.value === "Bar Restaurant") {
       //setPhoto = "https://cdn1.iconfinder.com/data/icons/cocktail-bar-glyph/100/martini_bar_restaurant_drink_club-512.png";
       setPhoto = "/images/Rest_bar.png";
-    } else if (event.target.value === "Pet Service") {
+    } else if (event.target.value === "Pet Services") {
       //setPhoto = "https://cdn0.iconfinder.com/data/icons/dog-4/100/dog-12-512.png";
       setPhoto = "/images/pet.png";
     } else if (event.target.value === "Household") {
@@ -58,7 +58,7 @@ class JobPostForm extends Component {
     } else if (event.target.value === "Labor") {
       //setPhoto = "https://cdn1.iconfinder.com/data/icons/occupations-3/100/13-512.png";
       setPhoto = "/images/labor.png";
-    } else if (event.target.value === "Art/Design/Photography") {
+    } else if (event.target.value === "Art Design Photography") {
       //setPhoto = "https://www.shareicon.net/data/512x512/2015/12/31/695872_color_512x512.png";
       setPhoto = "/images/art.png";
     } else if (event.target.value === "Miscellaneous") {
@@ -129,13 +129,13 @@ class JobPostForm extends Component {
 
                   <p id="jobCategories">Category (pick one):</p>
                     <select onChange={this.handleDropdown} name="category" value={this.state.value}>
-                      <option value="Bar/Restaurant">Restaurant/Bar</option>
-                      <option value="Pet Service">Pet Service</option>    
+                      <option value="Bar Restaurant">Restaurant/Bar</option>
+                      <option value="Pet Services">Pet Service</option>    
                       <option value="Household" >Household</option>
                       <option value="Outdoors" >Outdoors</option>      
                       <option value="Administrative" >Administrative</option>
                       <option value="Labor" >Labor</option> 
-                      <option value="Art/Design/Photography" >Art/Design/Photography</option>  
+                      <option value="Art Design Photography" >Art/Design/Photography</option>  
                       <option value="Miscellaneous" >Miscellaneous</option>         
 
                     </select>

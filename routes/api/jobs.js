@@ -16,8 +16,8 @@ router
   .delete(jobsController.remove);
 
   router
-  .route("/by-category/:category")
-  .get(jobsController.findByCategory);
+    .route("/by-category/:category")
+    .get(jobsController.findByCategory);
 
   router
     .route("/by-search/:term")
