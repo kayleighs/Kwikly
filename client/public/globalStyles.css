@@ -220,5 +220,15 @@ Sorry for trolling, you should probably change this id but its really awesome.
     transform: rotate(45deg);
 }
 
-
+button.btn-primary{
+    background-color: #5460B1; 
+    border: 1px solid #5460B1;
+    border-radius: 100px;
+    font-family: 'Fugaz One', cursive;
+    color: #5460B1;
+    font-size: 20px;
+    cursor: pointer;
+    background-color:white; 
+    border: 4px outset #5460B1;
+}
 

@@ -118,7 +118,7 @@ class JobPostForm extends Component {
                   <input id="inputJob" name="title" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.title}></input>
                 </div>
                 <div className="form-group">
-                  <label>Address (exact)</label>
+                  <label id="employer-input">Address (exact)</label>
                   <input id="inputJob" name="address" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.address}></input>
                 </div>
                 <div className="form-group">
