@@ -204,3 +204,12 @@
 transform: scale(1.5);
 text-decoration: none !important;
 }
+
+.button-link {
+  color: black;
+  padding: 9px;
+}
+.button-link:hover {
+  color: black;
+  text-decoration: none;
+}

@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
+
 import './employerCard.css';
 //import Button from '../Buttons/Button';
 import DMicon from './DMicon/DM-Icon.png';
@@ -156,7 +159,6 @@ render() {
         <a id="editButton" className="float-right edit-button" onClick={this.toggleInputAbout}>Edit</a>
         <textarea id="statementInputBox" name="newStatement" type="text" rows="3" placeholder="..." className="desc-input form-control" onChange={this.props.onChange} value={this.props.newStatement}>{this.props.statement}</textarea>
         <p id="statement">{this.props.statement}</p>
-        
       </div>
 
       {/*This section holds two buttons.*/} 
@@ -165,7 +167,7 @@ render() {
       {/*========================================================================*/}
       <div className="Item-Employer-Card-6 Item">
       <button className="Item-6-Grid-1 button-style"><p>Current Jobs</p></button>
-      <button className="Item-6-Grid-2 button-style"  onClick={() => this.props.showJobPostForm()}>Create Job</button>
+        <Link to={ROUTES.POSTJOB} className="Item-6-Grid-2 button-style button-link"> Create Job </Link>
       </div>
 
     </div>

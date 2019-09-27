@@ -7,7 +7,7 @@ import BottomGrid from '../components/Grids/HomePageGrids/BottomGrid/BottomGrid'
 import NavBar from './../components/NavBar/NavBar';
 import Footer from './../components/Footer/Footer';
 import SideBar from './../components/SideBar/SideBar';
-import UserCard from './../components/UserCard/UserCard';
+import UserCard from '../components/UserCard/UserCard';
 
 
 /*Mock Data*/
