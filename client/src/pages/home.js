@@ -46,8 +46,8 @@ class HomePage extends Component {
 
   filterJobsByName = (filter) => {
     API.getJobsbySearch(filter)
-    .then(res=> console.log(res.data))
-    //.then(res=> this.setState({ allJobs: res.data }))
+    //.then(res=> console.log(res.data))
+    .then(res=> this.setState({ allJobs: res.data }))
     .catch(err => console.log(err));
   };
 

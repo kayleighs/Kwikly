@@ -44,6 +44,14 @@ class HomePageLoggedIn extends Component {
       .then(res => this.setState({ allJobs: res.data }))
       .catch(err => console.log(err));
   };
+
+  filterJobsByName = (filter) => {
+    API.getJobsbySearch(filter)
+    //.then(res=> console.log(res.data))
+    .then(res=> this.setState({ allJobs: res.data }))
+    .catch(err => console.log(err));
+  };
+
   seeTheState = event => {
     event.preventDefault();
     console.log(this.state)
@@ -60,11 +68,15 @@ class HomePageLoggedIn extends Component {
           <SideBar />
           <GoogleMapCMPT />
         </TopGrid>
-        {this.props.location.state ? (
+        {this.props.location.state && this.props.location.state.category ? (
           <div className="d-flex justify-content-center">
-            <button className="btn btn-primary" onClick={() => this.filterJobs(this.props.location.state.category)}>Search by {this.props.location.state.category}</button>
+            <button className="btn btn-primary" onClick={()=> this.filterJobs(this.props.location.state.category)}>Search by {this.props.location.state.category}</button>
           </div>
-        ) : null}
+        ) : this.props.location.state && this.props.location.state.searchTerm ? (
+          <div className="d-flex justify-content-center">
+            <button className="btn btn-primary" onClick={()=> this.filterJobsByName(this.props.location.state.searchTerm)}>Search by {this.props.location.state.searchTerm}</button>
+          </div>
+        ): null}
 
         <BottomGrid>
           {this.state.allJobs.map(jobs => (
