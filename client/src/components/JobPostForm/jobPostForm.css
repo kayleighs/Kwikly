@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
 }
-label{
+label.employer-input{
     font-family: 'Fugaz One', cursive;
     background-color: #5460B1;
     border-right: 10px solid #c9c9c9 ;
