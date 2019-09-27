@@ -60,7 +60,7 @@ class Account extends React.Component {
   render() {
     return (
       <div>
-        {/* <button onClick={(event) => this.seeTheState(event)} className="btn btn-primary">Current State</button> */}
+        {/* {/* <button onClick={(event) => this.seeTheState(event)} className="btn btn-primary">Current State</button> */}
         {this.state.user.isAdmin ? 
           (<div>
             <EmployerCard
@@ -87,7 +87,7 @@ class Account extends React.Component {
             />
           </div>)
           
-        } 
+        }  */}
         {/*       <ul>uid: {firebase.auth().currentUser.uid}</ul> */}
         {/*       <ul>Sign-in-provider: {firebase.auth().currentUser.providerId}</ul> */}
       </div>
