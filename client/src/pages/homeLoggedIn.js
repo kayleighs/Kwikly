@@ -84,7 +84,7 @@ class HomePageLoggedIn extends Component {
               key={jobs._id}
               title={jobs.title}
               category={jobs.category}
-              image="https://i.pinimg.com/originals/30/9d/df/309ddf5999bb72b8c08058199877917b.jpg"
+              image={jobs.image}
               description={jobs.description}
               onClick={() => console.log(this.props.location.state.category)}
             />
