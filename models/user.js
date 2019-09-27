@@ -17,6 +17,7 @@ const userSchema = new Schema({
     lat : { type: String},
     lng : { type: String}
   },
+  seekingOrSkills: {type: String},
   dateJoined: { type: Date, default: Date.now }
 
 });
