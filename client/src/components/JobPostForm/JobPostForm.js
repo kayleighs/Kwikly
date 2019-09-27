@@ -43,7 +43,7 @@ class JobPostForm extends Component {
     if (event.target.value === "Bar Restaurant") {
       //setPhoto = "https://cdn1.iconfinder.com/data/icons/cocktail-bar-glyph/100/martini_bar_restaurant_drink_club-512.png";
       setPhoto = "/images/Rest_bar.png";
-    } else if (event.target.value === "Pet Service") {
+    } else if (event.target.value === "Pet Services") {
       //setPhoto = "https://cdn0.iconfinder.com/data/icons/dog-4/100/dog-12-512.png";
       setPhoto = "/images/pet.png";
     } else if (event.target.value === "Household") {
