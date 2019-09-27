@@ -97,7 +97,7 @@ class Account extends React.Component {
           ref={ref => container = ref}
           className="toast-bottom-right"
         />
-          <button onClick={(event) => this.seeTheState(event)} className="btn btn-primary">Current State</button>
+          {/* <button onClick={(event) => this.seeTheState(event)} className="btn btn-primary">Current State</button> */}
         {this.state.user.isAdmin ? 
           (<div>
             <EmployerCard
@@ -109,6 +109,8 @@ class Account extends React.Component {
               address={this.state.user.address}
               seekingOrSkills={this.state.user.seekingOrSkills}
               onChange={this.onChange}
+              newStatement={this.state.newStatement}
+              newSeekingOrSkills={this.state.newSeekingOrSkills}
               updateStatement={() => this.updateStatement()}
               updateSeeking={() => this.updateSeeking()}
             />
