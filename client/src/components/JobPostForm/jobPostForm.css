@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
 }
-label.employer-input{
+label#employer-input{
     font-family: 'Fugaz One', cursive;
     background-color: #5460B1;
     border-right: 10px solid #c9c9c9 ;
@@ -23,7 +23,7 @@ label.employer-input{
     margin-top: 30px;
     position: relative;
 }
-p.jobCateories{
+p#jobCategories{
     font-family: 'Fugaz One', cursive;
     background-color: #5460B1;
     border-right: 10px solid #c9c9c9 ;
@@ -37,7 +37,7 @@ p.jobCateories{
     margin-top: 30px;
     position: relative;
 }
-.inputJob{
+#inputJob{
     border: 1px solid #5460B1;
     font-family: 'Fugaz One', cursive;
     color: white;
