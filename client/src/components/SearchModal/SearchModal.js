@@ -6,7 +6,7 @@ import * as ROUTES from '../../constants/routes';
 
 
 class SearchModal extends React.Component {
-  state = { show: false, category: "Miscellaneous" }
+  state = { show: false, category: "Miscellaneous", searchBar: "" }
 
   showModal = () => {
     this.setState({ show: true });
@@ -18,6 +18,14 @@ class SearchModal extends React.Component {
 
   onSubmit(newValue) {
     this.setState({ show: false, category: newValue })
+  };
+
+  handleInputChange = event => {
+    console.log(event.target)
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
   };
 
   render() {
@@ -48,7 +56,10 @@ class SearchModal extends React.Component {
     }}}
     isOpen={this.state.show} onRequestClose={this.hideModal}>
             <section className='modal-main'>
-              <input type="text" id="search-bar" placeholder="Search for Jobs..."></input>
+              <div id="seaching-div">
+                <input type="text" style={{width: "85%", color: "black"}}name="searchBar" id="search-bar" placeholder="Search for Jobs..." value={this.state.searchBar} onChange={this.handleInputChange}></input>
+                <Link to={{pathname:ROUTES.LANDING, state:{searchTerm: this.state.searchBar}}} onClick={()=> this.onSubmit("")}><button id="search-now" className="d-inline">Search</button ></Link>
+              </div>
               <div className="clearfix"><Link to={{pathname:ROUTES.LANDING, state:{category:"Bar/Restaurant"}}} onClick={()=> this.onSubmit("Bar/Restaurant")}>
                 <img id="searchIcon" src={"https://img.icons8.com/cotton/2x/search--v2.png"}></img>Restarant/Bar</Link></div>
                 <div className="clearfix"><Link to={{pathname:ROUTES.LANDING, state:{category:"Pet Services"}}} onClick={()=> this.onSubmit("Pet Services")}>
