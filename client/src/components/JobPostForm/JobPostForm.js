@@ -83,18 +83,18 @@ class JobPostForm extends Component {
               <form>
                 <div className="form-group">
                   <label>Job Name</label>
-                  <input name="title" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.title}></input>
+                  <input id="inputJob" name="title" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.title}></input>
                 </div>
                 <div className="form-group">
                   <label>Address (exact)</label>
-                  <input name="address" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.address}></input>
+                  <input id="inputJob" name="address" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.address}></input>
                 </div>
                 <div className="form-group">
                   <label htmlFor="employer-input">Employer Name</label>
-                  <input name="employer" type="text" placeholder="..." className="employer-input form-control" onChange={this.handleInputChange} value={this.state.employer}></input>
+                  <input id="inputJob" name="employer" type="text" placeholder="..." className="employer-input form-control" onChange={this.handleInputChange} value={this.state.employer}></input>
                 </div>
                 <div className="form-group">
-                  <p>Category (pick one):</p>
+                  <p id="jobCategories">Category (pick one):</p>
                     <select onChange={this.handleInputChange} name="category" value={this.state.value}>
 
                       <option value="Bar/Restaurant">Restaurant/Bar</option>
@@ -110,10 +110,10 @@ class JobPostForm extends Component {
                 </div>
                 <div className="form-group">
                   <label htmlFor="desc-input">Description</label>
-                  <textarea name="description" type="text" rows="3" placeholder="..." className="desc-input form-control" onChange={this.handleInputChange} value={this.state.description}></textarea>
+                  <textarea id="inputJob" name="description" type="text" rows="3" placeholder="..." className="desc-input form-control" onChange={this.handleInputChange} value={this.state.description}></textarea>
                 </div>
-                <button id="submit" onClick={(event)=> this.createJob(event, this.state)} className="btn btn-primary">Submit</button>
-                <button id="currentState" onClick={(event)=> this.seeTheState(event)} className="btn btn-primary">Current State</button>
+                <button id="submitJob" onClick={(event)=> this.createJob(event, this.state)} className="btn btn-primary">Submit</button>
+                <button id="currentStateJob" onClick={(event)=> this.seeTheState(event)} className="btn btn-primary">Current State</button>
               </form>
               
             </div>

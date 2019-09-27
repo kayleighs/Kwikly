@@ -23,7 +23,7 @@ label{
     margin-top: 30px;
     position: relative;
 }
-p{
+p.jobCateories{
     font-family: 'Fugaz One', cursive;
     background-color: #5460B1;
     border-right: 10px solid #c9c9c9 ;
@@ -37,7 +37,7 @@ p{
     margin-top: 30px;
     position: relative;
 }
-.form-control{
+.inputJob{
     border: 1px solid #5460B1;
     font-family: 'Fugaz One', cursive;
     color: white;
@@ -53,7 +53,7 @@ select{
     border-radius: 10px;
     font-size: 15px;
 }
-button#submit{
+button#submitJob{
  border-radius: 50px;
   font-family: 'Fugaz One', cursive;
   color: #5460B1;
@@ -65,7 +65,7 @@ button#submit{
   margin: 10px;
 }
 
-button#currentState{
+button#currentStateJob{
     border-radius: 50px;
     font-family: 'Fugaz One', cursive;
     color: #5460B1;
