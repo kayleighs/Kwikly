@@ -1,6 +1,6 @@
 import React from 'react';
 import './employerCard.css';
-import Button from '../Buttons/Button';
+//import Button from '../Buttons/Button';
 import DMicon from './DMicon/DM-Icon.png';
 import Gravatar from 'react-gravatar';
 import ReactModal from 'react-modal';
@@ -14,7 +14,7 @@ function EmployerCard(props) {
       {/*This section holds user image, first & last name and bussiness name*/}
       {/*========================================================================*/}
       <div className="Item-Employer-Card-1 Item">
-        <Gravatar email={props.email} id="EmployerImg" alt={props.id} />
+       <Gravatar email={props.email} id="EmployerImg" alt={props.id} />
         <p className="ks-container color-1-red">Employer</p>
         <p className="ks-container color-2-yellow">{props.username}</p>
         <p className="ks-container color-3-blue">{props.email}</p>
@@ -24,7 +24,7 @@ function EmployerCard(props) {
       {/*========================================================================*/}
       <div className="Item-Employer-Card-2 Item ks-container color-2-yellow">
         <h2>Seeking:</h2>
-        {props.seeking}
+
       </div>
 
       {/*Badge and DM section*/}
@@ -82,6 +82,7 @@ function EmployerCard(props) {
         <h2>About Us:</h2>
           {props.statement}
       </div>
+      <button className="Item-6-Grid-2 button-style" onClick={() => this.props.editStatement()}>edit statement</button>
 
       {/*This section holds two buttons.*/} 
       {/*Button num1 displays the employer's current job postings.*/} 

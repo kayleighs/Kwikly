@@ -60,17 +60,16 @@ class Account extends React.Component {
   render() {
     return (
       <div>
-        {/* <button onClick={(event) => this.seeTheState(event)} className="btn btn-primary">Current State</button> */}
+         <button onClick={(event) => this.seeTheState(event)} className="btn btn-primary">Current State</button>
         {this.state.user.isAdmin ? 
           (<div>
             <EmployerCard
               id={this.state.user.id}
-              firstName={this.state.user.FirstName}
-              lastName={this.state.user.LastName}
-              businessName={this.state.user.BusinessName}
-              description={this.state.user.Description}
-              image={this.state.user.image}
+              username={this.state.user.username}
+              email={this.state.user.email}
+              statement={this.state.user.statement}
               location={this.state.user.location}
+              address={this.state.user.address}
             />
             <Link to={ROUTES.POSTJOB}>Post a Job</Link>
           </div>): 
@@ -80,7 +79,6 @@ class Account extends React.Component {
               username={this.state.user.username}
               email={this.state.user.email}
               JobTitle={this.state.user.JobTitle}
-              image={this.state.user.image}
               statement={this.state.user.statement}
               address={this.state.user.address}
               skills={this.state.user.skills}
