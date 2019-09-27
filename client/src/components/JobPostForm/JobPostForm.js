@@ -15,7 +15,7 @@ class JobPostForm extends Component {
     image: "/images/Rest_bar.png",
     address: "",
     employer: "",
-    category: "",
+    category: "Bar/Restaurant",
     description: "",
     location: {
       lat: "",
@@ -38,7 +38,7 @@ class JobPostForm extends Component {
     });
   };
 
-  handleDropdown = event => {
+  handleDropdown = (event) => {
     let setPhoto;
     if (event.target.value === "Bar/Restaurant") {
       //setPhoto = "https://cdn1.iconfinder.com/data/icons/cocktail-bar-glyph/100/martini_bar_restaurant_drink_club-512.png";
@@ -114,21 +114,21 @@ class JobPostForm extends Component {
             <div className="col-10">
               <form>
                 <div className="form-group">
-                  <label>Job Name</label>
+                  <label id="employer-input">Job Name</label>
                   <input id="inputJob" name="title" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.title}></input>
                 </div>
                 <div className="form-group">
-                  <label>Address (exact)</label>
+                  <label id="employer-input">Address (exact)</label>
                   <input id="inputJob" name="address" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.address}></input>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="employer-input">Employer Name</label>
+                  <label id="employer-input" htmlFor="employer-input">Employer Name</label>
                   <input id="inputJob" name="employer" type="text" placeholder="..." className="employer-input form-control" onChange={this.handleInputChange} value={this.state.employer}></input>
                 </div>
                 <div className="form-group">
 
                   <p id="jobCategories">Category (pick one):</p>
-                    <select onChange={this.handleInputChange} name="category" value={this.state.value}>
+                    <select onChange={this.handleDropdown} name="category" value={this.state.value}>
                       <option value="Bar/Restaurant">Restaurant/Bar</option>
                       <option value="Pet Service">Pet Service</option>    
                       <option value="Household" >Household</option>
@@ -141,7 +141,7 @@ class JobPostForm extends Component {
                     </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="desc-input">Description</label>
+                  <label id="employer-input" htmlFor="desc-input">Description</label>
                   <textarea id="inputJob" name="description" type="text" rows="3" placeholder="..." className="desc-input form-control" onChange={this.handleInputChange} value={this.state.description}></textarea>
                 </div>
                 <button id="submitJob" onClick={(event)=> this.createJob(event, this.state)} className="btn btn-primary">Submit</button>

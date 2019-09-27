@@ -49,7 +49,7 @@ class SearchModal extends React.Component {
           <div className="clearfix"><Link>
           <img id="searchIcon" src={"https://img.icons8.com/cotton/2x/search--v2.png"}></img>Miscellaneous</Link></div>
           </Modal>
-        <button className="clearfix" type='button' id="open" onClick={this.showModal}>Search for Jobs... </button>
+        <button disabled={isInvalid} className="clearfix" type='button' id="open" onClick={this.showModal}>Search for Jobs.. </button>
         {/* </div> */}
       </main>
     )
