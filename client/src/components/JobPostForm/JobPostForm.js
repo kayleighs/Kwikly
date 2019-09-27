@@ -12,6 +12,7 @@ class JobPostForm extends Component {
   
   state = {
     title: "",
+    image: "/images/Rest_bar.png",
     address: "",
     employer: "",
     category: "",
@@ -37,8 +38,38 @@ class JobPostForm extends Component {
     });
   };
 
-  handleDropdown = input => {
-    this.setState({category: input});
+  handleDropdown = event => {
+    let setPhoto;
+    if (event.target.value === "Bar/Restaurant") {
+      //setPhoto = "https://cdn1.iconfinder.com/data/icons/cocktail-bar-glyph/100/martini_bar_restaurant_drink_club-512.png";
+      setPhoto = "/images/Rest_bar.png";
+    } else if (event.target.value === "Pet Service") {
+      //setPhoto = "https://cdn0.iconfinder.com/data/icons/dog-4/100/dog-12-512.png";
+      setPhoto = "/images/pet.png";
+    } else if (event.target.value === "Household") {
+      //setPhoto = "https://cdn1.iconfinder.com/data/icons/misc-vol-1/512/house_home_household_domestic-512.png";
+      setPhoto = "/images/household.png";
+    } else if (event.target.value === "Outdoors") {
+      //setPhoto = "https://cdn3.iconfinder.com/data/icons/nature-animals/512/tree-512.png";
+      setPhoto = "/images/outdoors.png";
+    } else if (event.target.value === "Administrative") {
+      //setPhoto = "https://cdn3.iconfinder.com/data/icons/mobipeople/512/admin_add_user_edit_delete-512.png";
+      setPhoto = "/images/admin.png";
+    } else if (event.target.value === "Labor") {
+      //setPhoto = "https://cdn1.iconfinder.com/data/icons/occupations-3/100/13-512.png";
+      setPhoto = "/images/labor.png";
+    } else if (event.target.value === "Art/Design/Photography") {
+      //setPhoto = "https://www.shareicon.net/data/512x512/2015/12/31/695872_color_512x512.png";
+      setPhoto = "/images/art.png";
+    } else if (event.target.value === "Miscellaneous") {
+      //setPhoto = "https://cdn2.iconfinder.com/data/icons/budicon-misc/16/13-misc_-_puzzle_piece-512.png";
+      setPhoto = "/images/misc.png";
+    }
+
+    this.setState({
+      category: event.target.value,
+      image: setPhoto
+    });
   }
 
   createJob(event, data) {
@@ -52,6 +83,7 @@ class JobPostForm extends Component {
         }
       })).then(()=> API.savejob({
             title: data.title,
+            image: data.image,
             employer: data.employer,
             description: data.description,
             category: data.category,
@@ -95,7 +127,7 @@ class JobPostForm extends Component {
                 </div>
                 <div className="form-group">
                   <p>Category (pick one):</p>
-                    <select onChange={this.handleInputChange} name="category" value={this.state.value}>
+                    <select onChange={this.handleDropdown} name="category" value={this.state.value}>
 
                       <option value="Bar/Restaurant">Restaurant/Bar</option>
                       <option value="Pet Service">Pet Service</option>    
