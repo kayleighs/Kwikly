@@ -9,7 +9,7 @@ import EmployerCard from './../components/EmpolyerCard/EmployerCard';
 import UserCard from '../components/UserCard/UserCard';
 
 let container;
-//const uId = firebase.auth().currentUser.uid 
+
 class Account extends React.Component {
   constructor(props) {
     super(props);
@@ -52,7 +52,7 @@ class Account extends React.Component {
     //console.log(this.state)
     //console.log(userId, userObj)
     API.editUser(userId,userObj)
-    console.log("successfully updated")
+    //console.log("successfully updated")
     container.success(`Success`, `Statement Updated!`, {
       closeButton: true,
     })
