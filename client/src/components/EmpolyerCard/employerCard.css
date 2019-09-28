@@ -98,23 +98,24 @@
 
 /*Item-4-Inner-grid (Nested Grid)*/
 /***************************************/
+/*Commenting this out. Use later if a map is used here*/
 .Item-Employer-Card-4 { 
   grid-area: 2 / 1 / 3 / 2;
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  height: 100%;
+  height: 100%; */
 }
 
-.Item-4-Grid-1 { 
+/* .Item-4-Grid-1 { 
   grid-area: 1 / 1 / 2 / 2; 
 }
 
 .Item-4-Grid-2 { 
   grid-area: 1 / 2 / 2 / 3; 
-}
+} */
 /***************************************/
 /*End of Item-4-Nested-Grid*/
 
@@ -164,10 +165,9 @@
   max-height: 100%;
 }
 
-
 /*Badge Styles*/
 /***************************************/
-.badge-icon {
+.badge-icon {  /*Use this for badge icons*/
   width: 50px;
   height: 50px;
   margin: 2px;
@@ -212,4 +212,14 @@ text-decoration: none !important;
 .button-link:hover {
   color: black;
   text-decoration: none;
+}
+
+/*Job Post Button/Link*/
+.job-post-button-style {
+  width: 200px;
+  height: 50px;
+  position:relative; 
+  top: -30px; 
+  border-color: white;
+    
 }
