@@ -41,3 +41,16 @@
     border-radius: 40px;
     text-align: center;
   }
+
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .navbar,
+    .navbar a,
+    .navbar.right-nav {
+      justify-content: center;
+    }
+
+    .navbar a#logo {
+      width: 100%;
+    }
+  }
