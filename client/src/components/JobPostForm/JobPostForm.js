@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import * as ROUTES from '../../constants/routes';
 //Style Sheet
 import './jobPostForm.css';
 
@@ -9,8 +9,9 @@ require("dotenv").config();
 
 
 class JobPostForm extends Component {
-  
-  state = {
+  constructor(props) {
+    super(props);
+  this.state = {
     title: "",
     image: "/images/Rest_bar.png",
     address: "",
@@ -23,7 +24,7 @@ class JobPostForm extends Component {
     },
     allJobs: []
   };
-
+  }
   componentDidMount() {
     API.getJobs()
       .then(res=> this.setState({ allJobs: res.data }))
@@ -94,6 +95,7 @@ class JobPostForm extends Component {
             }
       })
       .then(() => this.componentDidMount())
+      .then(() => this.props.history.push(ROUTES.HOME))
       .catch(err => console.log(err)))
   };
 

@@ -10,8 +10,6 @@ class UserCard extends React.Component {
     const sInputS = document.getElementById("seekingOrSkillsInputBox");
     const saveButton = document.getElementById("saveButton");
     const saveButtonS = document.getElementById("saveButtonS");
-  // document.getElementById("statementInputBox").defaultValue=this.props.statement
-
    sInput.style.display = "none";
     saveButton.style.display = "none";
    sInputS.style.display = "none";
@@ -149,7 +147,7 @@ class UserCard extends React.Component {
           <h2>{this.props.address}</h2>
         </div>
         <div className="Item-4-Grid-2">
-          <img id="MapImg" src={this.props.location} alt={this.props.id}></img>
+          {/* <img id="MapImg" src={this.props.location} alt={this.props.id}></img> */}
         </div>
 
       </div>
