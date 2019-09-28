@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Button from '../components/Buttons/Button';
+import Footer from '../components/Footer/Footer';
 
 
 
@@ -14,7 +14,7 @@ class TestPage extends Component {
 
         return (
          
-            <Button />
+            <Footer />
 
         );
     
