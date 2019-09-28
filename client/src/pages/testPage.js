@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Button from '../components/Buttons/Button';
+import JobCard from '../components/JobCard/JobCard';
 
 
 
@@ -14,7 +14,7 @@ class TestPage extends Component {
 
         return (
          
-            <Button />
+            <JobCard />
 
         );
     
