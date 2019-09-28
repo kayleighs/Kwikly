@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastr";
 
 import API from "../utils/API";
 
-import EmployerCard from './../components/EmpolyerCard/EmployerCard';
+import EmployerCard from '../components/EmpolyerCard/EmployerCard';
 import UserCard from '../components/UserCard/UserCard';
 
 let container;

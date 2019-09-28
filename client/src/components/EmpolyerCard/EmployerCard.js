@@ -125,7 +125,7 @@ render() {
       {/*========================================================================*/}
       <div className="Item-Employer-Card-4  color-3-blue ks-container">  {/*Add the class "Item" when the map is rdy*/}
         
-        <div className="Item-4-Grid-1">  {/*The Item-4-Grid-1 & Item-4-Grid-2 styles are commented out in the employer,css file*/}
+        <div className="Item-4-Grid-1">  {/*The Item-4-Grid-1 & Item-4-Grid-2 styles are commented out in the employerCard.css file*/}
           <h2>{this.props.address}</h2>
         </div>
         <div className="Item-4-Grid-2">

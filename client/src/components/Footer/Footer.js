@@ -3,7 +3,7 @@ import './footer.css';
 
 function Footer(){
     return(
-        <div id="footer">&#9400;Copyright</div>
+        <div className="footer-logo" id="footer">Kwikly&#9400;</div>
     )
 }
 
