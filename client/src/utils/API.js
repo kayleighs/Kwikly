@@ -38,6 +38,9 @@ export default {
   getUser: function (id) {
     return axios.get("/api/user/"+ id);
   },
+  getUserByEmail (email) {
+    return axios.get("/api/user/by-email/" + email);
+  },
   getEmployer: function (id) {
     return axios.get("/api/userEmployer/" + id);
   },
@@ -53,8 +56,8 @@ export default {
   editEmployer: function(id, userData) {
     return axios.put("/api/userEmployer/" + id, userData);
   },
-  getDirections: function(origin, destination, travelMode) {
-    return axios.get("/dir/" + origin + "/" + destination + "/" + travelMode);
+  getDirections: function(originLat, originLng, destination, travelMode) {
+    return axios.get("/dir/" + originLat + "/" + originLng + "/" + destination + "/" + travelMode);
     //See index.js in the 'routes' folder (not the one nested within the 'api' folder)
     //for how this axios call to Directions API is made
   }

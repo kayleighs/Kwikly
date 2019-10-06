@@ -13,31 +13,32 @@ const Navigation = () => (
     <div>
         <AuthUserContext.Consumer>
             {authUser =>
-                authUser ? <NavigationAuth /> : <NavigationNonAuth />
+                authUser ? <NavigationAuth signedinUser={authUser}/> : <NavigationNonAuth />
             }
         </AuthUserContext.Consumer>
     </div>
 );
 
-const NavigationAuth = () => (
+const NavigationAuth = (props) => (
 
-    <div class="navbar">
+    <div className="navbar" value={props.signedinUser.email}>
          <SearchModal />
         <Link id="logo" to={ROUTES.LANDING}>Kwikly</Link>
-        <div class="right-nav">
+        <div className="right-nav">
             <Link to={ROUTES.HOME}>Home</Link>
             <Link to={ROUTES.ACCOUNT}>Account</Link>
             <SignOutButton />
         </div>
+        {/* <button className="btn btn-warning" onClick={()=> console.log(props.signedinUser.email)}>See Props</button> */}
 
     </div> 
 );
 
 const NavigationNonAuth = () => (
-    <div class="navbar">
+    <div className="navbar">
         <SearchModal />
         <Link id="logo" to={ROUTES.LANDING}>Kwikly</Link>
-        <div class="right-nav">
+        <div className="right-nav">
             <Link to={ROUTES.SIGN_IN}>Sign In</Link>
         </div>
     </div> 

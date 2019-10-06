@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './googeMap.css';
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps';
 //import testData from "../testdata.json";
@@ -67,6 +68,14 @@ class Map extends Component {
               <div>
                 <h4>{this.state.selectedMarker.title}</h4>
                 <p>{this.state.selectedMarker.description}</p>
+                {document.getElementsByClassName("navbar")[0].attributes[1] ? (
+                  <div>
+                    <p onClick={()=> console.log(document.getElementsByClassName("navbar")[0].attributes[1].value)}><em>Click here for details</em></p>
+                    <p>Get details <Link to={{pathname:"/jobdetail/" + this.state.selectedMarker._id, state:{ currentUser: document.getElementsByClassName("navbar")[0].attributes[1].value, jobId: this.state.selectedMarker._id}}}>here</Link></p>
+                  </div>
+                ):(
+                  null
+                )}
               </div>
             </InfoWindow>
           )}

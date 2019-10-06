@@ -13,6 +13,7 @@ import UserPage from './pages/user'
 import EmployerPage from './pages/userEmployer';
 import TestPage from './pages/testPage';
 import modalTest from './pages/modalTest';
+import JobDetailPage from './pages/JobDetailPage'
 import PasswordForgetPage from './components/PasswordForget';
 //------Paths to test form pages---
 import JobPostForm from "./components/JobPostForm/JobPostForm";
@@ -39,6 +40,7 @@ const App = () => (
         <Route exact path="/employerform" component={EmployerCreateForm} />
         <Route path="/employerform/:id" render={props=> <EmployerUpdateForm {...props}/>} />
         <Route exact path ="/directiontest" component={DirectionsTest} />
+        <Route path="/jobdetail/:id" render={props=> <JobDetailPage {...props}/>} />
 
 
         <Route exact path={ROUTES.LANDING} component={HomePage} />
