@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastr";
 
 import API from "../utils/API";
 
-import EmployerCard from '../components/EmpolyerCard/EmployerCard';
+import EmployerCard from './../components/EmpolyerCard/EmployerCard';
 import UserCard from '../components/UserCard/UserCard';
 
 let container;
@@ -97,7 +97,7 @@ class Account extends React.Component {
           ref={ref => container = ref}
           className="toast-bottom-right"
         />
-          {/* <button onClick={(event) => this.seeTheState(event)} className="btn btn-primary">Current State</button> */}
+          <button onClick={()=> console.log(this.state)} className="btn btn-primary">Current State</button>
         {this.state.user.isAdmin ? 
           (<div>
             <EmployerCard

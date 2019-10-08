@@ -129,7 +129,7 @@ class JobPostForm extends Component {
                 </div>
                 <div className="form-group">
 
-                  <p id="jobCategories">Category (pick one):</p>
+                  <p id="jobCategories">Category (pick one)</p>
                     <select onChange={this.handleDropdown} name="category" value={this.state.value}>
                       <option value="Bar Restaurant">Restaurant/Bar</option>
                       <option value="Pet Services">Pet Service</option>    
