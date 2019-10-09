@@ -17,4 +17,8 @@ router
   .route("/byname/:username")
   .get(userController.findByName)
 
+router
+  .route("/by-email/:email")
+  .get(userController.findByEmail)
+
 module.exports = router;

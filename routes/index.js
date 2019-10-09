@@ -11,8 +11,8 @@ router.use("/api", apiRoutes);
 // This route below is specific for making axios calls to Directions API, can only be done via backend
 // See API.js within the 'utils' folder within 'src' folder to understand how
 // The front-end handles this route
-router.use("/dir/:origin/:destination/:transitMode", (req, res)=> {
-  axios.get("https://maps.googleapis.com/maps/api/directions/json?origin=" + req.params.origin + "&destination=" + req.params.destination + "&mode=" + req.params.transitMode + "&key=" + process.env.REACT_APP_GOOGLE_KEY)
+router.use("/dir/:originLat/:originLng/:destination/:transitMode", (req, res)=> {
+  axios.get("https://maps.googleapis.com/maps/api/directions/json?origin=" + req.params.originLat + "," + req.params.originLng + "&destination=" + req.params.destination + "&mode=" + req.params.transitMode + "&key=" + process.env.REACT_APP_GOOGLE_KEY)
     .then(DirModel=> res.json(DirModel.data))
     .catch(err => res.status(422).json(err));
 });
