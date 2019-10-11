@@ -17,7 +17,7 @@ function AppylyPage(props) {
     return (
      
         <div className="">
-            <div className="ks-container">
+            <div className="ks-container Apply-Page-Container-Styles">
 
                 <div className="Top-Apply-Main-Grid">
                     <div className="Top-Grid-1">
@@ -47,8 +47,8 @@ function AppylyPage(props) {
                         <p className="Description-Area">{props.description}
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae elementum curabitur vitae nunc sed velit dignissim sodales. Diam sollicitudin tempor id eu nisl. Mi bibendum neque egestas congue quisque egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae elementum curabitur vitae nunc sed velit dignissim sodales. Diam sollicitudin tempor id eu nisl. Mi bibendum neque egestas congue quisque egestas.
                         </p>
-                        <h2 className="Apply-Header"><strong>Leave A Message For The Employer</strong></h2>
-                        <textarea className="Comment-Section" name="comment" form="usrform"></textarea>
+                        <h2 className="Apply-Header"><strong>Leave A Message</strong></h2>
+                        <textarea className="Comment-Section" placeholder="Leave a comment if you'd like" name="comment" form="usrform"></textarea>
                     </div>
 
 
