@@ -245,3 +245,78 @@ button.btn-primary{
     font-size: 20px;
     
 }
+
+/*==========================*/
+/*Apply-Page Styles*/
+/*==========================*/
+
+
+/*Top-Apply-Main-Grid*/
+/*==========================*/
+
+.Top-Apply-Main-Grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.Top-Grid-1 { 
+    grid-area: 1 / 1 / 2 / 2; 
+    justify-content: start;
+}
+.Top-Grid-2 { 
+    grid-area: 1 / 2 / 2 / 3; 
+
+}
+.Top-Grid-3 { 
+    grid-area: 1 / 3 / 2 / 4; 
+    justify-self: end;
+    justify-content: center;
+}
+
+/*Bottom-Apply-Main-Grid*/
+/*==========================*/
+.Bottom-Apply-Grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 100%;
+}
+
+.Bottom-Grid-1 { 
+    grid-area: 1 / 1 / 2 / 2; 
+    justify-content: center;
+    border: 10px solid #5460B1;
+    padding: 20px;
+}
+
+.Description-Area {
+    padding: 10px;
+    margin: 10px;
+    font-size: 32px;
+    color: black;
+    border: 3px solid #5460B1;
+    border-radius: 50px;
+}
+
+.Apply-Header {
+    text-align: center;
+}
+
+/*Comment Text-Area Styles/
+/*==========================*/
+.Comment-Section {
+    min-width: 100%;
+    height: 250px;
+    padding: 10px;
+    margin: auto;
+    align-content: center;
+    font-size: 32px;
+    color: black;
+    border: 3px solid #5460B1;
+    border-radius: 50px;
+}

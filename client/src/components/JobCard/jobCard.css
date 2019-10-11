@@ -40,6 +40,57 @@
   font-family: 'Fugaz One', cursive;
 }
 
+.apply-button {
+  width: 200px;
+  height: 50px;
+  margin: 0px 10px; 
+  padding: 10px 28px;
+  background-color: #5460B1; 
+  border: 1px solid #5460B1;
+  border-radius: 50px;
+  font-family: 'Fugaz One', cursive;
+  color: white;
+  font-size: 20px;
+  cursor: pointer; 
+}
+
+.apply-button:hover {
+  background-color: white; 
+  border: 3px solid #5460B1;
+  color: #5460B1;
+}
+
+.top-job-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.top-col-1 { 
+  grid-area: 1 / 1 / 2 / 2; 
+}
+.top-col-2 { 
+  grid-area: 1 / 2 / 2 / 3; 
+}
+.top-col-3 { 
+  grid-area: 1 / 3 / 2 / 4; 
+}  
 
 
-  
+.job-card-main-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.job-card-main-col-2 {
+  grid-area: 1 / 1 / 2 / 2; 
+}
+
+.job-card-main-col-1 {
+  grid-area: 1 / 2 / 2 / 3;
+}

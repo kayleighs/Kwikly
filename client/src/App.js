@@ -15,6 +15,7 @@ import TestPage from './pages/testPage';
 import modalTest from './pages/modalTest';
 import JobDetailPage from './pages/JobDetailPage'
 import PasswordForgetPage from './components/PasswordForget';
+import ApplyPage from './pages/applyPage';
 //------Paths to test form pages---
 import JobPostForm from "./components/JobPostForm/JobPostForm";
 import UserCreateForm from "./components/UserUpdate/UserCreateForm";
@@ -54,6 +55,7 @@ const App = () => (
         <Route exact path={ROUTES.ADMIN} component={AdminPage} />
         <Route exact path={ROUTES.USER} component={UserPage} />
         <Route exact path={ROUTES.EMPLOYER} component={EmployerPage} />
+        <Route exact path={ROUTES.ApplyPage} component={ApplyPage} />
         <Route exact path={ROUTES.TESTpage} component={TestPage} />
         <Route exact path={ROUTES.MODALTEST} component={modalTest} />
 
