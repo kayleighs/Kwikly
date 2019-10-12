@@ -7,13 +7,13 @@ function JobCard(props) {
     <div className="card">
       
       <div className="content job-card-main-grid">
-        <div className="job-card-main-col-1">
+        {/* <div className="job-card-main-col-1">
           <div className="top-job-card-grid">
             <div className="top-col-1"></div>
             <div className="top-col-2"></div>
             <button className="apply-button top-col-3">Apply Now</button>
           </div>
-        </div>
+        </div> */}
 
         <div className="job-card-main-col-2">
           <ul>

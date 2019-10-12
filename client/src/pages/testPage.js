@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import JobCard from '../components/JobCard/JobCard';
+import JobList from '../components/JobList/JobList';
 import Footer from '../components/Footer/Footer';
 
 
@@ -16,7 +16,23 @@ class TestPage extends Component {
         return (
          
             <div className="">
-                <JobCard />
+
+                <ul>
+                    <JobList />
+                    <JobList />
+                    <JobList />
+                    <JobList />
+                    <JobList />
+                    <JobList />
+                    <JobList />
+                    <JobList />
+                    <JobList />
+                    <JobList />
+                    <JobList />
+                    <JobList />
+                </ul>
+               
+
                 <Footer />
             </div>
 
