@@ -13,6 +13,7 @@
 
 .job-link {
     color: black;
+    cursor: pointer;
 }
 
 .job-link:hover {

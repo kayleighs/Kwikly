@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import JobList from '../components/JobList/JobList';
+import HireList from '../components/HireList/HireList';
 import Footer from '../components/Footer/Footer';
 
 
@@ -18,17 +19,7 @@ class TestPage extends Component {
             <div className="">
 
                 <ul>
-                    <JobList />
-                    <JobList />
-                    <JobList />
-                    <JobList />
-                    <JobList />
-                    <JobList />
-                    <JobList />
-                    <JobList />
-                    <JobList />
-                    <JobList />
-                    <JobList />
+                    <HireList />
                     <JobList />
                 </ul>
                
