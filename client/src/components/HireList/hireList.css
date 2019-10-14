@@ -15,7 +15,6 @@
     color: black;
     cursor: pointer;
 }
-
 .hire-link:hover {
     text-decoration: none;
     color: white;
@@ -23,18 +22,23 @@
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #5460B1;
 }
+.hire-link:active {
+    color: orange;
+    -webkit-text-fill-color: orange; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #5460B1;
+    cursor: pointer;
+}
 
 .hire-list-block {
     display: inline-block;
-
     margin: 10px;
 }
 
 .hire-list-title {
     border-left: 15px double #5460B1;
     border-bottom: 2px solid #c9c9c9;
-    border-radius: 50%;
-    
+    border-radius: 50%;   
 }
 
 .hire-button {

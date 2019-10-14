@@ -15,13 +15,19 @@
     color: black;
     cursor: pointer;
 }
-
 .job-link:hover {
     text-decoration: none;
     color: white;
     -webkit-text-fill-color: white; /* Will override color (regardless of order) */
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #5460B1;
+}
+.job-link:active {
+    color: orange;
+    -webkit-text-fill-color: orange; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #5460B1;
+    cursor: pointer;
 }
 
 .job-list-block {
