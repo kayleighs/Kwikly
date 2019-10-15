@@ -334,3 +334,32 @@ button.btn-primary{
     border: 3px solid #5460B1;
     font-family: 'Merriweather', serif;
 }
+
+
+/*===========================================*/
+/*Empolyer Page Bottom Grid*/
+/*===========================================*/
+
+/*===========================================*/
+/*This grid has 2 colums and 1 row*/
+/*Its used to split the area into two equal halves*/
+/*The left half is for the list of created jobs a employer created in order to look at who applied for them*/
+/*The right half will fill in with potential employees for each job.  The list will refresh when a job is selected*/
+/*===========================================*/
+
+.job-list-split-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    justify-items: center;
+}
+
+.left-job-list {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.right-hire-list {
+    grid-area: 1 / 2 / 2 / 3;
+}

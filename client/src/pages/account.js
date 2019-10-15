@@ -6,6 +6,8 @@ import { ToastContainer } from "react-toastr";
 import API from "../utils/API";
 
 import EmployerCard from '../components/EmpolyerCard/EmployerCard';
+import JobList from '../components/JobList/JobList';
+import HireList from '../components/HireList/HireList';
 import UserCard from '../components/UserCard/UserCard';
 
 let container;
@@ -114,6 +116,29 @@ class Account extends React.Component {
               updateStatement={() => this.updateStatement()}
               updateSeeking={() => this.updateSeeking()}
             />
+            
+            <div className="job-list-split-grid">
+              <div className="left-job-list">
+                <JobList />
+                <JobList />
+                <JobList />
+                <JobList />
+                <JobList />
+                <JobList />
+                <JobList />
+                <JobList />
+              </div> 
+              <div className="right-hire-list">
+                <HireList />
+                <HireList />
+                <HireList />
+                <HireList />
+                <HireList />
+                <HireList />
+                <HireList />
+                <HireList />
+              </div>  
+            </div>
           </div>): 
           (<div>
             <UserCard
