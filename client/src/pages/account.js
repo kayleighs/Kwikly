@@ -117,8 +117,13 @@ class Account extends React.Component {
               updateSeeking={() => this.updateSeeking()}
             />
             
-            <div className="job-list-split-grid">
-              <div className="left-job-list">
+            <div className="job-list-split-grid ks-container">
+              <div className="left-job-list ks-container">
+                <div className="ks-container list-main-container job-list-header-grid"> 
+                <div className="job-header-1-grid">Job Name</div>
+                <div className="job-header-2-grid">Date</div>
+                <div className="job-header-3-grid">Applicants</div>
+                </div>
                 <JobList />
                 <JobList />
                 <JobList />
@@ -128,7 +133,9 @@ class Account extends React.Component {
                 <JobList />
                 <JobList />
               </div> 
-              <div className="right-hire-list">
+              <div className="right-hire-list ks-container">
+                <div className="ks-container list-main-container"> hello
+                </div> 
                 <HireList />
                 <HireList />
                 <HireList />
