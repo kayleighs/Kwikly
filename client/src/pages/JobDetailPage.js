@@ -24,7 +24,17 @@ class Map extends Component {
     .then(res => this.setState({ currentJob: res.data }))
     .catch(err => console.log(err));
 
-    if (navigator.geolocation) {
+    if (window.window.history.state) {
+      
+      API.getUserByEmail(window.window.history.state.state.currentUser)
+        .then(res=> this.setState({
+          currentLoc: {
+            lat: res.data[0].location.lat,
+            lng: res.data[0].location.lng
+          }
+        }))
+        .catch(err => console.log(err));
+    } else if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position=> {
         this.setState({
           currentLoc: {
@@ -56,24 +66,25 @@ class Map extends Component {
           <button className="btn btn-success" onClick={()=> console.log(window.history.state.state)}>See All</button> 
         </div>
         
-        {this.state.currentJob && this.state.currentLoc ? (
+        {this.state.currentJob ? (
           <div>
             <div className="row map-job-detail">
               <div className="col-10">
                 <GoogleMap
                   defaultZoom={11}
                   defaultCenter={{ 
-                    lat: parseFloat(this.state.currentLoc.lat), 
-                    lng: parseFloat(this.state.currentLoc.lng)
+                    lat: parseFloat(this.state.currentJob.location.lat), 
+                    lng: parseFloat(this.state.currentJob.location.lng)
                   }}
                 >
-                  
-                  <Marker 
-                    position={{
-                      lat: parseFloat(this.state.currentLoc.lat), 
-                      lng: parseFloat(this.state.currentLoc.lng)
-                    }}
-                  />
+                  {this.state.currentLoc ? (
+                    <Marker 
+                      position={{
+                        lat: parseFloat(this.state.currentLoc.lat), 
+                        lng: parseFloat(this.state.currentLoc.lng)
+                      }}
+                    />
+                  ): null}
 
                   <Marker 
                     position={{
