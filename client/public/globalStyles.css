@@ -43,7 +43,7 @@ html, body {
 }
 
 .color-4-gray {
-    background-color: #c9c9c9 ;
+    background-color: #c9c9c9;
 }
 
 .gradient-style-1 {
@@ -244,4 +244,151 @@ button.btn-primary{
     font-family: 'Merriweather', serif;
     font-size: 20px;
     
+}
+
+/*=================================================================================================*/
+/*Apply-Page Styles*/
+/*=================================================================================================*/
+
+.Apply-Page-Container-Styles {
+    border: 10px solid #5460B1;
+    
+}
+
+/*Top-Apply-Main-Grid*/
+/*==========================*/
+
+.Top-Apply-Main-Grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.Top-Grid-1 { 
+    grid-area: 1 / 1 / 2 / 2; 
+    justify-content: start;
+}
+.Top-Grid-2 { 
+    grid-area: 1 / 2 / 2 / 3; 
+
+}
+.Top-Grid-3 { 
+    grid-area: 1 / 3 / 2 / 4; 
+    justify-self: end;
+    justify-content: center;
+}
+
+/*Bottom-Apply-Main-Grid*/
+/*==========================*/
+.Bottom-Apply-Grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 100%;
+}
+
+.Bottom-Grid-1 { 
+    grid-area: 1 / 1 / 2 / 2; 
+    justify-content: center;
+    padding: 20px;
+}
+
+.Description-Area {
+    padding: 10px;
+    margin: 10px;
+    font-size: 32px;
+    color: black;
+    border: 3px solid #5460B1;
+    font-family: 'Merriweather', serif;
+}
+
+.Apply-Header {
+    font-family: 'Fugaz One', cursive;
+    text-align: center;
+    font-size: 42px;
+}
+
+.Apply-Header:after {
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 25%; /* Change this to whatever width you want. */
+    padding-top: 3px; /* This creates some space between the element and the border. */
+    border-bottom: 10px double #5460B1;; /* This creates the border. Replace black with whatever color you want. */
+}
+
+/*Comment Text-Area Styles/
+/*==========================*/
+.Comment-Section {
+    min-width: 100%;
+    height: 250px;
+    padding: 10px;
+    margin: auto;
+    align-content: center;
+    font-size: 32px;
+    color: black;
+    border: 3px solid #5460B1;
+    font-family: 'Merriweather', serif;
+}
+
+
+/*===========================================*/
+/*Empolyer Page Bottom Grid*/
+/*===========================================*/
+
+/*===========================================*/
+/*This grid has 2 colums and 1 row*/
+/*Its used to split the area into two equal halves*/
+/*The left half is for the list of created jobs a employer created in order to look at who applied for them*/
+/*The right half will fill in with potential employees for each job.  The list will refresh when a job is selected*/
+/*===========================================*/
+
+.job-list-split-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    justify-items: center;
+}
+
+.left-job-list {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.right-hire-list {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+
+
+.list-main-container {
+    background: #5460B1;
+}
+
+
+/*3 Column, 1 row grid that holds the info for the jobs list*/
+.job-list-header-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    justify-items: center;
+}
+.job-header-1-grid { 
+    grid-area: 1 / 1 / 2 / 2; 
+    font-size: 22px;
+}
+.job-header-2-grid { 
+    grid-area: 1 / 2 / 2 / 3;
+    font-size: 22px; 
+}
+.job-header-3-grid { 
+    grid-area: 1 / 3 / 2 / 4; 
+    font-size: 22px;
 }

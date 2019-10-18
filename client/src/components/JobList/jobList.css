@@ -1,0 +1,57 @@
+
+.job-list-container {
+    width: 500px;
+    text-align: center;
+}
+
+.job-list-style {
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Fugaz One', cursive;
+    
+}
+
+.job-link {
+    color: black;
+    cursor: pointer;
+}
+.job-link:hover {
+    text-decoration: none;
+    color: white;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #5460B1;
+}
+.job-link:active {
+    color: orange;
+    -webkit-text-fill-color: orange; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #5460B1;
+    cursor: pointer;
+}
+
+.job-list-block {
+    display: inline-block;
+
+    margin: 10px;
+}
+
+.job-list-title {
+    border-right: 15px double #5460B1;
+    border-bottom: 2px solid #c9c9c9;
+    border-radius: 50%;
+    
+}
+.job-time {
+    border-right: 15px double #5460B1;
+    border-bottom: 2px solid #c9c9c9;
+    border-radius: 50%;
+}
+
+.hired-num {
+    border-radius: 50%;
+    width: 50px;
+    color: white;
+    background: #5460B1;
+    text-align: center;
+}
