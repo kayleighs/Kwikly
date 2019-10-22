@@ -8,7 +8,11 @@ const userSchema = new Schema({
   isAdmin: { type: Boolean, required: true, default: false},
   _id: String,
   statement: {type: String},
-  badges: [ {type: String} ], //could be a string that explains the type of badge to show on profile
+  badges: [ {
+    message: { type: String },
+    provider: { type: String }
+  } ], //could be a string that explains the type of badge to show on profile
+  badgesGiven: [ {type: String} ],
   savedJobs: [{type: String} ], //This will probably be equal to the _id of the Jobs object
   appliedJobs: [{type: String} ],
   hiredJobs: [{type: String} ], 

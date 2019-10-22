@@ -39,6 +39,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  updateByEmail: function (req, res) {
+    db.Users
+      .findOneAndUpdate({ email: req.params.email }, req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   remove: function (req, res) {
     db.Users
       .findById({ _id: req.params.id })

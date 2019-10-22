@@ -28,6 +28,9 @@ export default {
   savejob: function (jobData) {
     return axios.post("/api/jobs", jobData);
   },
+  updateJobApplicants: function(id, jobData) {
+    return axios.put("/api/jobs/" + id, jobData);
+  },
   // Saves a job to the database
   saveUser: function (userData) {
     return axios.post("/api/user", userData);
@@ -51,6 +54,12 @@ export default {
     return axios.get("/api/userEmployer");
   },
   editUser: function (id, userData) {
+    return axios.put("/api/user/" + id, userData);
+  },
+  editUserByEmail: function (email, userData) {
+    return axios.put("/api/user/by-email/" + email, userData);
+  },
+  updateUserApplicant: function (id, userData) {
     return axios.put("/api/user/" + id, userData);
   },
   editEmployer: function(id, userData) {

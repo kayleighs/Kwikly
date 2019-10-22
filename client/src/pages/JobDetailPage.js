@@ -9,6 +9,7 @@ class Map extends Component {
     super(props);
     this.state = {
       currentJob: null,
+      currentUser: null,
       currentLoc: {
         lat: null,
         lng: null
@@ -28,6 +29,7 @@ class Map extends Component {
       
       API.getUserByEmail(window.window.history.state.state.currentUser)
         .then(res=> this.setState({
+          currentUser: res.data[0],
           currentLoc: {
             lat: res.data[0].location.lat,
             lng: res.data[0].location.lng
@@ -45,7 +47,7 @@ class Map extends Component {
       })
     }
 
-  }
+  };
 
   handleInputChange = (event, state, travelMode) => {
     const { name, value } = event.target;
@@ -57,6 +59,29 @@ class Map extends Component {
       .then(res=> this.setState({travelTime:res.data.routes[0].legs[0].duration.text}))
       .catch(err => console.log(err));
   };
+
+  jobApply = () => {
+    console.log(this.state.currentUser);
+    if (!this.state.currentJob.appliedWorkers.includes(this.state.currentUser._id)) {
+      API.updateJobApplicants(this.state.currentJob._id, {
+        $push: {
+          appliedWorkers: this.state.currentUser._id
+        }
+      })
+        .then(() => this.componentDidMount())
+        .catch(err => console.log(err));
+
+      API.updateUserApplicant(this.state.currentUser._id, {
+        $push: {
+          appliedJobs: this.state.currentJob._id
+        }
+      })
+      .then(() => this.componentDidMount())
+      .catch(err => console.log(err));
+    } else {
+      console.log("you already applied!");
+    }
+  }
 
   render() {
     return (
@@ -117,6 +142,13 @@ class Map extends Component {
                 
               </div>
             </div>
+            {this.state.currentUser ? (
+              <div className="row">
+                <div className="col-10">
+                  <button onClick={()=> this.jobApply()} className="btn btn-success">Apply Now!</button> 
+                </div>
+              </div>
+            ): null}
           </div>
         ):(
           <p>Processing data...</p>  

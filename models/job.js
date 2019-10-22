@@ -7,6 +7,7 @@ const jobSchema = new Schema({
   employer: { type: String, required: true },
   description: { type: String, required: true },
   category: { type: String },
+  appliedWorkers: [{ type: String }],
   hiredWorkers: [{ type: String }],
   address: { type: String, required: true },
   location: {

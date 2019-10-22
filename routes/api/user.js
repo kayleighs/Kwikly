@@ -20,5 +20,6 @@ router
 router
   .route("/by-email/:email")
   .get(userController.findByEmail)
+  .put(userController.updateByEmail);
 
 module.exports = router;

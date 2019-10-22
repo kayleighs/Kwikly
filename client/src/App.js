@@ -13,7 +13,9 @@ import UserPage from './pages/user'
 import EmployerPage from './pages/userEmployer';
 import TestPage from './pages/testPage';
 import modalTest from './pages/modalTest';
-import JobDetailPage from './pages/JobDetailPage'
+import JobDetailPage from './pages/JobDetailPage';
+import ProfilePage from './pages/ProfilePage';
+import SearchUsers from './pages/SearchUsers';
 import PasswordForgetPage from './components/PasswordForget';
 import ApplyPage from './pages/applyPage';
 //------Paths to test form pages---
@@ -42,6 +44,8 @@ const App = () => (
         <Route path="/employerform/:id" render={props=> <EmployerUpdateForm {...props}/>} />
         <Route exact path ="/directiontest" component={DirectionsTest} />
         <Route path="/jobdetail/:id" render={props=> <JobDetailPage {...props}/>} />
+        <Route path="/profile/:id" render={props=> <ProfilePage {...props}/>} />
+        <Route exact path="/users" component={SearchUsers} />
 
 
         <Route exact path={ROUTES.LANDING} component={HomePage} />
