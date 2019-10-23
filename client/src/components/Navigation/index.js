@@ -35,7 +35,7 @@ const NavigationAuth = (props) => (
 );
 
 const NavigationNonAuth = () => (
-    <div className="navbar">
+    <div className="navbar" value="non-user">
         <SearchModal />
         <Link id="logo" to={ROUTES.LANDING}>Kwikly</Link>
         <div className="right-nav">
