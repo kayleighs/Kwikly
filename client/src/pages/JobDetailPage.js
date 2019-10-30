@@ -1,6 +1,7 @@
+/*global google*/
 import React, { Component } from "react";
 import API from "../utils/API";
-import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps';
+import { GoogleMap, withScriptjs, withGoogleMap, Marker, DirectionsRenderer } from 'react-google-maps';
 require("dotenv").config();
 
 
@@ -14,6 +15,7 @@ class Map extends Component {
         lat: null,
         lng: null
       },
+      directions: "",
       travelMode: "",
       travelTime: ""
     }
@@ -51,6 +53,7 @@ class Map extends Component {
 
   handleInputChange = (event, state, travelMode) => {
     const { name, value } = event.target;
+    const DirectionsService = new google.maps.DirectionsService();
     this.setState({
       [name]: value
     });
@@ -58,6 +61,20 @@ class Map extends Component {
       //.then(res=> console.log(res.data.routes[0].legs[0].duration.text))
       .then(res=> this.setState({travelTime:res.data.routes[0].legs[0].duration.text}))
       .catch(err => console.log(err));
+
+    DirectionsService.route({
+      origin: new google.maps.LatLng(state.currentLoc.lat, state.currentLoc.lng),
+      destination: state.currentJob.address,
+      travelMode: travelMode.toUpperCase(),
+    }, (result, status) => {
+      if (status === google.maps.DirectionsStatus.OK) {
+        this.setState({
+          directions: result,
+        });
+      } else {
+        console.error(`error fetching directions ${result}`);
+      }
+    });
   };
 
   jobApply = () => {
@@ -86,10 +103,10 @@ class Map extends Component {
   render() {
     return (
       <div className="job-detail-page container">
-        <div className="row">
+        {/* <div className="row">
           <button className="btn btn-info" onClick={()=> console.log(this.state)}>See State</button> 
           <button className="btn btn-success" onClick={()=> console.log(window.history.state.state)}>See All</button> 
-        </div>
+        </div> */}
         
         {this.state.currentJob ? (
           <div>
@@ -117,13 +134,16 @@ class Map extends Component {
                       lng: parseFloat(this.state.currentJob.location.lng)
                     }}
                   />
-                  
+                  {this.state.directions && <DirectionsRenderer directions={this.state.directions} />}
                 </GoogleMap>
               </div>
             </div>
             <div className="info-test row">
               <div className="col-10">
-                <p>Current Job: {this.state.currentJob.title}</p>
+                <h1>{this.state.currentJob.title}</h1>
+                <p>Posted by: {this.state.currentJob.employer}</p>
+                <p>{this.state.currentJob.address}</p>
+                <p>{this.state.currentJob.description}</p>
               </div>
               <div className="col-10">
                 <div className="form-group">
@@ -137,6 +157,16 @@ class Map extends Component {
                   <input className="mr-2" type="radio" name="travelMode" value="transit" onChange={(event)=> this.handleInputChange(event, this.state, "transit")}/>
                   <label htmlFor="transit">Transit</label><br />
                 </div>
+
+                {this.state.directions ? (
+                  this.state.directions.routes[0].legs[0].steps.map(res=> (
+                    <div className="card" key={res.encoded_lat_lngs}>
+                      <div className="card-body" id="inst-body">
+                        {res.instructions}
+                      </div>
+                    </div> 
+                  ))
+                ): null}
                 
                 <p>Your travel time by {this.state.travelMode} will be {this.state.travelTime}</p>
                 
