@@ -15,7 +15,10 @@ class JobPostForm extends Component {
     title: "",
     image: "/images/Rest_bar.png",
     address: "",
-    employer: "",
+    employer: {
+      name: "",
+      empId: ""
+    },
     category: "Bar Restaurant",
     description: "",
     location: {
@@ -27,7 +30,7 @@ class JobPostForm extends Component {
   }
   componentDidMount() {
     API.getJobs()
-      .then(res=> this.setState({ allJobs: res.data }))
+      .then(res=> this.setState({ allJobs: res.data, employer: { name: this.props.location.state.jobProvider, empId: this.props.location.state.empId }}))
       .catch(err => console.log(err));
   };
 
@@ -85,7 +88,10 @@ class JobPostForm extends Component {
       })).then(()=> API.savejob({
             title: data.title,
             image: data.image,
-            employer: data.employer,
+            employer: {
+              name: data.employer.name,
+              empId: data.employer.empId
+            },
             description: data.description,
             category: data.category,
             address: data.address,
@@ -123,10 +129,12 @@ class JobPostForm extends Component {
                   <label id="employer-input">Address (exact)</label>
                   <input id="inputJob" name="address" type="text" placeholder="..." className="title-input form-control" onChange={this.handleInputChange} value={this.state.address}></input>
                 </div>
-                <div className="form-group">
-                  <label id="employer-input" htmlFor="employer-input">Employer Name</label>
-                  <input id="inputJob" name="employer" type="text" placeholder="..." className="employer-input form-control" onChange={this.handleInputChange} value={this.state.employer}></input>
-                </div>
+                {!this.state.employer ? (
+                  <div className="form-group">
+                    <label id="employer-input" htmlFor="employer-input">Employer Name</label>
+                    <input id="inputJob" name="employer" type="text" placeholder="..." className="employer-input form-control" onChange={this.handleInputChange} value={this.state.employer}></input>
+                  </div>
+                ): null}
                 <div className="form-group">
 
                   <p id="jobCategories">Category (pick one):</p>

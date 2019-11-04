@@ -17,6 +17,7 @@ class Account extends React.Component {
     super(props);
     this.state = {
       user: [],
+      userJobs: [],
       newStatement: '',
       newSeekingOrSkills: '',
     }
@@ -36,6 +37,10 @@ class Account extends React.Component {
           .then(res =>
             this.setState({ user: res.data , newStatement: res.data.statement, newSeekingOrSkills: res.data.seekingOrSkills})
           )
+          .catch(err => console.log(err));
+        API.getJobsbyEmployer(uId)
+          //.then(res=> console.log(res.data))
+          .then(res=> this.setState({userJobs: res.data}))
           .catch(err => console.log(err));
       }
     });
@@ -99,11 +104,11 @@ class Account extends React.Component {
           ref={ref => container = ref}
           className="toast-bottom-right"
         />
-          {/* <button onClick={(event) => this.seeTheState(event)} className="btn btn-primary">Current State</button> */}
+          <button onClick={(event) => this.seeTheState(event)} className="btn btn-primary">Current State</button>
         {this.state.user.isAdmin ? 
           (<div>
             <EmployerCard
-              id={this.state.user.id}
+              id={this.state.user._id}
               username={this.state.user.username}
               email={this.state.user.email}
               statement={this.state.user.statement}
@@ -124,14 +129,15 @@ class Account extends React.Component {
                 <div className="job-header-2-grid">Date</div>
                 <div className="job-header-3-grid">Applicants</div>
                 </div>
-                <JobList />
-                <JobList />
-                <JobList />
-                <JobList />
-                <JobList />
-                <JobList />
-                <JobList />
-                <JobList />
+                {this.state.userJobs.map(res=> (
+                  <JobList
+                    key={res._id} 
+                    title={res.title}
+                    date={res.date.slice(0, 10)}
+                    appliedWorkers={res.appliedWorkers.length}
+                  />
+                ))}
+                
               </div> 
               <div className="right-hire-list ks-container">
                 <div className="ks-container list-main-container"> hello

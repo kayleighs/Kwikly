@@ -45,6 +45,7 @@ const App = () => (
         <Route exact path ="/directiontest" component={DirectionsTest} />
         <Route path="/jobdetail/:id" render={props=> <JobDetailPage {...props}/>} />
         <Route path="/profile/:id" render={props=> <ProfilePage {...props}/>} />
+        <Route path="/apply/:id" render={props=> <ApplyPage {...props}/>} />
         <Route exact path="/users" component={SearchUsers} />
 
 

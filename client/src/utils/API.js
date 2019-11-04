@@ -16,6 +16,9 @@ export default {
   getJobsbySearch: function(term) {
     return axios.get("/api/jobs/by-search/" + term)
   },
+  getJobsbyEmployer: function(empId) {
+    return axios.get("/api/jobs/by-employer/" + empId)
+  },
   // Gets the job with the given id
   getjob: function (id) {
     return axios.get("/api/jobs/" + id);
