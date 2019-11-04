@@ -7,7 +7,8 @@ function HireList(props) {
     <li className="ks-container hire-list-container">
       
         <div className="hire-list-block hire-list-title">
-          <p href="" className="hire-list-style hire-link">{props.username}Daniel LaZenberry</p>
+          <p>{props.jobName}</p>
+          <p href="" className="hire-list-style hire-link">{props.username}</p>
         </div>
 
         <div className="hire-list-block">

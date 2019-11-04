@@ -104,7 +104,7 @@ class Account extends React.Component {
           ref={ref => container = ref}
           className="toast-bottom-right"
         />
-          <button onClick={(event) => this.seeTheState(event)} className="btn btn-primary">Current State</button>
+          {/* <button onClick={(event) => this.seeTheState(event)} className="btn btn-primary">Current State</button> */}
         {this.state.user.isAdmin ? 
           (<div>
             <EmployerCard
@@ -142,14 +142,14 @@ class Account extends React.Component {
               <div className="right-hire-list ks-container">
                 <div className="ks-container list-main-container"> hello
                 </div> 
-                <HireList />
-                <HireList />
-                <HireList />
-                <HireList />
-                <HireList />
-                <HireList />
-                <HireList />
-                <HireList />
+                {this.state.userJobs.map(res=> (
+                  res.appliedWorkers.map(worker=> (
+                    <HireList 
+                      jobName={res.title}
+                      username={worker.username}
+                    />
+                  ))
+                ))}  
               </div>  
             </div>
           </div>): 
