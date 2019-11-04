@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, DirectionsRenderer } from 'react-google-maps';
+import { Link } from 'react-router-dom';
 require("dotenv").config();
 
 
@@ -77,29 +78,6 @@ class Map extends Component {
     });
   };
 
-  jobApply = () => {
-    console.log(this.state.currentUser);
-    if (!this.state.currentJob.appliedWorkers.includes(this.state.currentUser._id)) {
-      API.updateJobApplicants(this.state.currentJob._id, {
-        $push: {
-          appliedWorkers: this.state.currentUser._id
-        }
-      })
-        .then(() => this.componentDidMount())
-        .catch(err => console.log(err));
-
-      API.updateUserApplicant(this.state.currentUser._id, {
-        $push: {
-          appliedJobs: this.state.currentJob._id
-        }
-      })
-      .then(() => this.componentDidMount())
-      .catch(err => console.log(err));
-    } else {
-      console.log("you already applied!");
-    }
-  }
-
   render() {
     return (
       <div className="job-detail-page container">
@@ -141,7 +119,7 @@ class Map extends Component {
             <div className="info-test row">
               <div className="col-10">
                 <h1>{this.state.currentJob.title}</h1>
-                <p>Posted by: {this.state.currentJob.employer}</p>
+                <p>Posted by: {this.state.currentJob.employer.name}</p>
                 <p>{this.state.currentJob.address}</p>
                 <p>{this.state.currentJob.description}</p>
               </div>
@@ -175,7 +153,9 @@ class Map extends Component {
             {this.state.currentUser ? (
               <div className="row">
                 <div className="col-10">
-                  <button onClick={()=> this.jobApply()} className="btn btn-success">Apply Now!</button> 
+                  <Link to={{pathname:"/apply/" + this.state.currentJob._id, state:{ currentJob: this.state.currentJob, currentUser: this.state.currentUser }}}>
+                    <button className="btn btn-success">Interested?</button>
+                  </Link>
                 </div>
               </div>
             ): null}

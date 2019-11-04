@@ -39,7 +39,10 @@ class SearchUsers extends Component {
                   {res.isAdmin ? (
                     <p>Employer Profile</p>
                   ):(
-                    <p>Job-Seeker Profile</p>
+                    <div className="seeker-data">
+                      <p>Job-Seeker Profile</p>
+                      <p># of Applied Jobs:{res.appliedJobs.length}</p>
+                    </div>
                   )}
                   <a href={"/profile/" + res._id} className="btn btn-info">Profile</a>
                 </div>

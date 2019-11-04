@@ -70,7 +70,6 @@ class Map extends Component {
                 <p>{this.state.selectedMarker.description}</p>
                 {document.getElementsByClassName("navbar")[0].attributes[1] ? (
                   <div>
-                    <p onClick={()=> console.log(document.getElementsByClassName("navbar")[0].attributes[1].value)}><em>Click here for details</em></p>
                     <p>Get details <Link to={{pathname:"/jobdetail/" + this.state.selectedMarker._id, state:{ currentUser: document.getElementsByClassName("navbar")[0].attributes[1].value, jobId: this.state.selectedMarker._id}}}>here</Link></p>
                   </div>
                 ):(

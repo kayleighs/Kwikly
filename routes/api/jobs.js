@@ -23,4 +23,8 @@ router
     .route("/by-search/:term")
     .get(jobsController.findBySearch);
 
+  router  
+    .route("/by-employer/:empId")
+    .get(jobsController.findByEmployer);
+
 module.exports = router;

@@ -27,6 +27,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err=> res.status(422).json(err));
   },
+  findByEmployer: function (req, res) {
+    db.Jobs
+      .find({"employer.empId": req.params.empId})
+      .then(dbModel => res.json(dbModel))
+      .catch(err=> res.status(422).json(err));
+  },
   create: function (req, res) {
     db.Jobs
       .create(req.body)

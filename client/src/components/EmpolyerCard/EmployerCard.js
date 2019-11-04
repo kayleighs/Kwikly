@@ -150,7 +150,7 @@ render() {
       {/*========================================================================*/}
       <div className="Item-Employer-Card-6 Item color-3-blue ks-container">
         {/* <button className="Item-6-Grid-1 button-style"><p>Current Jobs</p></button> */}
-        <Link to={ROUTES.POSTJOB} className="Item-6-Grid-2 dl-form-button job-post-button-style text-center"> Create A  Job!</Link>
+        <Link to={{pathname:ROUTES.POSTJOB, state:{ jobProvider: this.props.username, empId: this.props.id }}} className="Item-6-Grid-2 dl-form-button job-post-button-style text-center"> Create A  Job!</Link>
       </div>
 
     </div>
