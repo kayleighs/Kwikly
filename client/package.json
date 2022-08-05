@@ -16,7 +16,7 @@
     "react-modal": "^3.10.1",
     "gravatar": "^1.8.0",
     "if-env": "^1.0.4",
-    "mongoose": "^5.7.1"
+    "mongoose": "^5.7.5"
   },
   "scripts": {
     "start": "react-scripts start",
